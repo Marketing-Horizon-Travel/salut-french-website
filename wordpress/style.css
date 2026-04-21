@@ -1,0 +1,17 @@
+/*
+Theme Name: Salut Français
+Theme URI: https://tiengphapsalut.vn/
+Author: Salut - Chia sẻ Pháp ngữ
+Author URI: https://www.facebook.com/Tiengphapsalut
+Description: Custom WordPress theme for Salut French Language Center in Hanoi. Features course catalog, class schedules, registration form, blog, and testimonials. Designed with a French-inspired palette (navy, cream, coral) and elegant Playfair Display typography.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: salut
+Tags: education, language-school, french, custom-logo, custom-menu, featured-images, translation-ready
+*/
+
+/* Base styles live in assets/css/main.css — this file only holds the theme header. */
