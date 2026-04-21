@@ -55,25 +55,45 @@ vercel --prod
 - Vercel cho sẵn domain `*.vercel.app` miễn phí
 - Muốn dùng domain riêng (vd `tiengphapsalut.vn`): `Settings → Domains → Add`, trỏ DNS theo hướng dẫn
 
-## Form đăng ký tư vấn
+## Form đăng ký tư vấn — Kích hoạt Formspree (1 phút)
 
-⚠️ Form hiện dùng `alert()` giả để demo. Để form thực sự gửi email, chọn 1 trong các cách:
+Form đã được tích hợp sẵn Formspree. Chỉ cần:
 
-### Formspree (khuyến nghị — miễn phí 50 submissions/tháng)
-
-1. Đăng ký tại [formspree.io](https://formspree.io)
-2. Tạo form mới, lấy endpoint dạng `https://formspree.io/f/xxxxxxxx`
-3. Sửa trong `index.html`, tìm thẻ `<form class="contact-form" ...>`:
+1. **Đăng ký miễn phí** tại [formspree.io](https://formspree.io) (dùng email `contact@tiengphapsalut.vn` hoặc email bạn muốn nhận thông báo)
+2. Click **+ New Form** → đặt tên (vd: "Salut Website") → **Create Form**
+3. Copy form ID — nó có dạng `xvojpnrq` (8 ký tự), nằm trong URL `https://formspree.io/f/xvojpnrq`
+4. Mở [index.html](index.html), tìm:
    ```html
-   <form action="https://formspree.io/f/xxxxxxxx" method="POST" class="contact-form">
+   action="https://formspree.io/f/YOUR_FORMSPREE_ID"
    ```
-4. Xoá `onsubmit="..."` cũ
+   Thay `YOUR_FORMSPREE_ID` bằng ID vừa copy.
+5. Commit + push — Vercel tự redeploy:
+   ```bash
+   git add index.html
+   git commit -m "Enable Formspree endpoint"
+   git push
+   ```
 
-### Getform / Web3Forms / FormSubmit (thay thế)
-Tương tự Formspree — chỉ cần thay URL action.
+**Gói miễn phí:** 50 submissions/tháng. Nâng cấp Gold ($10/tháng) = không giới hạn + tắt branding + webhook.
 
-### Google Forms (free, unlimited)
-Embed trực tiếp bằng iframe hoặc dùng AJAX tới Google Sheets via Apps Script.
+**Tính năng đã có sẵn:**
+- ✅ AJAX submit (không reload trang)
+- ✅ Loading state, success/error message
+- ✅ Honeypot `_gotcha` chống bot
+- ✅ Tự động gửi email về địa chỉ bạn đăng ký Formspree với subject "[Salut] Đăng ký tư vấn mới từ website"
+- ✅ Track event `lead_submit` cho Google Analytics (nếu có cài)
+- ✅ Track Facebook Pixel `Lead` event (nếu có cài)
+
+### Thay thế khác (nếu không muốn Formspree)
+
+| Dịch vụ | Free tier | Lưu ý |
+|---|---|---|
+| [Getform](https://getform.io) | 50/tháng | Tương tự Formspree |
+| [Web3Forms](https://web3forms.com) | Unlimited | Cần access key thay form ID |
+| [FormSubmit](https://formsubmit.co) | Unlimited | Đơn giản nhất, chỉ cần email |
+| [Google Forms](https://forms.google.com) | Unlimited | Cần code tuỳ biến thêm |
+
+Chỉ cần đổi URL trong `action="..."` — JS đã tương thích với Formspree/Getform/Web3Forms.
 
 ## Tuỳ biến màu / font / text
 

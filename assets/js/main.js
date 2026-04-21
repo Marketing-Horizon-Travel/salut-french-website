@@ -85,7 +85,7 @@
         targets.forEach(function (el) { io.observe(el); });
     }
 
-    /* AJAX lead form submission */
+    /* Lead form submission — works with Formspree, Getform, Web3Forms, FormSubmit */
     function initLeadForm() {
         var form = document.getElementById('salut-lead-form');
         if (!form) return;
@@ -95,45 +95,57 @@
 
             var btn = form.querySelector('button[type="submit"]');
             var msg = form.querySelector('.form-message');
+            var action = form.getAttribute('action') || '';
+
             msg.className = 'form-message';
             msg.textContent = '';
+
+            if (!action || action.indexOf('YOUR_FORMSPREE_ID') > -1) {
+                msg.className = 'form-message is-error';
+                msg.textContent = '⚠️ Form chưa được cấu hình. Vui lòng liên hệ qua hotline hoặc Facebook.';
+                return;
+            }
 
             btn.classList.add('is-loading');
             btn.disabled = true;
 
             var data = new FormData(form);
-            data.append('action', 'salut_lead');
-            data.append('nonce', window.salutData ? window.salutData.nonce : '');
 
-            var ajaxUrl = window.salutData ? window.salutData.ajaxUrl : '/wp-admin/admin-ajax.php';
-
-            fetch(ajaxUrl, {
+            fetch(action, {
                 method: 'POST',
                 body: data,
-                credentials: 'same-origin'
+                headers: { 'Accept': 'application/json' }
             })
-                .then(function (r) { return r.json(); })
-                .then(function (json) {
+                .then(function (res) {
                     btn.classList.remove('is-loading');
                     btn.disabled = false;
 
-                    if (json && json.success) {
+                    if (res.ok) {
                         msg.className = 'form-message is-success';
-                        msg.textContent = json.data.msg || 'Cảm ơn bạn!';
+                        msg.textContent = '✅ Cảm ơn bạn! Salut sẽ liên hệ trong 24h. À bientôt!';
                         form.reset();
                         if (typeof gtag === 'function') {
                             gtag('event', 'lead_submit', { event_category: 'engagement' });
                         }
-                    } else {
-                        msg.className = 'form-message is-error';
-                        msg.textContent = (json && json.data && json.data.msg) || 'Có lỗi xảy ra, vui lòng thử lại.';
+                        if (typeof fbq === 'function') {
+                            fbq('track', 'Lead');
+                        }
+                        return;
                     }
+                    return res.json().then(function (json) {
+                        var errMsg = 'Có lỗi xảy ra, vui lòng thử lại.';
+                        if (json && Array.isArray(json.errors) && json.errors.length) {
+                            errMsg = json.errors.map(function (er) { return er.message; }).join(' · ');
+                        }
+                        msg.className = 'form-message is-error';
+                        msg.textContent = errMsg;
+                    });
                 })
                 .catch(function () {
                     btn.classList.remove('is-loading');
                     btn.disabled = false;
                     msg.className = 'form-message is-error';
-                    msg.textContent = 'Không thể kết nối máy chủ. Vui lòng thử lại hoặc gọi hotline.';
+                    msg.textContent = 'Không thể kết nối. Vui lòng thử lại hoặc gọi hotline.';
                 });
         });
     }

@@ -249,8 +249,15 @@
                 <li><span class="ci-icon">💬</span><div><strong>Facebook</strong><p><a href="https://www.facebook.com/Tiengphapsalut" target="_blank" rel="noopener">Salut - Chia sẻ Pháp ngữ</a></p></div></li>
             </ul>
         </div>
-        <form class="contact-form" id="salut-lead-form" onsubmit="event.preventDefault(); document.querySelector('.form-message').className='form-message is-success'; document.querySelector('.form-message').textContent='Cảm ơn bạn! Salut sẽ liên hệ trong 24h. À bientôt!'; this.reset();">
+        <!-- Formspree: thay YOUR_FORMSPREE_ID bằng ID lấy từ formspree.io -->
+        <form class="contact-form" id="salut-lead-form"
+              action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+              method="POST">
             <h3>Để Salut liên hệ bạn nhé!</h3>
+
+            <input type="hidden" name="_subject" value="[Salut] Đăng ký tư vấn mới từ website">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
             <div class="form-row"><label><span>Họ tên *</span><input type="text" name="name" required placeholder="VD: Nguyễn Thu Hà"></label></div>
             <div class="form-row form-row-2">
                 <label><span>Số điện thoại *</span><input type="tel" name="phone" required placeholder="VD: 0987 654 321"></label>
