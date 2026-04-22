@@ -1,0 +1,145 @@
+============================================================
+TEMPLATE CONTACT FORM 7 — SALUT FRENCH
+============================================================
+Copy toàn bộ nội dung dưới đây vào tab "Form" của CF7.
+Sau đó vào Customizer → dán shortcode [contact-form-7 id="xxx"] vào "Contact Form 7 shortcode".
+============================================================
+
+<p>
+<label>Họ tên *
+[text* name placeholder "VD: Nguyễn Thu Hà"]</label>
+</p>
+
+<div class="form-row-2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<p>
+<label>Số điện thoại *
+[tel* phone placeholder "VD: 0987 654 321"]</label>
+</p>
+<p>
+<label>Email
+[email email placeholder "email@cua-ban.com"]</label>
+</p>
+</div>
+
+<p>
+<label>Quan tâm khoá học
+[select course "-- Chọn khoá học --" "Tiếng Pháp từ số 0" "Ngữ pháp nền tảng" "DELF A2 - B1 - B2" "TCF Canada - TEF" "TCF TP - TCF IRN" "Giao tiếp phản xạ" "Tư vấn lộ trình cá nhân"]</label>
+</p>
+
+<p>
+<label>Lời nhắn (không bắt buộc)
+[textarea message rows:3 placeholder "Mục tiêu của bạn? Trình độ hiện tại? Thời gian mong muốn?"]</label>
+</p>
+
+[submit "Gửi đăng ký"]
+
+
+============================================================
+TAB "MAIL" — Cấu hình email gửi về admin
+============================================================
+
+To:          contact@tiengphapsalut.vn (email của bạn)
+From:        [_site_admin_email]
+Subject:     [Salut] Đăng ký tư vấn mới từ [name]
+Body:
+
+Học viên vừa đăng ký tư vấn trên website:
+
+Họ tên:  [name]
+SĐT:     [phone]
+Email:   [email]
+Quan tâm: [course]
+
+Lời nhắn:
+[message]
+
+---
+Gửi từ website [_site_title] ([_site_url])
+Thời gian: [_date] [_time]
+IP: [_remote_ip]
+
+
+============================================================
+TAB "MAIL (2)" — Email auto-reply gửi học viên (tuỳ chọn)
+============================================================
+
+To:          [email]
+From:        Salut - Chia sẻ Pháp ngữ <contact@tiengphapsalut.vn>
+Subject:     Cảm ơn [name] đã quan tâm đến Salut! 🥐
+Body:
+
+Bonjour [name],
+
+Cảm ơn bạn đã đăng ký tư vấn tại Salut - Chia sẻ Pháp ngữ!
+
+Chúng mình đã nhận được thông tin:
+• SĐT: [phone]
+• Quan tâm: [course]
+
+Đội ngũ tư vấn sẽ liên hệ lại trong vòng 24h để trao đổi chi tiết về
+lộ trình học phù hợp nhất với bạn.
+
+Trong lúc chờ đợi, bạn có thể:
+• Xem các khoá học: https://tiengphapsalut.vn/khoa-hoc/
+• Theo dõi fanpage: https://www.facebook.com/Tiengphapsalut
+
+À bientôt!
+
+--
+Salut - Chia sẻ Pháp ngữ
+📞 +84 827 030 018
+✉️ contact@tiengphapsalut.vn
+
+
+============================================================
+TAB "MESSAGES" — Thông báo tiếng Việt
+============================================================
+
+Sender's message was sent successfully:
+→ Cảm ơn bạn! Salut sẽ liên hệ trong 24h. À bientôt! 🥐
+
+Sender's message failed to send:
+→ Có lỗi xảy ra khi gửi. Vui lòng thử lại hoặc gọi hotline 0827 030 018.
+
+Validation errors occurred:
+→ Vui lòng kiểm tra lại các ô có dấu *
+
+One or more fields have an error:
+→ Vui lòng kiểm tra lại thông tin.
+
+There is a field that the sender is required to fill in:
+→ Trường này bắt buộc.
+
+The field is too long:
+→ Nội dung quá dài.
+
+The field is too short:
+→ Nội dung quá ngắn.
+
+Email address that the sender entered is invalid:
+→ Email không hợp lệ.
+
+Telephone number that the sender entered is invalid:
+→ Số điện thoại không hợp lệ.
+
+
+============================================================
+PLUGIN GỢI Ý CÀI THÊM
+============================================================
+
+1. Flamingo (cùng tác giả CF7)
+   → Lưu mọi submission vào database, xem lại trong admin
+   → Tự thêm lead vào Address Book
+   https://wordpress.org/plugins/flamingo/
+
+2. Contact Form 7 - Google reCAPTCHA v3
+   → Chống spam không cần checkbox phiền
+   Có sẵn trong CF7 core: Integration → reCAPTCHA
+
+3. Contact Form 7 to Google Sheets
+   → Tự động đồng bộ lead sang Google Sheets
+   https://wordpress.org/plugins/cf7-google-sheets-connector/
+
+4. WP Mail SMTP
+   → Đảm bảo email CF7 gửi đi ổn định (dùng Gmail/SendGrid)
+   https://wordpress.org/plugins/wp-mail-smtp/

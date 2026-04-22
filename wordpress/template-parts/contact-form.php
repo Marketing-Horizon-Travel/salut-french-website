@@ -53,57 +53,88 @@
             </ul>
         </div>
 
-        <form class="contact-form" id="salut-lead-form" novalidate>
-            <h3>Để Salut liên hệ bạn nhé!</h3>
+        <div class="contact-form-wrap">
+            <?php
+            /**
+             * Form rendering priority:
+             * 1. If admin pasted a CF7 shortcode into Customizer → use CF7 (recommended)
+             * 2. Otherwise → fall back to built-in custom AJAX form
+             */
+            $cf7_shortcode = salut_opt( 'salut_cf7_shortcode', '' );
+            $cf7_active    = shortcode_exists( 'contact-form-7' );
 
-            <div class="form-row">
-                <label>
-                    <span>Họ tên *</span>
-                    <input type="text" name="name" required placeholder="VD: Nguyễn Thu Hà">
-                </label>
-            </div>
+            if ( ! empty( $cf7_shortcode ) && $cf7_active ) :
+                echo '<div class="contact-form cf7-wrap">';
+                echo '<h3>Để Salut liên hệ bạn nhé!</h3>';
+                echo '<div class="form-note" style="margin-bottom:16px">🔒 Thông tin của bạn được bảo mật. Salut không spam, không bán dữ liệu.</div>';
+                echo do_shortcode( $cf7_shortcode );
+                echo '</div>';
+            else : ?>
+                <form class="contact-form" id="salut-lead-form" novalidate>
+                    <h3>Để Salut liên hệ bạn nhé!</h3>
 
-            <div class="form-row form-row-2">
-                <label>
-                    <span>Số điện thoại *</span>
-                    <input type="tel" name="phone" required placeholder="VD: 0987 654 321">
-                </label>
-                <label>
-                    <span>Email</span>
-                    <input type="email" name="email" placeholder="email@cua-ban.com">
-                </label>
-            </div>
+                    <?php if ( current_user_can('manage_options') ) : ?>
+                        <?php if ( ! $cf7_active ) : ?>
+                            <p class="admin-tip">
+                                💡 <strong>Admin tip:</strong> Cài plugin <a href="<?php echo esc_url( admin_url('plugin-install.php?s=contact+form+7&tab=search&type=term') ); ?>" target="_blank">Contact Form 7</a> để quản lý form linh hoạt hơn (reCAPTCHA, Flamingo lưu lead, tích hợp Mailchimp…).
+                            </p>
+                        <?php else : ?>
+                            <p class="admin-tip admin-tip-ok">
+                                ✅ <strong>CF7 đang active.</strong> Dán shortcode vào <a href="<?php echo esc_url( admin_url('customize.php?autofocus[control]=salut_cf7_shortcode') ); ?>" target="_blank">Customizer → Thông tin liên hệ Salut</a> để thay form này.
+                            </p>
+                        <?php endif; ?>
+                    <?php endif; ?>
 
-            <div class="form-row">
-                <label>
-                    <span>Quan tâm khoá học</span>
-                    <select name="course">
-                        <option value="">-- Chọn khoá học --</option>
-                        <option>Tiếng Pháp từ số 0</option>
-                        <option>Ngữ pháp nền tảng</option>
-                        <option>DELF A2 - B1 - B2</option>
-                        <option>TCF Canada - TEF</option>
-                        <option>TCF TP - TCF IRN</option>
-                        <option>Giao tiếp phản xạ</option>
-                        <option>Tư vấn lộ trình cá nhân</option>
-                    </select>
-                </label>
-            </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Họ tên *</span>
+                            <input type="text" name="name" required placeholder="VD: Nguyễn Thu Hà">
+                        </label>
+                    </div>
 
-            <div class="form-row">
-                <label>
-                    <span>Lời nhắn (không bắt buộc)</span>
-                    <textarea name="message" rows="3" placeholder="Mục tiêu của bạn? Trình độ hiện tại? Thời gian mong muốn?"></textarea>
-                </label>
-            </div>
+                    <div class="form-row form-row-2">
+                        <label>
+                            <span>Số điện thoại *</span>
+                            <input type="tel" name="phone" required placeholder="VD: 0987 654 321">
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type="email" name="email" placeholder="email@cua-ban.com">
+                        </label>
+                    </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block">
-                <span class="btn-label">Gửi đăng ký</span>
-                <span class="btn-loader" aria-hidden="true"></span>
-            </button>
+                    <div class="form-row">
+                        <label>
+                            <span>Quan tâm khoá học</span>
+                            <select name="course">
+                                <option value="">-- Chọn khoá học --</option>
+                                <option>Tiếng Pháp từ số 0</option>
+                                <option>Ngữ pháp nền tảng</option>
+                                <option>DELF A2 - B1 - B2</option>
+                                <option>TCF Canada - TEF</option>
+                                <option>TCF TP - TCF IRN</option>
+                                <option>Giao tiếp phản xạ</option>
+                                <option>Tư vấn lộ trình cá nhân</option>
+                            </select>
+                        </label>
+                    </div>
 
-            <div class="form-note">🔒 Thông tin của bạn được bảo mật. Salut không spam, không bán dữ liệu.</div>
-            <div class="form-message" role="status" aria-live="polite"></div>
-        </form>
+                    <div class="form-row">
+                        <label>
+                            <span>Lời nhắn (không bắt buộc)</span>
+                            <textarea name="message" rows="3" placeholder="Mục tiêu của bạn? Trình độ hiện tại? Thời gian mong muốn?"></textarea>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">
+                        <span class="btn-label">Gửi đăng ký</span>
+                        <span class="btn-loader" aria-hidden="true"></span>
+                    </button>
+
+                    <div class="form-note">🔒 Thông tin của bạn được bảo mật. Salut không spam, không bán dữ liệu.</div>
+                    <div class="form-message" role="status" aria-live="polite"></div>
+                </form>
+            <?php endif; ?>
+        </div>
     </div>
 </section>

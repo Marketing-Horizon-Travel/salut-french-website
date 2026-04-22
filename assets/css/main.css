@@ -846,6 +846,94 @@ p { margin: 0 0 1em; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* =========================================================================
+   CONTACT FORM 7 (WordPress plugin — style để khớp design Salut)
+   ========================================================================= */
+.cf7-wrap .wpcf7 { padding: 0; margin: 0; }
+.cf7-wrap .wpcf7-form p { margin: 0 0 16px; }
+.cf7-wrap label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: var(--ink);
+}
+.cf7-wrap .wpcf7-form-control {
+    width: 100%;
+    padding: 13px 16px;
+    border: 2px solid var(--lavender-100);
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    background: var(--cream);
+    color: var(--ink);
+    transition: border-color .2s, background .2s;
+}
+.cf7-wrap .wpcf7-form-control:focus {
+    outline: 0;
+    border-color: var(--lavender-400);
+    background: var(--white);
+}
+.cf7-wrap textarea.wpcf7-form-control { resize: vertical; min-height: 90px; }
+.cf7-wrap select.wpcf7-form-control { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B5B95' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+
+/* CF7 checkbox/radio groups */
+.cf7-wrap .wpcf7-list-item { display: inline-flex; align-items: center; margin: 0 12px 6px 0; }
+.cf7-wrap .wpcf7-list-item-label { margin-left: 6px; font-weight: 400; }
+
+/* CF7 submit button — match btn-primary */
+.cf7-wrap .wpcf7-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 18px 36px;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    border: 2px solid transparent;
+    background: var(--lavender-600);
+    color: var(--white);
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s, background .2s;
+    margin-top: 8px;
+}
+.cf7-wrap .wpcf7-submit:hover {
+    background: var(--lavender-700);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* CF7 status messages */
+.cf7-wrap .wpcf7-response-output {
+    margin: 16px 0 0 !important;
+    padding: 12px 16px !important;
+    border-radius: 10px !important;
+    border: 0 !important;
+    font-size: 14px;
+}
+.cf7-wrap .wpcf7 form.sent .wpcf7-response-output { background: #D4F5E3; color: #1B6B3F; }
+.cf7-wrap .wpcf7 form.failed .wpcf7-response-output,
+.cf7-wrap .wpcf7 form.aborted .wpcf7-response-output { background: #FFD5D5; color: #B84545; }
+.cf7-wrap .wpcf7 form.invalid .wpcf7-response-output,
+.cf7-wrap .wpcf7 form.unaccepted .wpcf7-response-output { background: var(--yellow-soft); color: #8B6914; }
+.cf7-wrap .wpcf7-not-valid-tip { color: #B84545; font-size: 13px; margin-top: 4px; }
+.cf7-wrap .wpcf7-spinner { background-color: var(--lavender-600) !important; }
+
+/* Admin tips inside form (only visible to logged-in admins) */
+.contact-form .admin-tip {
+    background: var(--yellow-soft);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    border-left: 3px solid var(--yellow-dark);
+}
+.contact-form .admin-tip-ok { background: #E8F5E9; border-left-color: #4CAF50; }
+.contact-form .admin-tip a { font-weight: 600; }
+
+/* =========================================================================
    CTA BAND (before footer)
    ========================================================================= */
 .cta-band {

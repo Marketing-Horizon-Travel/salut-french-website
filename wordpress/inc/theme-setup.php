@@ -59,6 +59,18 @@ function salut_customize_register( $wp_customize ) {
             'type'    => 'text',
         ) );
     }
+
+    // Contact Form 7 shortcode — textarea (shortcode có thể chứa nhiều attr)
+    $wp_customize->add_setting( 'salut_cf7_shortcode', array(
+        'default'           => '',
+        'sanitize_callback' => 'wp_kses_post',
+    ) );
+    $wp_customize->add_control( 'salut_cf7_shortcode', array(
+        'label'       => 'Contact Form 7 shortcode',
+        'description' => 'Dán shortcode dạng [contact-form-7 id="123" title="Đăng ký"]. Để trống sẽ dùng form tự code kèm theo theme.',
+        'section'     => 'salut_contact',
+        'type'        => 'textarea',
+    ) );
 }
 add_action( 'customize_register', 'salut_customize_register' );
 

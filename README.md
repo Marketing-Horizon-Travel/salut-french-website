@@ -130,14 +130,39 @@ Dán script GA4 ngay trước `</head>` trong `index.html`.
 
 ## Phiên bản WordPress (`wordpress/`)
 
-Nếu về sau bạn muốn có:
+Nếu sau này bạn muốn có:
 - Admin panel quản lý khoá học / lịch học / testimonial
 - Blog CMS đầy đủ
+- Contact Form 7 quản lý form linh hoạt
 - Lưu đơn đăng ký vào database
 
-Copy thư mục `wordpress/` vào `wp-content/themes/salut-theme/` trên host WordPress riêng. Xem [wordpress/](wordpress/) để biết chi tiết cài đặt (sẽ viết README riêng khi cần).
+### Cài đặt
 
-Vercel KHÔNG host được WordPress — cần hosting PHP riêng (Hostinger, SiteGround, Cloudways, Kinsta…).
+1. Copy thư mục `wordpress/` vào `wp-content/themes/salut-theme/` trên host WordPress riêng (Hostinger, SiteGround, Cloudways, Kinsta…). **Vercel không host được WordPress.**
+2. `Appearance → Themes` → kích hoạt **Salut Français**
+3. `Settings → Permalinks` → chọn "Post name" → Save
+
+### Dùng Contact Form 7 (khuyến nghị)
+
+Theme đã tích hợp sẵn CF7. Cách bật:
+
+1. **Cài plugin** — `Plugins → Add New` → tìm "Contact Form 7" → Install → Activate
+2. **Tạo form** — `Contact → Add New`:
+   - Mở file [wordpress/cf7-template.txt](wordpress/cf7-template.txt)
+   - Copy từng phần vào tab tương ứng (Form / Mail / Messages)
+3. **Lấy shortcode** — sau khi Save, CF7 sẽ hiển thị shortcode dạng `[contact-form-7 id="123" title="Đăng ký"]`
+4. **Gắn vào theme** — `Appearance → Customize → Thông tin liên hệ Salut → Contact Form 7 shortcode` → paste shortcode → Publish
+5. Xong! Form trên trang chủ sẽ tự đổi sang CF7.
+
+**Gợi ý plugin thêm (miễn phí):**
+- **Flamingo** — lưu mọi submission vào DB, xem lại như Gmail inbox
+- **WP Mail SMTP** — đảm bảo email không vào spam (dùng Gmail/SendGrid)
+- **CF7 Google Sheets Connector** — đồng bộ lead sang Google Sheets
+- **reCAPTCHA v3** — chống spam (có sẵn trong CF7 core: Integration → reCAPTCHA)
+
+### Không dùng CF7? Theme vẫn chạy
+
+Nếu để trống ô "Contact Form 7 shortcode" trong Customizer, theme sẽ dùng form tự code sẵn (AJAX, lưu CPT `lead`, gửi email qua `wp_mail()`).
 
 ## Roadmap
 
