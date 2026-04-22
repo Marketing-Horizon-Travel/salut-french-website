@@ -24,10 +24,11 @@
         <div class="footer-col">
             <h4>Liên hệ</h4>
             <ul class="footer-contact">
-                <li>📍 {{ site.address }}</li>
-                <li>📞 <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a></li>
+                <li>🌐 {{ site.address }}</li>
+                {% if site.phone %}<li>📞 <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a></li>{% endif %}
                 {% if site.phoneFr %}<li>🇫🇷 {{ site.phoneFr }}</li>{% endif %}
                 <li>✉️ <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                <li>💬 <a href="{{ site.social.facebook }}" target="_blank" rel="noopener">Messenger Salut</a></li>
             </ul>
         </div>
 

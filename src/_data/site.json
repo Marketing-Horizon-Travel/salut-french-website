@@ -10,8 +10,9 @@
   "city": "Online",
   "country": "Việt Nam",
   "address": "Học 100% online — Live Class toàn quốc",
-  "phone": "Liên hệ qua Fanpage",
+  "phone": "",
   "phoneFr": "",
+  "messengerLabel": "Nhắn tin qua Facebook Messenger",
   "email": "contact@tiengphapsalut.vn",
   "social": {
     "facebook": "https://www.facebook.com/Tiengphapsalut",
