@@ -1,10 +1,10 @@
 [
-  { "level": "DELF B1", "startDate": "2026-05-15", "time": "T2-4-6 · 19h00-21h00", "teacher": "Cô Hà Anh", "slots": 4, "course": "delf-a2-b1-b2", "mode": "Offline" },
-  { "level": "TCF Canada", "startDate": "2026-05-20", "time": "T3-5-7 · 18h30-20h30", "teacher": "Thầy Minh", "slots": 3, "course": "tcf-canada-tef", "mode": "Offline" },
-  { "level": "A1 - Sơ cấp", "startDate": "2026-05-22", "time": "T2-4 · 19h30-21h30", "teacher": "Cô Linh", "slots": 8, "course": "tu-so-khong", "mode": "Offline" },
-  { "level": "DELF A2", "startDate": "2026-05-27", "time": "T3-5 · 19h00-21h00", "teacher": "Cô Ngọc", "slots": 5, "course": "delf-a2-b1-b2", "mode": "Online" },
-  { "level": "Giao tiếp B1+", "startDate": "2026-06-01", "time": "T7-CN · 14h00-16h00", "teacher": "Thầy Pierre (bản ngữ)", "slots": 2, "course": "giao-tiep-phan-xa", "mode": "Offline" },
-  { "level": "Ngữ pháp nền", "startDate": "2026-06-03", "time": "T2-4-6 · 18h00-20h00", "teacher": "Cô Hà Anh", "slots": 6, "course": "ngu-phap-nen-tang", "mode": "Offline" },
-  { "level": "TCF TP Québec", "startDate": "2026-06-08", "time": "T2-4-6 · 19h30-21h30", "teacher": "Thầy Minh", "slots": 5, "course": "tcf-tp-irn", "mode": "Online" },
-  { "level": "DELF B2", "startDate": "2026-06-12", "time": "T3-5-7 · 18h30-20h30", "teacher": "Cô Thảo", "slots": 7, "course": "delf-a2-b1-b2", "mode": "Offline" }
+  { "level": "A1 - Khoá mới", "startDate": "2026-05-08", "time": "T2-4-6 · 19h30-21h00", "teacher": "GV Khoa tiếng Pháp ĐHQG", "slots": 6, "course": "a1", "mode": "Online" },
+  { "level": "A1 - Cuối tuần", "startDate": "2026-05-10", "time": "T7-CN · 14h00-16h30", "teacher": "GV chuyên Pháp THPT chuyên", "slots": 8, "course": "a1", "mode": "Online" },
+  { "level": "A2 - Tăng tốc", "startDate": "2026-05-13", "time": "T2-4-6 · 19h30-21h00", "teacher": "GV C1 · 5 năm kinh nghiệm", "slots": 4, "course": "a2", "mode": "Online" },
+  { "level": "A2 - Tối", "startDate": "2026-05-20", "time": "T3-5-7 · 20h00-21h30", "teacher": "GV ngôn ngữ Pháp", "slots": 7, "course": "a2", "mode": "Online" },
+  { "level": "B1 - Luyện DELF", "startDate": "2026-05-22", "time": "T2-4-6 · 19h30-21h00", "teacher": "Chuyên gia luyện DELF/TCF", "slots": 3, "course": "b1", "mode": "Online" },
+  { "level": "B1 - Sáng", "startDate": "2026-05-27", "time": "T3-5 · 09h00-11h00", "teacher": "GV khoa tiếng Pháp ĐH", "slots": 5, "course": "b1", "mode": "Online" },
+  { "level": "B2 - DELF/TCF", "startDate": "2026-06-03", "time": "T2-4-6 · 19h30-21h00", "teacher": "Chuyên gia luyện thi quốc tế", "slots": 2, "course": "b2", "mode": "Online" },
+  { "level": "B2 - Native practice", "startDate": "2026-06-08", "time": "T7-CN · 16h00-18h00", "teacher": "Professeur Natif (Pháp bản ngữ)", "slots": 4, "course": "b2", "mode": "Online" }
 ]

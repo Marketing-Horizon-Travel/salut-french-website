@@ -2,14 +2,16 @@
   "name": "Salut - Chia sẻ Pháp ngữ",
   "shortName": "Salut",
   "tagline": "Chia sẻ Pháp ngữ",
-  "description": "Trung tâm tiếng Pháp tại Hà Nội. Luyện thi TCF, DELF, TEF từ con số 0 cùng đội ngũ giảng viên tận tâm. Oui Oui Baguette!",
+  "motto": "Tiếng Pháp không chỉ là một ngôn ngữ, đó là một hành trình mở ra thế giới.",
+  "mission": "Mang tiếng Pháp đến gần hơn với mọi người",
+  "description": "Salut - Trung tâm tiếng Pháp 100% online. Lộ trình CEFR A1 đến B2, luyện thi DELF/TCF/TEF. Live Class với giảng viên trình độ C1+ và native.",
   "url": "https://salut-french-website.vercel.app",
   "locale": "vi_VN",
-  "city": "Hà Nội",
+  "city": "Online",
   "country": "Việt Nam",
-  "address": "Hà Nội, Việt Nam",
-  "phone": "+84 827 030 018",
-  "phoneFr": "+33 17 69 10 01 08",
+  "address": "Học 100% online — Live Class toàn quốc",
+  "phone": "Liên hệ qua Fanpage",
+  "phoneFr": "",
   "email": "contact@tiengphapsalut.vn",
   "social": {
     "facebook": "https://www.facebook.com/Tiengphapsalut",
@@ -23,11 +25,23 @@
     "successRate": "95%",
     "rating": "4.9★"
   },
+  "values": [
+    { "icon": "❤️", "title": "Tận tâm", "desc": "Luôn đặt sự tiến bộ của người học là kim chỉ nam cho mọi hoạt động giảng dạy và hỗ trợ." },
+    { "icon": "🎨", "title": "Sáng tạo", "desc": "Không ngừng đổi mới phương pháp để mỗi giờ học tiếng Pháp là một trải nghiệm thú vị và đầy màu sắc." },
+    { "icon": "🤝", "title": "Kết nối", "desc": "Xây dựng mối quan hệ bền chặt giữa giảng viên - học viên và giữa những người yêu tiếng Pháp tại Việt Nam." }
+  ],
+  "guarantees": [
+    { "icon": "🎓", "title": "Nền tảng học thuật top đầu", "desc": "100% giảng viên đạt trình độ C1+ hoặc tốt nghiệp chuyên ngành Ngôn ngữ Pháp. Mỗi bài giảng đều chuẩn xác kiến thức và giàu tư duy ngôn ngữ." },
+    { "icon": "🏛️", "title": "Kinh nghiệm thực chiến", "desc": "Đội ngũ Giảng viên khoa tiếng Pháp (Đại học) & giáo viên chuyên Pháp (THPT chuyên). Hiểu sâu lộ trình, dẫn dắt từ cơ bản đến nâng cao." },
+    { "icon": "🎯", "title": "Chuyên gia luyện thi", "desc": "Giảng viên giàu kinh nghiệm luyện DELF/TCF/TEF — giúp bạn 'bẻ khoá' đề thi và làm chủ barème chấm điểm." },
+    { "icon": "📚", "title": "Phương pháp sư phạm", "desc": "Dạy học có hệ thống, khoa học. Biến cấu trúc ngữ pháp phức tạp thành khái niệm dễ hiểu để bạn làm chủ ngôn ngữ." }
+  ],
   "nav": [
     { "label": "Trang chủ", "url": "/" },
     { "label": "Khoá học", "url": "/khoa-hoc/" },
     { "label": "Lịch khai giảng", "url": "/lich-khai-giang/" },
     { "label": "Về Salut", "url": "/ve-chung-toi/" },
+    { "label": "Câu hỏi thường gặp", "url": "/cau-hoi-thuong-gap/" },
     { "label": "Blog", "url": "/blog/" },
     { "label": "Liên hệ", "url": "/lien-he/" }
   ]

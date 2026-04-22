@@ -1,126 +1,106 @@
 [
   {
-    "slug": "tcf-canada-tef",
-    "icon": "🎯",
-    "title": "TCF Canada · TEF",
-    "short": "TCF Canada · TEF",
-    "excerpt": "Luyện thi định cư Canada — 4 kỹ năng Nghe/Đọc/Nói/Viết với đề thi cập nhật mới nhất.",
-    "price": "4.500.000đ",
-    "duration": "3 tháng",
-    "sessions": "36 buổi",
-    "goal": "TCF 400+",
-    "level": "B1-B2",
-    "description": "TCF Canada và TEF là các chứng chỉ tiếng Pháp được yêu cầu cho hồ sơ định cư Canada (Federal Express Entry, CSQ Québec). Khoá học tại Salut tập trung vào 4 kỹ năng bắt buộc: Compréhension orale, Compréhension écrite, Expression orale và Expression écrite — với bộ đề thi cập nhật liên tục từ France Éducation International.",
+    "slug": "a1",
+    "icon": "🌱",
+    "title": "Level A1 · Khám phá tiếng Pháp",
+    "short": "Level A1",
+    "level": "A1",
+    "format": "100% Online",
+    "excerpt": "Xây dựng nền tảng phát âm, giao tiếp cơ bản và làm quen với tư duy tiếng Pháp từ con số 0.",
+    "price": "Liên hệ",
+    "duration": "45 buổi",
+    "sessions": "67.5h lớp + 135h tự học",
+    "goal": "Đạt A1 CEFR",
+    "description": "Khoá A1 tại Salut là điểm khởi đầu hoàn hảo cho người hoàn toàn mới. 45 buổi học trực tuyến Live Class giúp bạn xây dựng nền tảng vững chắc: từ bảng chữ cái, âm đặc trưng tiếng Pháp (r, liaison, nasal), đến các tình huống giao tiếp cơ bản nhất. Không học qua video ghi sẵn — bạn được tương tác trực tiếp với giảng viên, chỉnh sửa phát âm ngay tức thì.",
     "outcomes": [
-      "Đạt tối thiểu TCF 400 điểm (tương đương B2)",
-      "Thành thạo 4 dạng đề thi: expression orale, écrite, compréhension orale, écrite",
-      "Tự tin đi thi chính thức tại CCF Hà Nội / TP.HCM",
-      "Lộ trình kèm hồ sơ du học/định cư"
+      "Phát âm chuẩn bảng chữ cái và 38 âm tiếng Pháp",
+      "Tự giới thiệu bản thân tự tin bằng tiếng Pháp",
+      "Giao tiếp cơ bản trong các tình huống đời sống thường ngày",
+      "Làm quen với tư duy ngôn ngữ Pháp, sẵn sàng cho cấp độ A2"
     ],
     "curriculum": [
-      { "week": "Tuần 1-4", "topic": "Ngữ pháp nâng cao + 500 từ vựng chủ đề định cư" },
-      { "week": "Tuần 5-8", "topic": "Compréhension orale: chiến lược nghe từng dạng câu hỏi" },
-      { "week": "Tuần 9-12", "topic": "Expression écrite: kỹ năng viết theo barème chính thức" }
+      { "week": "Giai đoạn 1", "topic": "Phát âm + bảng chữ cái + chào hỏi cơ bản" },
+      { "week": "Giai đoạn 2", "topic": "Chia động từ ở thì hiện tại + đại từ nhân xưng" },
+      { "week": "Giai đoạn 3", "topic": "Giao tiếp: giới thiệu bản thân, gia đình, nghề nghiệp" },
+      { "week": "Giai đoạn 4", "topic": "Ôn tập + kiểm tra cuối khoá đạt chuẩn A1" }
     ]
   },
   {
-    "slug": "delf-a2-b1-b2",
-    "icon": "📜",
-    "title": "DELF A2 · B1 · B2",
-    "short": "DELF A2 · B1 · B2",
-    "excerpt": "Chứng chỉ chính thức của Bộ Giáo dục Pháp — giá trị vĩnh viễn, phù hợp du học và xin visa.",
-    "price": "3.800.000đ",
-    "duration": "3 tháng",
-    "sessions": "30 buổi",
-    "goal": "Đạt DELF B1/B2",
-    "level": "A2-B2",
-    "description": "DELF (Diplôme d'Études en Langue Française) là chứng chỉ chính thức do Bộ Giáo dục Pháp cấp, có giá trị vĩnh viễn. DELF B2 là yêu cầu chuẩn cho hồ sơ du học Pháp tại các trường đại học công lập.",
+    "slug": "a2",
+    "icon": "🌿",
+    "title": "Level A2 · Giao tiếp phản xạ",
+    "short": "Level A2",
+    "level": "A2",
+    "format": "100% Online",
+    "excerpt": "Phản xạ nhanh trong đời sống hàng ngày, hiểu và sử dụng được cấu trúc câu phức hợp hơn.",
+    "price": "Liên hệ",
+    "duration": "48 buổi",
+    "sessions": "72h lớp + 144h tự học",
+    "goal": "Đạt A2 CEFR",
+    "description": "Khoá A2 đưa bạn từ 'biết' sang 'dùng được' tiếng Pháp. Sau 48 buổi, bạn sẽ phản xạ nhanh trong các tình huống thực tế: đi mua sắm, đặt bàn nhà hàng, hỏi đường, kể chuyện quá khứ. Cấu trúc câu phức hợp, thì quá khứ (passé composé, imparfait), và từ vựng chủ đề đa dạng.",
     "outcomes": [
-      "Đạt DELF theo cấp độ đăng ký (A2, B1 hoặc B2)",
-      "Hiểu cấu trúc đề thi + barème chấm điểm",
-      "Kỹ năng viết essay theo chuẩn DELF",
-      "Tự tin trình bày monologue suivi"
+      "Phản xạ giao tiếp trong 30+ tình huống đời sống",
+      "Hiểu và kể chuyện quá khứ với passé composé và imparfait",
+      "Sử dụng chính xác thì hiện tại, quá khứ, tương lai gần",
+      "Đọc hiểu văn bản ngắn về chủ đề quen thuộc"
     ],
     "curriculum": [
-      { "week": "Tuần 1-3", "topic": "Làm quen format DELF + kỹ năng đọc hiểu" },
-      { "week": "Tuần 4-7", "topic": "Production écrite theo từng dạng bài" },
-      { "week": "Tuần 8-10", "topic": "Luyện thi oral + mock test" }
+      { "week": "Giai đoạn 1", "topic": "Passé composé + thì quá khứ hoàn thành" },
+      { "week": "Giai đoạn 2", "topic": "Imparfait + so sánh 2 thì quá khứ" },
+      { "week": "Giai đoạn 3", "topic": "Futur simple + futur proche + thì tương lai" },
+      { "week": "Giai đoạn 4", "topic": "Tình huống thực tế + kiểm tra A2" }
     ]
   },
   {
-    "slug": "tcf-tp-irn",
-    "icon": "🌏",
-    "title": "TCF TP · TCF IRN",
-    "short": "TCF TP · TCF IRN",
-    "excerpt": "Luyện thi định cư Québec và nhập tịch Pháp — chuyên sâu về ngữ pháp và kỹ năng nói.",
-    "price": "4.200.000đ",
-    "duration": "2.5 tháng",
-    "sessions": "28 buổi",
-    "goal": "B1 minimum",
+    "slug": "b1",
+    "icon": "🌳",
+    "title": "Level B1 · Luyện thi DELF B1",
+    "short": "Level B1",
     "level": "B1",
-    "description": "TCF Québec (TP) và TCF IRN (Intégration, Résidence et Nationalité) là 2 kỳ thi chuyên biệt cho hồ sơ định cư Québec và nhập tịch Pháp. Chỉ yêu cầu 2 kỹ năng nói + nghe (TCF IRN) hoặc 4 kỹ năng (TCF TP).",
+    "format": "100% Online",
+    "excerpt": "Bày tỏ ý kiến cá nhân, tranh luận và chuẩn bị kỹ năng thi DELF B1.",
+    "price": "Liên hệ",
+    "duration": "50 buổi",
+    "sessions": "75h lớp + 150h tự học",
+    "goal": "Đạt DELF B1",
+    "description": "B1 là cấp độ 'breakthrough' — bạn chuyển từ người học sang người dùng tiếng Pháp độc lập. 50 buổi tại Salut tập trung phát triển kỹ năng diễn đạt ý kiến, tranh luận, và làm chủ 4 phần thi DELF B1 chính thức: Compréhension orale, Compréhension écrite, Production écrite, Production orale.",
     "outcomes": [
-      "TCF TP: đạt B2 cho hồ sơ CSQ Québec",
-      "TCF IRN: đạt B1 cho hồ sơ nhập tịch Pháp",
-      "Kỹ năng expression orale thuần thục",
-      "Hiểu các tình huống giao tiếp định cư"
+      "Bày tỏ và bảo vệ ý kiến cá nhân bằng tiếng Pháp",
+      "Làm chủ 4 phần thi DELF B1 + hiểu barème chấm điểm",
+      "Viết essay theo chuẩn DELF (lettre, article, commentaire)",
+      "Đạt tối thiểu 50/100 điểm trong kỳ thi DELF B1 chính thức"
+    ],
+    "curriculum": [
+      { "week": "Giai đoạn 1", "topic": "Subjonctif + conditionnel + ngữ pháp nâng cao" },
+      { "week": "Giai đoạn 2", "topic": "Compréhension orale + écrite theo format DELF B1" },
+      { "week": "Giai đoạn 3", "topic": "Production écrite: 3 dạng bài chính của DELF B1" },
+      { "week": "Giai đoạn 4", "topic": "Mock test DELF B1 + chiến lược làm bài" }
     ]
   },
   {
-    "slug": "ngu-phap-nen-tang",
-    "icon": "📖",
-    "title": "Ngữ pháp nền tảng",
-    "short": "Ngữ pháp nền tảng",
-    "excerpt": "Chắc gốc ngữ pháp từ A1 đến B1 — không còn sợ chia động từ, subjonctif, hay thì quá khứ.",
-    "price": "2.900.000đ",
-    "duration": "2 tháng",
-    "sessions": "24 buổi",
-    "goal": "Chắc A2-B1",
-    "level": "A1-B1",
-    "description": "Khoá học tập trung 100% vào ngữ pháp — phần 'xương sống' của tiếng Pháp. Phù hợp cho người đã học tiếng Pháp nhưng còn lúng túng với subjonctif, conditionnel, participe passé, hay các thì quá khứ.",
+    "slug": "b2",
+    "icon": "🌲",
+    "title": "Level B2 · Hoàn thiện 4 kỹ năng",
+    "short": "Level B2",
+    "level": "B2",
+    "format": "100% Online",
+    "excerpt": "Hoàn thiện 4 kỹ năng chuyên sâu, hiểu văn bản học thuật và giao tiếp lưu loát.",
+    "price": "Liên hệ",
+    "duration": "50 buổi",
+    "sessions": "75h lớp + 150h tự học",
+    "goal": "Đạt DELF B2 / TCF 400+",
+    "description": "B2 là cấp độ mục tiêu cho hồ sơ du học Pháp và định cư Canada. Sau 50 buổi, bạn hoàn thiện 4 kỹ năng ở mức chuyên sâu: hiểu văn bản học thuật, theo dõi tin tức Pháp, tranh luận về chủ đề phức tạp, viết bài argumentative chuẩn mực. Phù hợp chuẩn bị thi DELF B2 hoặc TCF Canada 400+.",
     "outcomes": [
-      "Làm chủ 6 mode + 15 thì của động từ Pháp",
-      "Không còn nhầm lẫn entre imparfait và passé composé",
-      "Nắm chắc concordance des temps",
-      "Sử dụng subjonctif đúng ngữ cảnh"
-    ]
-  },
-  {
-    "slug": "tu-so-khong",
-    "icon": "🥐",
-    "title": "Tiếng Pháp từ số 0",
-    "short": "Tiếng Pháp A1",
-    "excerpt": "Lớp dành cho người mới bắt đầu — bảng chữ cái, phát âm, câu giao tiếp cơ bản.",
-    "price": "2.500.000đ",
-    "duration": "2 tháng",
-    "sessions": "24 buổi",
-    "goal": "Đạt A1",
-    "level": "A0-A1",
-    "description": "Khoá học dành cho người chưa biết gì về tiếng Pháp. Bắt đầu từ bảng chữ cái, cách phát âm 'r' đặc trưng, đến các câu giao tiếp cơ bản: chào hỏi, giới thiệu bản thân, đặt món trong nhà hàng, hỏi đường.",
-    "outcomes": [
-      "Đọc và phát âm chuẩn bảng chữ cái + 38 âm tiếng Pháp",
-      "Tự giới thiệu bản thân tự tin",
-      "Giao tiếp cơ bản trong 15 tình huống thường gặp",
-      "Sẵn sàng cho khoá A2"
-    ]
-  },
-  {
-    "slug": "giao-tiep-phan-xa",
-    "icon": "💬",
-    "title": "Giao tiếp phản xạ",
-    "short": "Giao tiếp phản xạ",
-    "excerpt": "Nói tiếng Pháp tự tin — tình huống thực tế, học cùng giảng viên bản ngữ 2 buổi/tuần.",
-    "price": "3.200.000đ",
-    "duration": "3 tháng",
-    "sessions": "24 buổi",
-    "goal": "Tự tin giao tiếp",
-    "level": "A2+",
-    "description": "Nếu bạn đã học tiếng Pháp nhưng 'không dám mở miệng' — khoá này dành cho bạn. 100% thời gian là giao tiếp qua các tình huống thực tế: mua sắm, đi du lịch, công việc, hẹn hò. Có 2 buổi/tuần với giảng viên bản ngữ Pháp.",
-    "outcomes": [
-      "Phản xạ nói tự nhiên không cần dịch trong đầu",
-      "Tự tin giao tiếp trong 30+ tình huống",
-      "Phát âm chuẩn hơn qua feedback bản ngữ",
-      "Vượt qua rào cản tâm lý khi nói"
+      "Đạt DELF B2 — điều kiện chuẩn cho du học Pháp công lập",
+      "Đạt TCF Canada 400+ — đủ cho hồ sơ định cư Canada",
+      "Đọc hiểu văn bản học thuật và báo chí Pháp",
+      "Tranh luận lưu loát về chủ đề chuyên môn"
+    ],
+    "curriculum": [
+      { "week": "Giai đoạn 1", "topic": "Ngữ pháp nâng cao: subjonctif passé, concordance des temps" },
+      { "week": "Giai đoạn 2", "topic": "Compréhension sâu: báo chí, học thuật, phỏng vấn" },
+      { "week": "Giai đoạn 3", "topic": "Production écrite argumentative + synthèse" },
+      { "week": "Giai đoạn 4", "topic": "Mock test DELF B2 + TCF + chiến lược điểm cao" }
     ]
   }
 ]
