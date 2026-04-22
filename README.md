@@ -1,46 +1,75 @@
 # Salut - Chia sẻ Pháp ngữ
 
-Website cho trung tâm tiếng Pháp **Salut** tại Hà Nội.
+Website multi-page cho trung tâm tiếng Pháp **Salut** tại Hà Nội.
 Lấy cảm hứng từ banner fanpage: palette lavender + vàng + cream, handwritten Caveat/Pacifico, vibe "Oui Oui Baguette!".
 
-🔗 **Live:** https://salut-french-website.vercel.app _(sẽ có sau khi deploy)_
+🔗 **Live:** https://salut-french-website.vercel.app _(sau khi deploy)_
 📘 **Fanpage:** [facebook.com/Tiengphapsalut](https://www.facebook.com/Tiengphapsalut)
+🛠️ **Stack:** Eleventy (11ty) · Nunjucks · Vanilla CSS/JS · Vercel
 
-## Cấu trúc repo
+## Cấu trúc
 
 ```
 .
-├── index.html          Trang chính (static, deploy lên Vercel)
-├── assets/
-│   ├── css/main.css    CSS toàn bộ (~1300 dòng)
-│   └── js/main.js      JS vanilla: menu, smooth scroll, reveal, form
-├── vercel.json         Cấu hình Vercel (cache, headers, redirects)
-├── wordpress/          WordPress theme phiên bản PHP (dùng riêng nếu muốn)
-└── README.md
+├── src/
+│   ├── _includes/
+│   │   ├── base.njk              Layout chính (shared header/footer)
+│   │   └── partials/
+│   │       ├── header.njk         Navigation
+│   │       ├── footer.njk         Footer 4 cột
+│   │       ├── cta-band.njk       CTA band trước footer
+│   │       └── schedule-table.njk Bảng lịch (shared giữa nhiều trang)
+│   ├── _data/
+│   │   ├── site.json              Config site: SĐT, email, Formspree ID, nav
+│   │   ├── courses.json           6 khoá học + outcomes + curriculum
+│   │   ├── schedule.json          Lịch khai giảng
+│   │   ├── testimonials.json      Cảm nhận học viên
+│   │   └── posts.json             Bài blog
+│   ├── assets/
+│   │   ├── css/main.css           ~1500 dòng CSS
+│   │   ├── js/main.js             Menu, smooth scroll, reveal, form AJAX
+│   │   └── images/
+│   ├── index.njk                  Trang chủ
+│   ├── khoa-hoc/
+│   │   ├── index.njk              List 6 khoá học (/khoa-hoc/)
+│   │   └── course.njk             Paginated → 6 trang chi tiết khoá
+│   ├── lich-khai-giang.njk        Lịch khai giảng đầy đủ
+│   ├── ve-chung-toi.njk           Về Salut + đội ngũ + giá trị
+│   ├── blog/
+│   │   ├── index.njk              List bài viết
+│   │   └── post.njk               Paginated → 3 trang bài blog
+│   ├── lien-he.njk                Form đăng ký + thông tin + Google Maps
+│   └── 404.njk                    Trang lỗi
+├── _site/                         Build output (gitignored)
+├── wordpress/                     WordPress theme phiên bản PHP (nếu cần CMS)
+├── .eleventy.js                   Config Eleventy
+├── package.json
+└── vercel.json
 ```
 
-## Xem thử local
+## Chạy local
 
-Mở trực tiếp `index.html` trong browser — không cần build tool, không cần server.
-
-Hoặc dùng live server:
 ```bash
-npx serve .
-# hoặc
-python -m http.server 8000
+npm install           # chỉ chạy 1 lần đầu
+npm run dev           # dev server + watch + live reload tại http://localhost:3000
+npm run build         # build production ra _site/
+npm run clean         # xoá _site/
 ```
+
+Mọi thay đổi trong `src/` sẽ tự rebuild + reload browser.
 
 ## Deploy lên Vercel
 
-### Cách 1 — Qua Vercel Dashboard (đơn giản nhất)
+### Cách 1 — Auto deploy từ GitHub (khuyến nghị)
 
 1. Truy cập [vercel.com/new](https://vercel.com/new)
-2. Import repo `salut-french-website` từ GitHub
-3. Framework Preset: **Other**
-4. Root Directory: để trống
-5. Build Command: để trống
-6. Output Directory: để trống
-7. Nhấn **Deploy** — sau ~30 giây, site live
+2. Import repo `salut-french-website`
+3. Vercel tự detect Eleventy và set:
+   - Build Command: `npm run build`
+   - Output Directory: `_site`
+4. Click **Deploy**
+
+Mỗi lần `git push` → Vercel tự rebuild.
 
 ### Cách 2 — Qua Vercel CLI
 
@@ -50,127 +79,73 @@ vercel login
 vercel --prod
 ```
 
-### Tuỳ chỉnh domain
+### Domain riêng
 
-- Vercel cho sẵn domain `*.vercel.app` miễn phí
-- Muốn dùng domain riêng (vd `tiengphapsalut.vn`): `Settings → Domains → Add`, trỏ DNS theo hướng dẫn
+`Settings → Domains → Add` → nhập `tiengphapsalut.vn` → làm theo hướng dẫn trỏ DNS.
 
-## Form đăng ký tư vấn — Kích hoạt Formspree (1 phút)
+## Form đăng ký tư vấn — kích hoạt Formspree (1 phút)
 
-Form đã được tích hợp sẵn Formspree. Chỉ cần:
+1. Đăng ký tại [formspree.io](https://formspree.io) bằng email muốn nhận thông báo
+2. **+ New Form** → Name: "Salut Website" → Create
+3. Copy form ID (8 ký tự, trong URL `formspree.io/f/xvojpnrq`)
+4. Mở [`src/_data/site.json`](src/_data/site.json), thay `YOUR_FORMSPREE_ID` bằng ID
+5. Commit + push → Vercel tự redeploy
 
-1. **Đăng ký miễn phí** tại [formspree.io](https://formspree.io) (dùng email `contact@tiengphapsalut.vn` hoặc email bạn muốn nhận thông báo)
-2. Click **+ New Form** → đặt tên (vd: "Salut Website") → **Create Form**
-3. Copy form ID — nó có dạng `xvojpnrq` (8 ký tự), nằm trong URL `https://formspree.io/f/xvojpnrq`
-4. Mở [index.html](index.html), tìm:
-   ```html
-   action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-   ```
-   Thay `YOUR_FORMSPREE_ID` bằng ID vừa copy.
-5. Commit + push — Vercel tự redeploy:
-   ```bash
-   git add index.html
-   git commit -m "Enable Formspree endpoint"
-   git push
-   ```
+**Gói miễn phí:** 50 submissions/tháng. Có sẵn AJAX submit, honeypot, GA events.
 
-**Gói miễn phí:** 50 submissions/tháng. Nâng cấp Gold ($10/tháng) = không giới hạn + tắt branding + webhook.
+## Cập nhật nội dung
 
-**Tính năng đã có sẵn:**
-- ✅ AJAX submit (không reload trang)
-- ✅ Loading state, success/error message
-- ✅ Honeypot `_gotcha` chống bot
-- ✅ Tự động gửi email về địa chỉ bạn đăng ký Formspree với subject "[Salut] Đăng ký tư vấn mới từ website"
-- ✅ Track event `lead_submit` cho Google Analytics (nếu có cài)
-- ✅ Track Facebook Pixel `Lead` event (nếu có cài)
+### Thêm khoá học mới
+Sửa [`src/_data/courses.json`](src/_data/courses.json) — thêm 1 object mới. Eleventy sẽ tự tạo trang `/khoa-hoc/<slug>/`.
 
-### Thay thế khác (nếu không muốn Formspree)
+### Cập nhật lịch khai giảng
+Sửa [`src/_data/schedule.json`](src/_data/schedule.json) — bảng lịch ở mọi trang sẽ tự cập nhật.
 
-| Dịch vụ | Free tier | Lưu ý |
-|---|---|---|
-| [Getform](https://getform.io) | 50/tháng | Tương tự Formspree |
-| [Web3Forms](https://web3forms.com) | Unlimited | Cần access key thay form ID |
-| [FormSubmit](https://formsubmit.co) | Unlimited | Đơn giản nhất, chỉ cần email |
-| [Google Forms](https://forms.google.com) | Unlimited | Cần code tuỳ biến thêm |
+### Viết bài blog
+Thêm vào [`src/_data/posts.json`](src/_data/posts.json). Content support HTML (escape quotes). Tự tạo trang `/blog/<slug>/`.
 
-Chỉ cần đổi URL trong `action="..."` — JS đã tương thích với Formspree/Getform/Web3Forms.
+### Đổi SĐT / email / Facebook
+Sửa [`src/_data/site.json`](src/_data/site.json) — áp dụng cho mọi trang.
 
-## Tuỳ biến màu / font / text
+### Đổi menu navigation
+Sửa `nav` array trong [`src/_data/site.json`](src/_data/site.json).
 
-### Đổi màu chủ đạo
-Sửa `:root` trong [assets/css/main.css](assets/css/main.css) (dòng ~8):
-```css
---lavender-300: #B8A7E0;  /* Hero background */
---lavender-600: #6B5B95;  /* Primary button */
---yellow: #FFE066;         /* Accent */
-```
+## Palette màu
 
-### Đổi thông tin liên hệ
-Tìm & thay trong `index.html`:
-- SĐT: `+84 827 030 018`
-- Email: `contact@tiengphapsalut.vn`
-- Địa chỉ: `Hà Nội, Việt Nam`
-- Facebook URL: `https://www.facebook.com/Tiengphapsalut`
+Sửa `:root` trong [`src/assets/css/main.css`](src/assets/css/main.css) (dòng ~8):
+- Lavender 300 `#B8A7E0` — background hero chính
+- Lavender 600 `#6B5B95` — button primary
+- Yellow `#FFE066` — accent
+- Cream `#FFF9F0` — background chính
 
-### Thêm Google Analytics
-Dán script GA4 ngay trước `</head>` trong `index.html`.
+## Fonts
 
-## Các section có trong trang
+- **Poppins** — body + headings
+- **Caveat** — handwritten accent
+- **Pacifico** — logo "Salut"
 
-1. **Hero** — lavender + Eiffel SVG, máy bay giấy, ngôi sao
-2. **Về Salut** — 3 điểm nổi bật + sticker "Bonjour!" / "à bientôt"
-3. **Khoá học** — 6 khoá (TCF Canada, DELF, TCF TP, Ngữ pháp, A1, Giao tiếp)
-4. **Lịch khai giảng** — bảng 6 lớp sắp khai giảng với slot badge
-5. **Vì sao chọn Salut** — 4 feature cards (cam kết, lớp nhỏ, lịch linh hoạt, café Pháp)
-6. **Học viên nói gì** — 4 testimonial cards
-7. **Blog Salut** — 3 bài viết mới nhất
-8. **Đăng ký tư vấn** — form liên hệ + info card
-9. **CTA band** — "Oui Oui Baguette!"
-10. **Footer** — 4 cột + newsletter
+## Trang đã có
+
+| URL | Trang | Nội dung |
+|-----|-------|----------|
+| `/` | Trang chủ | Hero + preview mọi section |
+| `/khoa-hoc/` | Danh sách khoá học | 6 khoá |
+| `/khoa-hoc/<slug>/` | Chi tiết từng khoá | Description + outcomes + curriculum + lịch khai giảng liên quan |
+| `/lich-khai-giang/` | Lịch đầy đủ | Bảng 8 lớp + thông tin |
+| `/ve-chung-toi/` | Về Salut | Story + 4 giá trị + đội ngũ 3 GV + số liệu |
+| `/blog/` | Blog | List bài viết |
+| `/blog/<slug>/` | Chi tiết bài | Content + bài liên quan |
+| `/lien-he/` | Liên hệ | Form Formspree + info + Google Maps |
+| `/404.html` | Trang lỗi | |
 
 ## Phiên bản WordPress (`wordpress/`)
 
-Nếu sau này bạn muốn có:
-- Admin panel quản lý khoá học / lịch học / testimonial
-- Blog CMS đầy đủ
-- Contact Form 7 quản lý form linh hoạt
-- Lưu đơn đăng ký vào database
+Nếu sau này cần CMS backend (admin tự edit không cần code):
+- WordPress theme riêng với Custom Post Types
+- Hỗ trợ Contact Form 7
+- Xem [`wordpress/cf7-template.txt`](wordpress/cf7-template.txt) để setup CF7
 
-### Cài đặt
-
-1. Copy thư mục `wordpress/` vào `wp-content/themes/salut-theme/` trên host WordPress riêng (Hostinger, SiteGround, Cloudways, Kinsta…). **Vercel không host được WordPress.**
-2. `Appearance → Themes` → kích hoạt **Salut Français**
-3. `Settings → Permalinks` → chọn "Post name" → Save
-
-### Dùng Contact Form 7 (khuyến nghị)
-
-Theme đã tích hợp sẵn CF7. Cách bật:
-
-1. **Cài plugin** — `Plugins → Add New` → tìm "Contact Form 7" → Install → Activate
-2. **Tạo form** — `Contact → Add New`:
-   - Mở file [wordpress/cf7-template.txt](wordpress/cf7-template.txt)
-   - Copy từng phần vào tab tương ứng (Form / Mail / Messages)
-3. **Lấy shortcode** — sau khi Save, CF7 sẽ hiển thị shortcode dạng `[contact-form-7 id="123" title="Đăng ký"]`
-4. **Gắn vào theme** — `Appearance → Customize → Thông tin liên hệ Salut → Contact Form 7 shortcode` → paste shortcode → Publish
-5. Xong! Form trên trang chủ sẽ tự đổi sang CF7.
-
-**Gợi ý plugin thêm (miễn phí):**
-- **Flamingo** — lưu mọi submission vào DB, xem lại như Gmail inbox
-- **WP Mail SMTP** — đảm bảo email không vào spam (dùng Gmail/SendGrid)
-- **CF7 Google Sheets Connector** — đồng bộ lead sang Google Sheets
-- **reCAPTCHA v3** — chống spam (có sẵn trong CF7 core: Integration → reCAPTCHA)
-
-### Không dùng CF7? Theme vẫn chạy
-
-Nếu để trống ô "Contact Form 7 shortcode" trong Customizer, theme sẽ dùng form tự code sẵn (AJAX, lưu CPT `lead`, gửi email qua `wp_mail()`).
-
-## Roadmap
-
-- [ ] Tích hợp form thật với Formspree
-- [ ] Thêm trang Giảng viên chi tiết
-- [ ] Thêm landing page riêng cho chiến dịch DELF
-- [ ] Chuyển sang Next.js nếu cần backend (thanh toán, đăng nhập học viên)
-- [ ] Multi-language: Vietnamese / English / Français
+**Vercel không host được WordPress** — cần hosting PHP (Hostinger, SiteGround, Cloudways).
 
 ---
 

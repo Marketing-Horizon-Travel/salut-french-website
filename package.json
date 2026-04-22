@@ -1,0 +1,23 @@
+{
+  "name": "salut-french-website",
+  "version": "1.1.0",
+  "description": "Website cho trung tâm tiếng Pháp Salut - Chia sẻ Pháp ngữ (Hà Nội). Multi-page static site built with Eleventy.",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --port=3000",
+    "clean": "rimraf _site",
+    "start": "npm run dev"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Marketing-Horizon-Travel/salut-french-website.git"
+  },
+  "license": "UNLICENSED"
+}

@@ -1198,3 +1198,124 @@ p { margin: 0 0 1em; }
     outline-offset: 2px;
     border-radius: 4px;
 }
+
+/* =========================================================================
+   MULTI-PAGE ADDITIONS
+   ========================================================================= */
+
+/* Active nav item */
+.primary-menu a.current {
+    color: var(--lavender-700);
+    font-weight: 600;
+}
+.primary-menu a.current::after { width: 100%; }
+
+/* Mode badge in schedule table (Online/Offline) */
+.mode-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+.mode-offline { background: var(--lavender-100); color: var(--lavender-700); }
+.mode-online { background: #E0F2FE; color: #0369A1; }
+
+/* Course detail — curriculum timeline */
+.curriculum-timeline {
+    position: relative;
+    padding-left: 24px;
+    margin: 24px 0;
+    border-left: 3px dashed var(--lavender-200);
+}
+.curriculum-item {
+    position: relative;
+    padding: 12px 0 12px 20px;
+}
+.curriculum-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 18px;
+    width: 14px;
+    height: 14px;
+    background: var(--yellow);
+    border: 3px solid var(--white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--lavender-300);
+}
+.curriculum-week {
+    font-family: var(--font-script);
+    font-size: 20px;
+    color: var(--lavender-600);
+    margin-bottom: 2px;
+}
+.curriculum-topic {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+/* Course hero placeholder (when no image) */
+.course-hero-placeholder {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--yellow-soft), var(--lavender-100));
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Single content section wrapper (course/blog detail) */
+.single-content-section {
+    padding: 60px 0;
+    background: var(--white);
+}
+.single-content-section .single-content { padding-top: 0; }
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 10px;
+}
+.checklist li {
+    padding: 12px 16px;
+    background: var(--lavender-50);
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    border-left: 3px solid var(--yellow);
+}
+
+/* Team cards on About page */
+.team-card .course-icon {
+    font-size: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+}
+.team-card { text-align: center; }
+
+/* Map embed */
+.map-wrap {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Body class specific tweaks */
+.page-contact-page .page-header { background: linear-gradient(135deg, var(--lavender-200) 0%, var(--yellow-soft) 100%); }
+.page-about-page .page-header { background: linear-gradient(135deg, var(--yellow-soft) 0%, var(--lavender-100) 100%); }
+.page-blog-archive .page-header { background: linear-gradient(135deg, var(--cream-dark) 0%, var(--lavender-100) 100%); }
+.page-schedule-page .page-header { background: linear-gradient(135deg, var(--lavender-100) 0%, var(--lavender-200) 100%); }
+.page-courses-archive .page-header { background: linear-gradient(135deg, var(--yellow-soft) 0%, var(--lavender-200) 100%); }
+.page-blog-post .single-header {
+    background: linear-gradient(135deg, var(--lavender-100) 0%, var(--yellow-soft) 100%);
+    padding: 80px 0 40px;
+}
+.page-blog-post .single-header .post-meta { font-size: 14px; color: var(--lavender-700); }

@@ -1,0 +1,37 @@
+---
+layout: base.njk
+title: Lịch khai giảng
+description: Lịch khai giảng các lớp tiếng Pháp tại Salut. TCF, DELF, A1, Giao tiếp, Ngữ pháp — có đủ ca sáng, chiều, tối, cuối tuần.
+permalink: /lich-khai-giang/
+bodyClass: schedule-page
+---
+
+<section class="page-header">
+    <div class="container">
+        <p class="page-kicker">Lịch khai giảng</p>
+        <h1 class="page-title"><span class="handwritten">Sắp khai giảng</span> các lớp mới</h1>
+        <p class="page-lede">Cập nhật lịch học mới nhất tại Salut. Số lượng mỗi lớp có hạn — đăng ký sớm để giữ slot nhé!</p>
+    </div>
+</section>
+
+<section class="schedule-section">
+    <div class="container">
+        {% include "partials/schedule-table.njk" %}
+        <p class="schedule-note">* Lớp học mở lớp tối thiểu 4 học viên. Nếu lớp phù hợp chưa có, <a href="/lien-he/">để lại SĐT</a> — Salut sẽ báo ngay khi mở lớp mới.</p>
+    </div>
+</section>
+
+<section class="why-section">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-kicker">Thông tin thêm</p>
+            <h2 class="section-title"><span class="handwritten">Cần biết</span> về lớp học</h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-card"><div class="why-icon">👥</div><h3>Lớp nhỏ 6-10 bạn</h3><p>Tối đa 10 học viên/lớp để đảm bảo giảng viên quan tâm được từng người.</p></div>
+            <div class="why-card"><div class="why-icon">📍</div><h3>Offline + Online</h3><p>Offline tại Hà Nội, online qua Zoom cho học viên ngoại tỉnh/nước ngoài.</p></div>
+            <div class="why-card"><div class="why-icon">🎥</div><h3>Lớp online có ghi lại</h3><p>Buổi học được ghi video, học viên có thể xem lại trong 6 tháng.</p></div>
+            <div class="why-card"><div class="why-icon">💰</div><h3>Học phí linh hoạt</h3><p>Đóng 1 lần giảm 10%, trả góp không lãi 3 kỳ, nhóm 3 người giảm 15%.</p></div>
+        </div>
+    </div>
+</section>

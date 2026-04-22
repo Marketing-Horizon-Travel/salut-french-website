@@ -1,0 +1,136 @@
+---
+layout: base.njk
+title: Liên hệ & Đăng ký tư vấn
+description: Đăng ký tư vấn miễn phí lộ trình học tiếng Pháp tại Salut. Salut sẽ liên hệ trong 24h. Hotline +84 827 030 018.
+permalink: /lien-he/
+hideCta: true
+bodyClass: contact-page
+---
+
+<section class="page-header">
+    <div class="container">
+        <p class="page-kicker">Liên hệ</p>
+        <h1 class="page-title"><span class="handwritten">Đăng ký</span> tư vấn miễn phí</h1>
+        <p class="page-lede">Để lại thông tin — Salut sẽ liên hệ trong 24h để tư vấn lộ trình phù hợp nhất với bạn. Hoàn toàn miễn phí, không cam kết gì cả!</p>
+    </div>
+</section>
+
+<section class="contact-section">
+    <div class="contact-decoration" aria-hidden="true">
+        <svg class="deco deco-cloud" viewBox="0 0 120 60" fill="#FFE066" opacity="0.6"><path d="M20 40 Q10 30 20 22 Q25 12 40 18 Q50 8 65 18 Q85 15 90 30 Q105 32 100 45 Q95 55 80 52 L30 52 Q15 50 20 40 Z"/></svg>
+    </div>
+
+    <div class="container grid-2 contact-grid">
+        <div class="contact-info">
+            <p class="section-kicker">Thông tin liên hệ</p>
+            <h2 class="section-title"><span class="handwritten">Nhiều cách</span> để gặp Salut</h2>
+            <p class="section-lede">Chọn cách tiện nhất cho bạn — gọi điện, email, nhắn Messenger, hoặc đến thẳng trung tâm.</p>
+
+            <ul class="contact-list">
+                <li>
+                    <span class="ci-icon">📍</span>
+                    <div>
+                        <strong>Địa chỉ</strong>
+                        <p>{{ site.address }}</p>
+                        <p><small>Gần ga Cát Linh, có chỗ để xe miễn phí</small></p>
+                    </div>
+                </li>
+                <li>
+                    <span class="ci-icon">📞</span>
+                    <div>
+                        <strong>Hotline</strong>
+                        <p>
+                            <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a>
+                            {% if site.phoneFr %}<br><small>🇫🇷 Pháp: {{ site.phoneFr }}</small>{% endif %}
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <span class="ci-icon">✉️</span>
+                    <div>
+                        <strong>Email</strong>
+                        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+                    </div>
+                </li>
+                <li>
+                    <span class="ci-icon">💬</span>
+                    <div>
+                        <strong>Facebook Messenger</strong>
+                        <p><a href="{{ site.social.facebook }}" target="_blank" rel="noopener">Salut - Chia sẻ Pháp ngữ</a></p>
+                        <p><small>Thường trả lời trong 1 giờ</small></p>
+                    </div>
+                </li>
+                <li>
+                    <span class="ci-icon">🕐</span>
+                    <div>
+                        <strong>Giờ làm việc</strong>
+                        <p>Thứ 2 - Chủ Nhật: 8h00 - 22h00</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Formspree: thay YOUR_FORMSPREE_ID trong src/_data/site.json -->
+        <form class="contact-form"
+              id="salut-lead-form"
+              action="https://formspree.io/f/{{ site.formspreeId }}"
+              method="POST">
+            <h3>Để Salut liên hệ bạn nhé!</h3>
+
+            <input type="hidden" name="_subject" value="[Salut] Đăng ký tư vấn mới từ website">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="form-row">
+                <label><span>Họ tên *</span>
+                    <input type="text" name="name" required placeholder="VD: Nguyễn Thu Hà"></label>
+            </div>
+            <div class="form-row form-row-2">
+                <label><span>Số điện thoại *</span>
+                    <input type="tel" name="phone" required placeholder="VD: 0987 654 321"></label>
+                <label><span>Email</span>
+                    <input type="email" name="email" placeholder="email@cua-ban.com"></label>
+            </div>
+            <div class="form-row">
+                <label><span>Quan tâm khoá học</span>
+                    <select name="course">
+                        <option value="">-- Chọn khoá học --</option>
+                        {% for c in courses %}
+                            <option value="{{ c.slug }}">{{ c.title }}</option>
+                        {% endfor %}
+                        <option value="tu-van">Tư vấn lộ trình cá nhân</option>
+                    </select>
+                </label>
+            </div>
+            <div class="form-row">
+                <label><span>Lời nhắn (không bắt buộc)</span>
+                    <textarea name="message" rows="3" placeholder="Mục tiêu của bạn? Trình độ hiện tại? Thời gian mong muốn?"></textarea></label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                <span class="btn-label">Gửi đăng ký</span>
+                <span class="btn-loader"></span>
+            </button>
+            <div class="form-note">🔒 Thông tin của bạn được bảo mật. Salut không spam, không bán dữ liệu.</div>
+            <div class="form-message" role="status" aria-live="polite"></div>
+        </form>
+    </div>
+</section>
+
+<section class="map-section" style="padding:0;background:#fff">
+    <div class="container" style="max-width:1400px;padding:60px 24px">
+        <div class="section-head">
+            <p class="section-kicker">Đến thăm Salut</p>
+            <h2 class="section-title"><span class="handwritten">Ghé</span> gặp chúng mình</h2>
+        </div>
+        <div class="map-wrap">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14896.44321!2d105.82572!3d21.02851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab!2zSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1"
+                width="100%"
+                height="400"
+                style="border:0;border-radius:28px;box-shadow:0 20px 50px rgba(107,91,149,0.18)"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Vị trí Salut trên Google Maps"></iframe>
+        </div>
+    </div>
+</section>

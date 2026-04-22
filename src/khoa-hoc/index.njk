@@ -1,0 +1,49 @@
+---
+layout: base.njk
+title: Khoá học tiếng Pháp
+description: Tất cả khoá học tiếng Pháp tại Salut — TCF Canada, DELF, TEF, Ngữ pháp nền tảng, Giao tiếp phản xạ. Từ A1 đến C1, có lộ trình rõ ràng.
+permalink: /khoa-hoc/
+bodyClass: courses-archive
+---
+
+<section class="page-header">
+    <div class="container">
+        <p class="page-kicker">Các khoá học</p>
+        <h1 class="page-title"><span class="handwritten">Chọn khoá</span> phù hợp với bạn</h1>
+        <p class="page-lede">Từ A1 đến C1 — Salut có khoá phù hợp cho mọi mục tiêu: luyện thi chứng chỉ, du học, định cư, hay đơn giản là vì yêu tiếng Pháp.</p>
+    </div>
+</section>
+
+<section class="courses-section">
+    <div class="container">
+        <div class="course-grid">
+            {% for c in courses %}
+                <article class="course-card">
+                    <div class="course-icon">{{ c.icon }}</div>
+                    <h2 class="course-title"><a href="/khoa-hoc/{{ c.slug }}/">{{ c.title }}</a></h2>
+                    <p class="course-excerpt">{{ c.excerpt }}</p>
+                    <ul class="course-meta">
+                        <li>⏱ {{ c.duration }}</li>
+                        <li>📊 {{ c.level }}</li>
+                        <li>🎯 {{ c.goal }}</li>
+                    </ul>
+                    <div class="course-footer">
+                        <span class="course-price">{{ c.price }}</span>
+                        <a href="/khoa-hoc/{{ c.slug }}/" class="link-more">Chi tiết →</a>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="why-section">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-kicker">Không biết chọn khoá nào?</p>
+            <h2 class="section-title"><span class="handwritten">Để Salut</span> tư vấn cho bạn</h2>
+            <p class="section-lede">Mỗi học viên có mục tiêu, nền tảng và lịch học khác nhau. Đăng ký tư vấn miễn phí — chúng mình sẽ đề xuất lộ trình phù hợp nhất.</p>
+        </div>
+        <div style="text-align:center"><a href="/lien-he/" class="btn btn-primary btn-lg">Đăng ký tư vấn miễn phí</a></div>
+    </div>
+</section>

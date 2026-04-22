@@ -1,0 +1,33 @@
+---
+layout: base.njk
+title: Blog Salut
+description: Cẩm nang học tiếng Pháp, tips luyện thi TCF/DELF, văn hoá Pháp — chia sẻ từ đội ngũ Salut tại Hà Nội.
+permalink: /blog/
+bodyClass: blog-archive
+---
+
+<section class="page-header">
+    <div class="container">
+        <p class="page-kicker">Blog Salut</p>
+        <h1 class="page-title"><span class="handwritten">Cẩm nang</span> học tiếng Pháp</h1>
+        <p class="page-lede">Tips học, mẹo luyện thi, văn hoá Pháp và chuyện du học — cập nhật hàng tuần từ đội ngũ Salut.</p>
+    </div>
+</section>
+
+<section class="blog-preview-section">
+    <div class="container">
+        <div class="post-grid">
+            {% for p in posts %}
+                <article class="post-card">
+                    <a href="/blog/{{ p.slug }}/" class="post-thumb post-thumb-placeholder"><span>{{ p.emoji }}</span></a>
+                    <div class="post-body">
+                        <div class="post-meta">{{ p.date | dateVi }} · {{ p.category }}</div>
+                        <h2 class="post-title"><a href="/blog/{{ p.slug }}/">{{ p.title }}</a></h2>
+                        <p class="post-excerpt">{{ p.excerpt }}</p>
+                        <a href="/blog/{{ p.slug }}/" class="link-more">Đọc tiếp →</a>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,22 @@
+{# Shared schedule table — can be filtered by course slug via `courseSlug` var #}
+{% set rows = schedule %}
+{% if courseSlug %}{% set rows = schedule | where('course', courseSlug) %}{% endif %}
+
+<div class="schedule-table-wrap">
+    <table class="schedule-table">
+        <thead><tr><th>Lớp</th><th>Khai giảng</th><th>Lịch học</th><th>Giảng viên</th><th>Hình thức</th><th>Còn trống</th><th></th></tr></thead>
+        <tbody>
+            {% for s in rows %}
+                <tr>
+                    <td><strong>{{ s.level }}</strong></td>
+                    <td>{{ s.startDate | dateVi }}</td>
+                    <td>{{ s.time }}</td>
+                    <td>{{ s.teacher }}</td>
+                    <td><span class="mode-badge mode-{{ s.mode | lower }}">{{ s.mode }}</span></td>
+                    <td><span class="slot-badge {% if s.slots <= 3 %}slot-low{% endif %}">{{ s.slots }} chỗ</span></td>
+                    <td><a href="/lien-he/?lop={{ s.level | slugify }}" class="btn btn-sm btn-primary">Đăng ký</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

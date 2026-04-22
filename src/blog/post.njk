@@ -1,0 +1,58 @@
+---
+layout: base.njk
+pagination:
+  data: posts
+  size: 1
+  alias: post
+permalink: "/blog/{{ post.slug }}/"
+eleventyComputed:
+  title: "{{ post.title }}"
+  description: "{{ post.excerpt }}"
+ogType: article
+bodyClass: blog-post
+---
+
+<article class="single-post">
+    <header class="single-header">
+        <div class="container">
+            <div class="post-meta" style="text-align:center">
+                <span>{{ post.category }}</span> · <span>{{ post.date | dateVi }}</span> · <span>Bởi {{ post.author }}</span>
+            </div>
+            <h1 class="single-title">{{ post.title }}</h1>
+            <p class="single-lede">{{ post.excerpt }}</p>
+        </div>
+    </header>
+
+    <div class="container single-thumb" style="max-width:800px">
+        <div class="post-thumb-placeholder" style="aspect-ratio:16/9;font-size:120px;border-radius:28px">
+            <span>{{ post.emoji }}</span>
+        </div>
+    </div>
+
+    <div class="container single-content">
+        {{ post.content | safe }}
+    </div>
+</article>
+
+<section class="blog-preview-section">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-kicker">Đọc thêm</p>
+            <h2 class="section-title"><span class="handwritten">Bài viết</span> liên quan</h2>
+        </div>
+        <div class="post-grid">
+            {% set count = 0 %}
+            {% for p in posts %}{% if p.slug != post.slug and count < 3 %}{% set count = count + 1 %}
+                <article class="post-card">
+                    <a href="/blog/{{ p.slug }}/" class="post-thumb post-thumb-placeholder"><span>{{ p.emoji }}</span></a>
+                    <div class="post-body">
+                        <div class="post-meta">{{ p.date | dateVi }} · {{ p.category }}</div>
+                        <h3 class="post-title"><a href="/blog/{{ p.slug }}/">{{ p.title }}</a></h3>
+                        <p class="post-excerpt">{{ p.excerpt }}</p>
+                        <a href="/blog/{{ p.slug }}/" class="link-more">Đọc tiếp →</a>
+                    </div>
+                </article>
+            {% endif %}{% endfor %}
+        </div>
+    </div>
+</section>

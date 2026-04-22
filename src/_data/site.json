@@ -1,0 +1,34 @@
+{
+  "name": "Salut - Chia sẻ Pháp ngữ",
+  "shortName": "Salut",
+  "tagline": "Chia sẻ Pháp ngữ",
+  "description": "Trung tâm tiếng Pháp tại Hà Nội. Luyện thi TCF, DELF, TEF từ con số 0 cùng đội ngũ giảng viên tận tâm. Oui Oui Baguette!",
+  "url": "https://salut-french-website.vercel.app",
+  "locale": "vi_VN",
+  "city": "Hà Nội",
+  "country": "Việt Nam",
+  "address": "Hà Nội, Việt Nam",
+  "phone": "+84 827 030 018",
+  "phoneFr": "+33 17 69 10 01 08",
+  "email": "contact@tiengphapsalut.vn",
+  "social": {
+    "facebook": "https://www.facebook.com/Tiengphapsalut",
+    "tiktok": "",
+    "youtube": "",
+    "instagram": ""
+  },
+  "formspreeId": "YOUR_FORMSPREE_ID",
+  "stats": {
+    "students": "500+",
+    "successRate": "95%",
+    "rating": "4.9★"
+  },
+  "nav": [
+    { "label": "Trang chủ", "url": "/" },
+    { "label": "Khoá học", "url": "/khoa-hoc/" },
+    { "label": "Lịch khai giảng", "url": "/lich-khai-giang/" },
+    { "label": "Về Salut", "url": "/ve-chung-toi/" },
+    { "label": "Blog", "url": "/blog/" },
+    { "label": "Liên hệ", "url": "/lien-he/" }
+  ]
+}
