@@ -31,6 +31,183 @@
     { "icon": "🎨", "title": "Sáng tạo", "desc": "Không ngừng đổi mới phương pháp để mỗi giờ học tiếng Pháp là một trải nghiệm thú vị và đầy màu sắc." },
     { "icon": "🤝", "title": "Kết nối", "desc": "Xây dựng mối quan hệ bền chặt giữa giảng viên - học viên và giữa những người yêu tiếng Pháp tại Việt Nam." }
   ],
+  "teamHighlights": {
+    "quote": "Một người thầy giỏi là người biết biến những cấu trúc ngữ pháp khô khan thành những câu chuyện dễ hiểu.",
+    "stats": [
+      { "value": "70%+", "label": "Giảng viên có bằng Thạc sĩ tại Pháp" },
+      { "value": "C1+", "label": "Trình độ tối thiểu của giảng viên" },
+      { "value": "100%", "label": "Live Class — không học qua video" }
+    ]
+  },
+  "teachers": [
+    {
+      "name": "Nguyên Nguyên",
+      "honorific": "Chị giáo",
+      "role": "Founder Salut",
+      "photo": "/assets/img/teachers/1.jpg",
+      "certificate": "DALF C1",
+      "education": [
+        "Cử nhân KTĐN — ĐH Ngoại Thương",
+        "Thạc sĩ MSC ĐH Paris-Saclay (hệ Alternance)"
+      ],
+      "experience": [
+        "8 năm kinh nghiệm luyện thi DELF/TCF/TEF",
+        "Tư vấn dự tuyển Alternance"
+      ],
+      "achievements": [
+        "Chuyên song ngữ Pháp – Anh, Top 4 toàn tỉnh",
+        "Đề cử học bổng Hoa Trạng Nguyên"
+      ]
+    },
+    {
+      "name": "Minh Lưu",
+      "honorific": "Chị giáo",
+      "role": "Giảng viên trường quốc tế DURAS",
+      "photo": "/assets/img/teachers/2.jpg",
+      "certificate": "TCF C1 — Đọc hiểu 690/699",
+      "education": [
+        "Cử nhân & Thạc sĩ tại IAE LYON — Université Lyon 3 Jean Moulin",
+        "Tốt nghiệp hệ song ngữ 12 năm tiếng Pháp"
+      ],
+      "experience": [
+        "Giảng dạy tiếng Pháp sơ cấp & giao tiếp",
+        "Luyện thi TCF — DELF A2/B1/B2"
+      ],
+      "achievements": [
+        "Công tác tại trường quốc tế DURAS"
+      ]
+    },
+    {
+      "name": "Phương Thảo",
+      "honorific": "Cô giáo",
+      "role": "Giảng viên Đại học Xây dựng",
+      "photo": "/assets/img/teachers/3.jpg",
+      "certificate": "DALF C1",
+      "education": [
+        "Thạc sĩ Didactique des langues (FLE) — Université Grenoble-Alpes",
+        "Thạc sĩ Urbanisme et Aménagement — INSA Strasbourg"
+      ],
+      "experience": [
+        "8 năm giảng dạy tiếng Pháp",
+        "Luyện thi DELF — TCF — TEF B1/B2",
+        "Giảng dạy tiếng Pháp tại Đại học Xây dựng"
+      ],
+      "achievements": [
+        "Học bổng France Excellence của Đại sứ quán Pháp (2016–2017)"
+      ]
+    },
+    {
+      "name": "Elliott Lavalée",
+      "honorific": "Thầy giáo",
+      "role": "Giảng viên bản ngữ — sống & làm việc tại Pháp",
+      "photo": "/assets/img/teachers/4.jpg",
+      "certificate": "Native French",
+      "education": [
+        "Thạc sĩ MSC — Université Paris-Saclay",
+        "Cử nhân — Université Gustave Eiffel"
+      ],
+      "experience": [
+        "3 năm giảng dạy FLE",
+        "Chuyên luyện kỹ năng Viết (PE) & Nói (PO)",
+        "Luyện DELF B1/B2/C1 và TCF Canada (B2/C1)"
+      ],
+      "achievements": [
+        "Giáo viên sinh sống và làm việc tại Pháp"
+      ]
+    },
+    {
+      "name": "Như Ái",
+      "honorific": "Chị giáo",
+      "role": "Chủ tịch CLB Pháp ngữ ĐH KHXH&NV TP.HCM",
+      "photo": "/assets/img/teachers/5.jpg",
+      "certificate": "DELF B2",
+      "education": [
+        "Tốt nghiệp khoa Ngôn ngữ & Văn hóa Pháp — ĐH KHXH&NV TP.HCM"
+      ],
+      "experience": [
+        "Giảng dạy tiếng Pháp sơ cấp",
+        "Luyện thi DELF/TCF A2 — B1"
+      ],
+      "achievements": [
+        "Chủ tịch CLB Pháp ngữ — ĐH KHXH&NV TP.HCM",
+        "Giáo viên nhiều năm giảng dạy xuất sắc"
+      ]
+    },
+    {
+      "name": "Quốc Đạt",
+      "honorific": "Anh giáo",
+      "role": "Giải Nhất Hùng biện tiếng Pháp 2023",
+      "photo": "/assets/img/teachers/6.jpg",
+      "certificate": "DALF C1",
+      "education": [
+        "Cử nhân & Thạc sĩ Ngôn ngữ và Văn học Pháp — ĐH KHXH&NV TP.HCM"
+      ],
+      "experience": [
+        "Luyện thi DELF/TCF A2/B1/B2",
+        "Tiếng Pháp giao tiếp"
+      ],
+      "achievements": [
+        "Giải Nhất Hùng biện tiếng Pháp (IDECAF & AUF, 2023)",
+        "Giải Khuyến khích Cuộc thi Phóng viên trẻ Pháp ngữ (2023)",
+        "Top 20 Cuộc thi Phóng viên trẻ Pháp ngữ (2025)"
+      ]
+    },
+    {
+      "name": "Ngọc Diễm",
+      "honorific": "Chị giáo",
+      "role": "Cử nhân kép HANU & INALCO (Pháp)",
+      "photo": "/assets/img/teachers/7.jpg",
+      "certificate": "DELF B2",
+      "education": [
+        "Thạc sĩ Ngôn ngữ Pháp — ĐH Hà Nội (HANU)",
+        "Cử nhân Khoa Pháp — ĐH Hà Nội & ĐH INALCO (Pháp)"
+      ],
+      "experience": [
+        "Luyện thi DELF/TCF/TEF",
+        "Giảng dạy tiếng Pháp sơ cấp"
+      ],
+      "achievements": [
+        "Giáo viên nhiều năm giảng dạy xuất sắc"
+      ]
+    },
+    {
+      "name": "Ngọc Nghi",
+      "honorific": "Chị giáo",
+      "role": "Giảng viên THCS Huỳnh Thúc Kháng (Cần Thơ)",
+      "photo": "/assets/img/teachers/8.jpg",
+      "certificate": "DELF B2",
+      "education": [
+        "Thạc sĩ Lý luận & Phương pháp giảng dạy tiếng Pháp — ĐH Cần Thơ",
+        "Tốt nghiệp Sư phạm Pháp — ĐH Cần Thơ"
+      ],
+      "experience": [
+        "8 năm kinh nghiệm giảng dạy",
+        "Luyện thi DELF/TCF/TEF & tiếng Pháp sơ cấp"
+      ],
+      "achievements": [
+        "Giảng viên tiếng Pháp tại THCS Huỳnh Thúc Kháng (Cần Thơ)"
+      ]
+    },
+    {
+      "name": "Đức Bình",
+      "honorific": "Thầy giáo",
+      "role": "Cựu giảng viên EDF & CFA Mécavenir, Pháp",
+      "photo": "/assets/img/teachers/9.jpg",
+      "certificate": "Thạc sĩ tại Pháp",
+      "education": [
+        "Thạc sĩ tại INSA Lyon (Pháp)"
+      ],
+      "experience": [
+        "Luyện thi TCF, TEF (B1-B2)",
+        "Tiếng Pháp trung cấp B1, B2",
+        "Tiếng Pháp giao tiếp nền tảng cho trẻ em"
+      ],
+      "achievements": [
+        "Giảng viên vận hành nhà máy điện hạt nhân — EDF, Pháp (2021–2025)",
+        "Giảng viên & Chủ nhiệm lớp — CFA Mécavenir, Pháp (2017–2020)"
+      ]
+    }
+  ],
   "guarantees": [
     { "icon": "🎓", "title": "Nền tảng học thuật top đầu", "desc": "100% giảng viên đạt trình độ C1+ hoặc tốt nghiệp chuyên ngành Ngôn ngữ Pháp. Mỗi bài giảng đều chuẩn xác kiến thức và giàu tư duy ngôn ngữ." },
     { "icon": "🏛️", "title": "Kinh nghiệm thực chiến", "desc": "Đội ngũ Giảng viên khoa tiếng Pháp (Đại học) & giáo viên chuyên Pháp (THPT chuyên). Hiểu sâu lộ trình, dẫn dắt từ cơ bản đến nâng cao." },

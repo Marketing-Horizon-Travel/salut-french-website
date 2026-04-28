@@ -1,0 +1,67 @@
+<section class="teachers-section">
+    <div class="container">
+        <div class="section-head">
+            <p class="section-kicker">Đội ngũ giáo viên</p>
+            <h2 class="section-title">Người <span class="handwritten">đồng hành</span> trên hành trình Pháp ngữ</h2>
+            <p class="section-lede">Đội ngũ Salut quy tụ các giảng viên từ Khoa Pháp các Đại học top đầu, trường THPT chuyên, trường quốc tế Duras và giáo viên bản ngữ Pháp.</p>
+        </div>
+
+        <blockquote class="teachers-quote">
+            <span class="teachers-quote-mark">&ldquo;</span>
+            <p>{{ site.teamHighlights.quote }}</p>
+            <cite>— Chị giáo Nguyên Nguyên, Founder Salut</cite>
+        </blockquote>
+
+        <div class="teachers-grid">
+            {% for t in site.teachers %}
+                <article class="teacher-card">
+                    <div class="teacher-photo-wrap">
+                        <img class="teacher-photo" src="{{ t.photo }}" alt="{{ t.honorific }} {{ t.name }} — {{ t.role }}" loading="lazy" width="900" height="900">
+                        <span class="teacher-cert">{{ t.certificate }}</span>
+                    </div>
+                    <div class="teacher-body">
+                        <p class="teacher-honorific">{{ t.honorific }}</p>
+                        <h3 class="teacher-name">{{ t.name }}</h3>
+                        <p class="teacher-role">{{ t.role }}</p>
+
+                        {% if t.education and t.education.length %}
+                            <div class="teacher-block">
+                                <p class="teacher-block-label">🎓 Học vấn</p>
+                                <ul>
+                                    {% for line in t.education %}<li>{{ line }}</li>{% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        {% if t.experience and t.experience.length %}
+                            <div class="teacher-block">
+                                <p class="teacher-block-label">💼 Kinh nghiệm</p>
+                                <ul>
+                                    {% for line in t.experience %}<li>{{ line }}</li>{% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+
+                        {% if t.achievements and t.achievements.length %}
+                            <div class="teacher-block">
+                                <p class="teacher-block-label">🏆 Thành tích</p>
+                                <ul>
+                                    {% for line in t.achievements %}<li>{{ line }}</li>{% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+
+        <div class="teachers-stats">
+            {% for s in site.teamHighlights.stats %}
+                <div class="teachers-stat">
+                    <strong>{{ s.value }}</strong>
+                    <span>{{ s.label }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

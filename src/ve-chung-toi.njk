@@ -58,16 +58,14 @@ bodyClass: about-page
     </div>
 </section>
 
+{% include "partials/teachers.njk" %}
+
 <section class="courses-section">
     <div class="container">
         <div class="section-head">
-            <p class="section-kicker">Đội ngũ giảng viên</p>
-            <h2 class="section-title"><span class="handwritten">Không chỉ dạy tiếng Pháp,</span><br>mà truyền đam mê</h2>
-            <p class="section-lede">Tại Salut, chúng tôi không chỉ dạy tiếng Pháp — chúng tôi truyền niềm đam mê và tư duy ngôn ngữ có hệ thống từ những người đi trước.</p>
-        </div>
-
-        <div class="section-head" style="margin-top:40px;margin-bottom:32px">
-            <h3 style="font-size:28px;color:var(--lavender-700)">4 cam kết chất lượng tại SALUT</h3>
+            <p class="section-kicker">Cam kết chất lượng</p>
+            <h2 class="section-title">4 cam kết tại <span class="handwritten">Salut</span></h2>
+            <p class="section-lede">Tại Salut, chúng tôi không chỉ dạy tiếng Pháp — chúng tôi truyền niềm đam mê và tư duy ngôn ngữ có hệ thống.</p>
         </div>
 
         <div class="course-grid">
@@ -78,21 +76,6 @@ bodyClass: about-page
                     <p class="course-excerpt">{{ g.desc }}</p>
                 </article>
             {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="testimonials-section">
-    <div class="container">
-        <div class="section-head">
-            <p class="section-kicker">Professeurs Natifs</p>
-            <h2 class="section-title"><span class="handwritten">Giảng viên</span> bản ngữ Pháp</h2>
-            <p class="section-lede">Bên cạnh đội ngũ chuyên gia tại Việt Nam, Salut tự hào sở hữu đội ngũ giảng viên bản ngữ — mang đến:</p>
-        </div>
-        <div class="why-grid">
-            <div class="why-card"><div class="why-icon">🗣️</div><h3>Phát âm chuẩn xác</h3><p>Giúp học viên phát triển ngữ điệu tự nhiên, phản xạ nghe-nói như người Pháp ngay từ đầu.</p></div>
-            <div class="why-card"><div class="why-icon">🎭</div><h3>Hiểu biết văn hoá</h3><p>Không chỉ là ngôn ngữ — giảng viên mang đến góc nhìn chân thực về đời sống, văn hóa và con người Pháp.</p></div>
-            <div class="why-card"><div class="why-icon">💻</div><h3>Tối ưu tương tác online</h3><p>Lớp học với giảng viên bản ngữ được thiết kế năng động, xoá bỏ khoảng cách qua màn hình máy tính.</p></div>
         </div>
     </div>
 </section>

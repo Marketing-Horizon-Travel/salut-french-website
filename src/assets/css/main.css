@@ -4,44 +4,49 @@
    ========================================================================= */
 
 :root {
-    --lavender-50: #F5F1FB;
-    --lavender-100: #E8DFF5;
-    --lavender-200: #D4C5ED;
-    --lavender-300: #B8A7E0;
-    --lavender-400: #9B85D2;
-    --lavender-500: #8370C0;
-    --lavender-600: #6B5B95;
-    --lavender-700: #4A3D7C;
-    --lavender-800: #2F2655;
+    /* Brand palette
+       Accent:  #FBEDA6 (cream yellow)
+       Surface: #D9C6FF (light purple)
+       Ink:     #26345C (dark navy) */
+    --lavender-50:  #F4EEFF;
+    --lavender-100: #ECE2FF;
+    --lavender-200: #D9C6FF;
+    --lavender-300: #BFA5F0;
+    --lavender-400: #9F84DA;
+    --lavender-500: #7E66C2;
+    --lavender-600: #5A4D9A;
+    --lavender-700: #3D4373;
+    --lavender-800: #26345C;
 
-    --yellow: #FFE066;
-    --yellow-dark: #F5C518;
-    --yellow-soft: #FFF4B8;
+    --yellow:      #FBEDA6;
+    --yellow-dark: #F0D77A;
+    --yellow-soft: #FEF6CC;
 
-    --coral: #FFA9B8;
-    --coral-dark: #E8839A;
+    --coral:      #FFC2A0;
+    --coral-dark: #E89A78;
 
-    --cream: #FFF9F0;
+    --cream:      #FFFCF3;
     --cream-dark: #FBF3E4;
-    --white: #FFFFFF;
+    --white:      #FFFFFF;
 
-    --ink: #2F2655;
-    --ink-soft: #5A4E7C;
-    --muted: #8C80A8;
-    --line: #E8DFF5;
+    --ink:      #26345C;
+    --ink-soft: #4A5680;
+    --muted:    #7886A8;
+    --line:     #ECE2FF;
 
     --radius-sm: 10px;
     --radius-md: 18px;
     --radius-lg: 28px;
     --radius-xl: 40px;
 
-    --shadow-sm: 0 4px 12px rgba(107, 91, 149, 0.08);
-    --shadow-md: 0 10px 30px rgba(107, 91, 149, 0.12);
-    --shadow-lg: 0 20px 50px rgba(107, 91, 149, 0.18);
+    --shadow-sm: 0 4px 12px rgba(38, 52, 92, 0.08);
+    --shadow-md: 0 10px 30px rgba(38, 52, 92, 0.12);
+    --shadow-lg: 0 20px 50px rgba(38, 52, 92, 0.18);
 
-    --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-script: 'Caveat', cursive;
-    --font-logo: 'Pacifico', cursive;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Bricolage Grotesque', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-script: 'Dancing Script', cursive;
+    --font-logo: 'Bricolage Grotesque', sans-serif;
 
     --container: 1200px;
     --gutter: 24px;
@@ -70,10 +75,11 @@ a { color: var(--lavender-600); text-decoration: none; transition: color .2s; }
 a:hover { color: var(--lavender-700); }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     font-weight: 700;
     color: var(--ink);
-    line-height: 1.2;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
     margin: 0 0 .6em;
 }
 
@@ -150,11 +156,11 @@ p { margin: 0 0 1em; }
 }
 .brand-link { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
 .brand-mark {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     font-weight: 800;
     font-size: 26px;
-    letter-spacing: 2px;
-    color: var(--lavender-700);
+    letter-spacing: 1px;
+    color: var(--ink);
     line-height: 1;
 }
 .brand-tag { font-family: var(--font-script); font-size: 14px; color: var(--lavender-500); }
@@ -353,7 +359,7 @@ p { margin: 0 0 1em; }
 }
 .hero-stats li { display: flex; flex-direction: column; }
 .hero-stats strong {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     font-size: 36px;
     font-weight: 800;
     color: var(--white);
@@ -1018,11 +1024,11 @@ p { margin: 0 0 1em; }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
 
 .footer-brand {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
     font-weight: 800;
     font-size: 28px;
     color: var(--white);
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 }
 .footer-tag {
     font-family: var(--font-script);
@@ -1355,9 +1361,10 @@ p { margin: 0 0 1em; }
     margin-bottom: 48px;
 }
 .faq-group-title {
-    font-family: var(--font-body);
+    font-family: var(--font-heading);
+    font-weight: 700;
     font-size: 22px;
-    color: var(--lavender-700);
+    color: var(--ink);
     margin-bottom: 20px;
     padding-bottom: 12px;
     border-bottom: 2px dashed var(--lavender-200);
@@ -1509,3 +1516,199 @@ p { margin: 0 0 1em; }
    ========================================================================= */
 .page-faq-page .page-header { background: linear-gradient(135deg, var(--lavender-100) 0%, var(--yellow-soft) 100%); }
 .page-policy-page .page-header { background: linear-gradient(135deg, var(--cream-dark) 0%, var(--lavender-100) 100%); }
+
+/* =========================================================================
+   TEACHERS MODULE
+   ========================================================================= */
+.teachers-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, var(--cream) 0%, var(--lavender-50) 100%);
+}
+
+.teachers-quote {
+    max-width: 760px;
+    margin: 0 auto 64px;
+    padding: 32px 40px;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    border-left: 4px solid var(--yellow);
+}
+.teachers-quote-mark {
+    position: absolute;
+    top: -10px;
+    left: 24px;
+    font-family: var(--font-heading);
+    font-size: 80px;
+    line-height: 1;
+    color: var(--yellow);
+}
+.teachers-quote p {
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink);
+    font-style: italic;
+    margin: 0 0 12px;
+}
+.teachers-quote cite {
+    display: block;
+    font-style: normal;
+    font-size: 14px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 64px;
+}
+@media (max-width: 960px) { .teachers-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .teachers-grid { grid-template-columns: 1fr; } }
+
+.teacher-card {
+    background: var(--white);
+    border: 2px solid var(--lavender-100);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+    display: flex;
+    flex-direction: column;
+}
+.teacher-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--lavender-200);
+}
+
+.teacher-photo-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: var(--lavender-50);
+    overflow: hidden;
+}
+.teacher-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform .4s ease;
+}
+.teacher-card:hover .teacher-photo { transform: scale(1.04); }
+
+.teacher-cert {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    box-shadow: var(--shadow-sm);
+    letter-spacing: 0.3px;
+}
+
+.teacher-body {
+    padding: 24px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.teacher-honorific {
+    font-family: var(--font-script);
+    font-size: 20px;
+    color: var(--lavender-500);
+    margin: 0 0 2px;
+    line-height: 1;
+}
+.teacher-name {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 6px;
+    line-height: 1.15;
+}
+.teacher-role {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed var(--lavender-200);
+    line-height: 1.4;
+}
+
+.teacher-block {
+    margin-bottom: 14px;
+}
+.teacher-block:last-child { margin-bottom: 0; }
+.teacher-block-label {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--lavender-700);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin: 0 0 6px;
+}
+.teacher-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.teacher-block li {
+    position: relative;
+    padding-left: 14px;
+    font-size: 13.5px;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 4px;
+}
+.teacher-block li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--lavender-400);
+    font-weight: 700;
+}
+
+.teachers-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 32px;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+@media (max-width: 640px) { .teachers-stats { grid-template-columns: 1fr; } }
+
+.teachers-stat {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.teachers-stat strong {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+}
+.teachers-stat span {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+}
