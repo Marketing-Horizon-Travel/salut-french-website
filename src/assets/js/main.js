@@ -10,7 +10,29 @@
         initSmoothScroll();
         initLeadForm();
         initRevealOnScroll();
+        initRoadmapTabs();
     });
+
+    /* Roadmap tabs (homepage section 04) */
+    function initRoadmapTabs() {
+        document.querySelectorAll('[data-roadmap]').forEach(function (root) {
+            var tabs = root.querySelectorAll('.roadmap-tab');
+            var panels = root.querySelectorAll('.roadmap-panel');
+            tabs.forEach(function (tab) {
+                tab.addEventListener('click', function () {
+                    var target = tab.getAttribute('data-target');
+                    tabs.forEach(function (t) {
+                        var active = t === tab;
+                        t.classList.toggle('is-active', active);
+                        t.setAttribute('aria-selected', active ? 'true' : 'false');
+                    });
+                    panels.forEach(function (p) {
+                        p.classList.toggle('is-active', p.id === target);
+                    });
+                });
+            });
+        });
+    }
 
     /* Mobile menu toggle */
     function initMobileMenu() {

@@ -10,15 +10,18 @@
   "city": "Online",
   "country": "Việt Nam",
   "address": "Học 100% online — Live Class toàn quốc",
-  "phone": "",
-  "phoneFr": "",
+  "phone": "+84 927 028 088",
+  "phoneFr": "+33 7 63 10 01 84",
+  "website": "salut.vn",
+  "handle": "@hoctiengphapcungsalut",
   "messengerLabel": "Nhắn tin qua Facebook Messenger",
   "email": "contact@tiengphapsalut.vn",
   "social": {
     "facebook": "https://www.facebook.com/Tiengphapsalut",
-    "tiktok": "",
-    "youtube": "",
-    "instagram": ""
+    "tiktok": "https://www.tiktok.com/@hoctiengphapcungsalut",
+    "instagram": "https://www.instagram.com/hoctiengphapcungsalut",
+    "threads": "https://www.threads.net/@hoctiengphapcungsalut",
+    "youtube": ""
   },
   "formspreeId": "YOUR_FORMSPREE_ID",
   "stats": {
@@ -30,6 +33,129 @@
     { "icon": "❤️", "title": "Tận tâm", "desc": "Luôn đặt sự tiến bộ của người học là kim chỉ nam cho mọi hoạt động giảng dạy và hỗ trợ." },
     { "icon": "🎨", "title": "Sáng tạo", "desc": "Không ngừng đổi mới phương pháp để mỗi giờ học tiếng Pháp là một trải nghiệm thú vị và đầy màu sắc." },
     { "icon": "🤝", "title": "Kết nối", "desc": "Xây dựng mối quan hệ bền chặt giữa giảng viên - học viên và giữa những người yêu tiếng Pháp tại Việt Nam." }
+  ],
+  "hero": {
+    "title": "SALUT — Chia sẻ Pháp ngữ",
+    "slogan": "Chất lượng là kim chỉ nam",
+    "lede": "Trung tâm tiếng Pháp 100% online — đồng hành cùng bạn từ A1 đến B2, luyện thi DELF/TCF/TEF với đội ngũ giảng viên C1+ và bản ngữ.",
+    "ctaPrimary": { "label": "Nói tiếng Pháp cùng SALUT!", "url": "/lien-he/" },
+    "quickLinks": [
+      { "icon": "📝", "label": "Kiểm tra trình độ miễn phí", "url": "/lien-he/" },
+      { "icon": "🎯", "label": "Lộ trình chinh phục DELF/TCF", "url": "/khoa-hoc/" },
+      { "icon": "🚀", "label": "Đăng ký học ngay", "url": "/lich-khai-giang/" }
+    ],
+    "featuredTeachers": [
+      { "name": "Nguyên Nguyên", "role": "Founder", "photo": "/assets/img/teachers/1.jpg" },
+      { "name": "Elliott Lavalée", "role": "Bản ngữ Pháp", "photo": "/assets/img/teachers/4.jpg" },
+      { "name": "Minh Lưu", "role": "Chuyên môn", "photo": "/assets/img/teachers/2.jpg" }
+    ]
+  },
+  "founder": {
+    "name": "Chị Nguyên Nguyên",
+    "title": "Founder Salut — Chia sẻ Pháp ngữ",
+    "quote": "Tiếng Pháp không chỉ là ngôn ngữ, đó là hành trình mở cửa thế giới.",
+    "photo": "/assets/img/teachers/1.jpg",
+    "credentials": [
+      "Thạc sĩ MSc tại Đại học Paris-Saclay (Pháp)",
+      "Cử nhân Kinh tế Đối ngoại — ĐH Ngoại thương",
+      "Chứng chỉ DALF C1 cao cấp",
+      "8+ năm kinh nghiệm luyện thi quốc tế"
+    ],
+    "values": [
+      {
+        "icon": "🎓",
+        "title": "Đội ngũ giảng viên tinh hoa",
+        "desc": "100% giảng viên đạt trình độ C1+ hoặc là Giảng viên chuyên Pháp tại các Đại học và THPT chuyên."
+      },
+      {
+        "icon": "⚡",
+        "title": "Chiến thuật học tập linh hoạt",
+        "desc": "Tối ưu hoá thời gian, tập trung vào thực chiến và phản xạ tự nhiên."
+      },
+      {
+        "icon": "🎥",
+        "title": "Mô hình học tương tác thực (Live Class)",
+        "desc": "Không học qua video quay sẵn — sửa lỗi trực tiếp ngay tại lớp."
+      },
+      {
+        "icon": "🤝",
+        "title": "Môi trường đề cao tính tự chủ",
+        "desc": "Đồng hành sát sao qua hệ thống tài liệu số và nhóm hỗ trợ 24/7."
+      }
+    ]
+  },
+  "courseRoadmap": [
+    {
+      "level": "A1",
+      "icon": "🌱",
+      "title": "Trình độ A1",
+      "goal": "Xây gốc phát âm, giao tiếp căn bản và tư duy ngôn ngữ.",
+      "duration": "45 buổi",
+      "hours": "67.5h Live + 135h tự học",
+      "color": "lavender"
+    },
+    {
+      "level": "A2",
+      "icon": "🌿",
+      "title": "Trình độ A2",
+      "goal": "Phản xạ nhanh trong đời sống, sử dụng cấu trúc câu phức tạp.",
+      "duration": "48 buổi",
+      "hours": "72h Live + 144h tự học",
+      "color": "yellow"
+    },
+    {
+      "level": "B1",
+      "icon": "🌳",
+      "title": "Trình độ B1",
+      "goal": "Diễn đạt ý kiến, tranh luận và chuẩn bị kỹ năng thi DELF B1.",
+      "duration": "50 buổi",
+      "hours": "75h Live + 150h tự học",
+      "color": "lavender"
+    },
+    {
+      "level": "B2",
+      "icon": "🌲",
+      "title": "Trình độ B2",
+      "goal": "Hoàn thiện 4 kỹ năng chuyên sâu, làm chủ văn bản học thuật.",
+      "duration": "50 buổi",
+      "hours": "75h Live + 150h tự học",
+      "color": "cream"
+    }
+  ],
+  "supplementCourses": [
+    { "icon": "🎯", "title": "Luyện thi DELF/TCF/TEF cấp tốc" },
+    { "icon": "💬", "title": "Lớp Giao tiếp phản xạ" },
+    { "icon": "📚", "title": "Lớp Ngữ pháp chuyên sâu" }
+  ],
+  "homeNews": [
+    {
+      "tag": "Mới nhất",
+      "icon": "📝",
+      "title": "Test trình độ Tiếng Pháp Online miễn phí",
+      "excerpt": "Làm bài kiểm tra 15 phút — nhận kết quả & tư vấn lộ trình ngay.",
+      "url": "/lien-he/"
+    },
+    {
+      "tag": "Cẩm nang",
+      "icon": "📅",
+      "title": "Lịch thi DELF/TCF 2026",
+      "excerpt": "Địa điểm, lệ phí và những lưu ý quan trọng cho kỳ thi 2026.",
+      "url": "/blog/"
+    },
+    {
+      "tag": "Kinh nghiệm",
+      "icon": "📖",
+      "title": "4 bộ tài liệu tự học tiếng Pháp hiệu quả",
+      "excerpt": "Đội ngũ Salut chia sẻ những bộ giáo trình & app không thể thiếu.",
+      "url": "/blog/"
+    },
+    {
+      "tag": "Sự kiện",
+      "icon": "🎤",
+      "title": "Thi thử DELF tháng 6",
+      "excerpt": "Trải nghiệm phòng thi mô phỏng cùng giảng viên bản xứ Salut.",
+      "url": "/lich-khai-giang/"
+    }
   ],
   "teamHighlights": {
     "quote": "Một người thầy giỏi là người biết biến những cấu trúc ngữ pháp khô khan thành những câu chuyện dễ hiểu.",
