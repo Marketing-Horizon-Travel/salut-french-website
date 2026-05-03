@@ -38,6 +38,10 @@ module.exports = function (eleventyConfig) {
     // Shortcode: current year
     eleventyConfig.addShortcode("year", () => new Date().getFullYear());
 
+    // Cache-busting version (set once per build) — appended to CSS/JS URLs
+    const buildVersion = Date.now().toString(36);
+    eleventyConfig.addShortcode("buildVersion", () => buildVersion);
+
     return {
         dir: {
             input: "src",
