@@ -46,10 +46,13 @@ bodyClass: home
             <div class="hero-portraits">
                 {% for t in site.hero.featuredTeachers %}
                     <figure class="hero-portrait hero-portrait-{{ loop.index }}">
-                        <div class="hero-portrait-img"><img src="{{ t.photo }}" alt="{{ t.name }}" loading="eager" width="320" height="320"></div>
-                        <figcaption>
+                        <div class="hero-portrait-img">
+                            <img src="{{ t.photo }}" alt="{{ t.name }}" loading="eager" width="600" height="600">
+                        </div>
+                        <figcaption class="hero-portrait-label">
                             <strong>{{ t.name }}</strong>
                             <span>{{ t.role }}</span>
+                            {% if t.tag %}<em class="hp-tag">{{ t.tag }}</em>{% endif %}
                         </figcaption>
                     </figure>
                 {% endfor %}
@@ -68,7 +71,11 @@ bodyClass: home
     <div class="container founder-grid">
         <div class="founder-content">
             <p class="section-kicker">Câu chuyện founder</p>
-            <h2 class="section-title">Tầm nhìn từ <span class="handwritten">{{ site.founder.name }}</span></h2>
+            <h2 class="section-title founder-title">
+                Tầm nhìn từ
+                <span class="founder-name">{{ site.founder.name }}</span>
+            </h2>
+            <p class="founder-role">{{ site.founder.title }}</p>
             <blockquote class="founder-quote">
                 <span class="quote-mark">&ldquo;</span>{{ site.founder.quote }}<span class="quote-mark">&rdquo;</span>
             </blockquote>
@@ -108,7 +115,7 @@ bodyClass: home
     <div class="container">
         <div class="section-head">
             <p class="section-kicker">Notre Équipe</p>
-            <h2 class="section-title">Đội ngũ <span class="handwritten">giảng viên</span> Salut</h2>
+            <h2 class="section-title">Đội ngũ <span class="accent">giảng viên</span> Salut</h2>
             <p class="section-lede">Tại Salut, chúng mình không chỉ dạy tiếng Pháp — chúng mình truyền lửa đam mê từ những người đi trước.</p>
         </div>
 
@@ -156,7 +163,7 @@ bodyClass: home
     <div class="container">
         <div class="section-head">
             <p class="section-kicker">Danh mục khoá học</p>
-            <h2 class="section-title">Lộ trình <span class="handwritten">chinh phục</span> A1 → B2</h2>
+            <h2 class="section-title">Lộ trình <span class="accent">chinh phục</span> A1 → B2</h2>
             <p class="section-lede">Online 100% · Tương tác trực tiếp · Live Class — không học qua video quay sẵn.</p>
         </div>
 
@@ -212,7 +219,7 @@ bodyClass: home
     <div class="container">
         <div class="section-head">
             <p class="section-kicker">Học viên Salut</p>
-            <h2 class="section-title">Mỗi chứng chỉ là một <span class="handwritten">hành trình</span></h2>
+            <h2 class="section-title">Mỗi chứng chỉ là một <span class="accent">hành trình</span></h2>
             <p class="section-lede">Du học, định cư, sự nghiệp mới — những giấc mơ Pháp ngữ đã thành hiện thực cùng Salut.</p>
         </div>
 
@@ -241,17 +248,23 @@ bodyClass: home
     <div class="container">
         <div class="section-head">
             <p class="section-kicker">Tin tức & tiện ích</p>
-            <h2 class="section-title"><span class="handwritten">Cẩm nang</span> & sự kiện học viên</h2>
+            <h2 class="section-title"><span class="accent">Cẩm nang</span> & sự kiện học viên</h2>
         </div>
 
         <div class="news-grid">
             {% for n in site.homeNews %}
-                <a href="{{ n.url }}" class="news-card">
-                    <div class="news-icon">{{ n.icon }}</div>
-                    <span class="news-tag">{{ n.tag }}</span>
-                    <h3>{{ n.title }}</h3>
-                    <p>{{ n.excerpt }}</p>
-                    <span class="news-link">Tìm hiểu →</span>
+                <a href="{{ n.url }}" class="news-card news-card--{{ n.theme }}">
+                    <div class="news-banner">
+                        <span class="news-banner-icon" aria-hidden="true">{{ n.icon }}</span>
+                        <span class="news-banner-kicker">{{ n.bannerKicker }}</span>
+                        <span class="news-banner-headline">{{ n.bannerHeadline }}</span>
+                        <span class="news-banner-sub">{{ n.bannerSub }}</span>
+                        <span class="news-banner-tag">{{ n.tag }}</span>
+                    </div>
+                    <div class="news-body">
+                        <h3>{{ n.title }}</h3>
+                        <p>{{ n.excerpt }}</p>
+                    </div>
                 </a>
             {% endfor %}
         </div>

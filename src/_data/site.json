@@ -45,16 +45,16 @@
       { "icon": "🚀", "label": "Đăng ký học ngay", "url": "/lich-khai-giang/" }
     ],
     "featuredTeachers": [
-      { "name": "Nguyên Nguyên", "role": "Founder", "photo": "/assets/img/teachers/1.jpg" },
-      { "name": "Elliott Lavalée", "role": "Bản ngữ Pháp", "photo": "/assets/img/teachers/4.jpg" },
-      { "name": "Minh Lưu", "role": "Chuyên môn", "photo": "/assets/img/teachers/2.jpg" }
+      { "name": "Cô Nguyên Nguyên",   "role": "Founder Salut",          "tag": "DALF C1 · 8+ năm",  "photo": "/assets/img/teachers/poster-nguyen.png" },
+      { "name": "Thầy Elliott Lavalée","role": "Giảng viên bản ngữ",     "tag": "Native French",     "photo": "/assets/img/teachers/poster-elliott.png" },
+      { "name": "Chị giáo Minh Lưu",   "role": "Giảng viên chuyên môn",  "tag": "TCF C1 · IAE Lyon", "photo": "/assets/img/teachers/poster-minh.png" }
     ]
   },
   "founder": {
     "name": "Chị Nguyên Nguyên",
     "title": "Founder Salut — Chia sẻ Pháp ngữ",
     "quote": "Tiếng Pháp không chỉ là ngôn ngữ, đó là hành trình mở cửa thế giới.",
-    "photo": "/assets/img/teachers/1.jpg",
+    "photo": "/assets/img/teachers/poster-nguyen.png",
     "credentials": [
       "Thạc sĩ MSc tại Đại học Paris-Saclay (Pháp)",
       "Cử nhân Kinh tế Đối ngoại — ĐH Ngoại thương",
@@ -131,6 +131,10 @@
     {
       "tag": "Mới nhất",
       "icon": "📝",
+      "bannerKicker": "Test 15 phút",
+      "bannerHeadline": "TEST TRÌNH ĐỘ",
+      "bannerSub": "PHÁP NGỮ ONLINE",
+      "theme": "yellow",
       "title": "Test trình độ Tiếng Pháp Online miễn phí",
       "excerpt": "Làm bài kiểm tra 15 phút — nhận kết quả & tư vấn lộ trình ngay.",
       "url": "/lien-he/"
@@ -138,6 +142,10 @@
     {
       "tag": "Cẩm nang",
       "icon": "📅",
+      "bannerKicker": "Cẩm nang 2026",
+      "bannerHeadline": "LỊCH THI",
+      "bannerSub": "DELF · TCF · TEF",
+      "theme": "lavender",
       "title": "Lịch thi DELF/TCF 2026",
       "excerpt": "Địa điểm, lệ phí và những lưu ý quan trọng cho kỳ thi 2026.",
       "url": "/blog/"
@@ -145,6 +153,10 @@
     {
       "tag": "Kinh nghiệm",
       "icon": "📖",
+      "bannerKicker": "Tự học hiệu quả",
+      "bannerHeadline": "4 BỘ TÀI LIỆU",
+      "bannerSub": "TIẾNG PHÁP",
+      "theme": "cream",
       "title": "4 bộ tài liệu tự học tiếng Pháp hiệu quả",
       "excerpt": "Đội ngũ Salut chia sẻ những bộ giáo trình & app không thể thiếu.",
       "url": "/blog/"
@@ -152,6 +164,10 @@
     {
       "tag": "Sự kiện",
       "icon": "🎤",
+      "bannerKicker": "Tháng 6 · 2026",
+      "bannerHeadline": "THI THỬ DELF",
+      "bannerSub": "GIẢNG VIÊN BẢN NGỮ",
+      "theme": "ink",
       "title": "Thi thử DELF tháng 6",
       "excerpt": "Trải nghiệm phòng thi mô phỏng cùng giảng viên bản xứ Salut.",
       "url": "/lich-khai-giang/"
@@ -170,7 +186,7 @@
       "name": "Nguyên Nguyên",
       "honorific": "Chị giáo",
       "role": "Founder Salut",
-      "photo": "/assets/img/teachers/1.jpg",
+      "photo": "/assets/img/teachers/teacher-nguyen-nguyen.png",
       "certificate": "DALF C1",
       "education": [
         "Cử nhân KTĐN — ĐH Ngoại Thương",
@@ -189,7 +205,7 @@
       "name": "Minh Lưu",
       "honorific": "Chị giáo",
       "role": "Giảng viên trường quốc tế DURAS",
-      "photo": "/assets/img/teachers/2.jpg",
+      "photo": "/assets/img/teachers/teacher-minh-luu.png",
       "certificate": "TCF C1 — Đọc hiểu 690/699",
       "education": [
         "Cử nhân & Thạc sĩ tại IAE LYON — Université Lyon 3 Jean Moulin",
@@ -207,7 +223,7 @@
       "name": "Phương Thảo",
       "honorific": "Cô giáo",
       "role": "Giảng viên Đại học Xây dựng",
-      "photo": "/assets/img/teachers/3.jpg",
+      "photo": "/assets/img/teachers/teacher-phuong-thao.png",
       "certificate": "DALF C1",
       "education": [
         "Thạc sĩ Didactique des langues (FLE) — Université Grenoble-Alpes",
@@ -226,7 +242,7 @@
       "name": "Elliott Lavalée",
       "honorific": "Thầy giáo",
       "role": "Giảng viên bản ngữ — sống & làm việc tại Pháp",
-      "photo": "/assets/img/teachers/4.jpg",
+      "photo": "/assets/img/teachers/teacher-elliott.png",
       "certificate": "Native French",
       "education": [
         "Thạc sĩ MSC — Université Paris-Saclay",
@@ -245,7 +261,7 @@
       "name": "Như Ái",
       "honorific": "Chị giáo",
       "role": "Chủ tịch CLB Pháp ngữ ĐH KHXH&NV TP.HCM",
-      "photo": "/assets/img/teachers/5.jpg",
+      "photo": "/assets/img/teachers/teacher-nhu-ai.png",
       "certificate": "DELF B2",
       "education": [
         "Tốt nghiệp khoa Ngôn ngữ & Văn hóa Pháp — ĐH KHXH&NV TP.HCM"
@@ -263,7 +279,7 @@
       "name": "Quốc Đạt",
       "honorific": "Anh giáo",
       "role": "Giải Nhất Hùng biện tiếng Pháp 2023",
-      "photo": "/assets/img/teachers/6.jpg",
+      "photo": "/assets/img/teachers/teacher-quoc-dat.png",
       "certificate": "DALF C1",
       "education": [
         "Cử nhân & Thạc sĩ Ngôn ngữ và Văn học Pháp — ĐH KHXH&NV TP.HCM"
@@ -282,7 +298,7 @@
       "name": "Ngọc Diễm",
       "honorific": "Chị giáo",
       "role": "Cử nhân kép HANU & INALCO (Pháp)",
-      "photo": "/assets/img/teachers/7.jpg",
+      "photo": "/assets/img/teachers/teacher-ngoc-diem.png",
       "certificate": "DELF B2",
       "education": [
         "Thạc sĩ Ngôn ngữ Pháp — ĐH Hà Nội (HANU)",
@@ -300,7 +316,7 @@
       "name": "Ngọc Nghi",
       "honorific": "Chị giáo",
       "role": "Giảng viên THCS Huỳnh Thúc Kháng (Cần Thơ)",
-      "photo": "/assets/img/teachers/8.jpg",
+      "photo": "/assets/img/teachers/teacher-ngoc-nghi.png",
       "certificate": "DELF B2",
       "education": [
         "Thạc sĩ Lý luận & Phương pháp giảng dạy tiếng Pháp — ĐH Cần Thơ",
@@ -318,7 +334,7 @@
       "name": "Đức Bình",
       "honorific": "Thầy giáo",
       "role": "Cựu giảng viên EDF & CFA Mécavenir, Pháp",
-      "photo": "/assets/img/teachers/9.jpg",
+      "photo": "/assets/img/teachers/teacher-duc-binh.png",
       "certificate": "Thạc sĩ tại Pháp",
       "education": [
         "Thạc sĩ tại INSA Lyon (Pháp)"
@@ -332,6 +348,76 @@
         "Giảng viên vận hành nhà máy điện hạt nhân — EDF, Pháp (2021–2025)",
         "Giảng viên & Chủ nhiệm lớp — CFA Mécavenir, Pháp (2017–2020)"
       ]
+    },
+    {
+      "name": "Kim Thuỳ",
+      "honorific": "Chị giáo",
+      "role": "Giảng viên Salut",
+      "photo": "/assets/img/teachers/teacher-kim-thuy.png",
+      "certificate": "Tiếng Pháp chuyên sâu",
+      "education": [],
+      "experience": [],
+      "achievements": []
+    },
+    {
+      "name": "Lê Minh Hữu",
+      "honorific": "Thầy giáo",
+      "role": "Giảng viên Salut",
+      "photo": "/assets/img/teachers/teacher-le-minh-huu.png",
+      "certificate": "Tiếng Pháp chuyên sâu",
+      "education": [],
+      "experience": [],
+      "achievements": []
+    },
+    {
+      "name": "Anaïs Ngô Xuân",
+      "honorific": "Cô giáo",
+      "role": "Giảng viên Salut",
+      "photo": "/assets/img/teachers/teacher-anais-ngo-xuan.png",
+      "certificate": "Native French",
+      "education": [],
+      "experience": [],
+      "achievements": []
+    },
+    {
+      "name": "Léa",
+      "honorific": "Cô giáo",
+      "role": "Giảng viên bản ngữ",
+      "photo": "/assets/img/teachers/teacher-lea.png",
+      "certificate": "Native French",
+      "education": [],
+      "experience": [],
+      "achievements": []
+    },
+    {
+      "name": "Bá Tùng",
+      "honorific": "Thầy giáo",
+      "role": "Giảng viên Salut",
+      "photo": "/assets/img/teachers/teacher-ba-tung.png",
+      "certificate": "Tiếng Pháp chuyên sâu",
+      "education": [],
+      "experience": [],
+      "achievements": []
+    },
+    {
+      "name": "Bích",
+      "honorific": "Cô giáo",
+      "role": "Giảng viên Salut",
+      "photo": "/assets/img/teachers/teacher-bich.png",
+      "certificate": "Tiếng Pháp chuyên sâu",
+      "education": [],
+      "experience": [],
+      "achievements": []
+    },
+    {
+      "name": "Hồng Vân",
+      "honorific": "Cô giáo",
+      "role": "Giảng viên Salut",
+      "photo": "/assets/img/teachers/teacher-hong-van.png",
+      "certificate": "Tiếng Pháp chuyên sâu",
+      "education": [],
+      "experience": [],
+      "achievements": []
     }
   ],
   "guarantees": [

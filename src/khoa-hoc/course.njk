@@ -68,7 +68,7 @@ bodyClass: course-detail
     <div class="container">
         <div class="section-head">
             <p class="section-kicker">Lịch khai giảng</p>
-            <h2 class="section-title"><span class="handwritten">Sắp khai giảng</span> lớp {{ course.short }}</h2>
+            <h2 class="section-title"><span class="accent">Sắp khai giảng</span> lớp {{ course.short }}</h2>
         </div>
         {% set courseSlug = course.slug %}
         {% include "partials/schedule-table.njk" %}
@@ -80,7 +80,7 @@ bodyClass: course-detail
     <div class="container">
         <div class="section-head">
             <p class="section-kicker">Khoá học khác</p>
-            <h2 class="section-title"><span class="handwritten">Bạn cũng</span> có thể thích</h2>
+            <h2 class="section-title"><span class="accent">Bạn cũng</span> có thể thích</h2>
         </div>
         <div class="course-grid">
             {% set count = 0 %}

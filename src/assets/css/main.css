@@ -43,10 +43,15 @@
     --shadow-md: 0 10px 30px rgba(38, 52, 92, 0.12);
     --shadow-lg: 0 20px 50px rgba(38, 52, 92, 0.18);
 
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-heading: 'Bricolage Grotesque', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-script: 'Dancing Script', cursive;
-    --font-logo: 'Bricolage Grotesque', sans-serif;
+    /* Typography
+       Body  → Inter (UI text, paragraphs, forms, lists)
+       Heading → Bricolage Grotesque (h1–h6, brand, labels, badges)
+       Script → Dancing Script (handwritten emphasis points) */
+    --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-heading: 'Bricolage Grotesque', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* "Script" / accent — readable italic Inter instead of cursive (better diacritics support, easier to read) */
+    --font-script: var(--font-body);
+    --font-logo: var(--font-heading);
 
     --container: 1200px;
     --gutter: 24px;
@@ -68,6 +73,8 @@ body {
     background: var(--cream);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'cv11', 'ss01', 'ss03'; /* Inter alternates: open digits, single-storey a, etc. */
+    text-rendering: optimizeLegibility;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -81,6 +88,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.15;
     letter-spacing: -0.01em;
     margin: 0 0 .6em;
+    font-optical-sizing: auto; /* Bricolage Grotesque is variable with optical sizing */
 }
 
 p { margin: 0 0 1em; }
@@ -96,8 +104,12 @@ p { margin: 0 0 1em; }
 .skip-link { position: absolute; top: -40px; left: 10px; background: var(--ink); color: var(--white); padding: 8px 16px; z-index: 9999; border-radius: 8px; }
 .skip-link:focus { top: 10px; color: var(--white); }
 
-.handwritten { font-family: var(--font-script); font-weight: 700; color: var(--lavender-600); }
-.handwritten-big { font-family: var(--font-script); font-weight: 700; color: var(--lavender-700); display: block; }
+.handwritten { font-family: var(--font-script); font-style: italic; font-weight: 700; color: var(--lavender-600); }
+.handwritten-big { font-family: var(--font-script); font-style: italic; font-weight: 700; color: var(--lavender-700); display: block; }
+
+/* Inline accent inside headings — kept as a no-op span so existing markup keeps
+   working. Headings stay one consistent font AND one consistent color. */
+.accent { color: inherit; }
 
 /* =========================================================================
    BUTTONS
@@ -163,7 +175,7 @@ p { margin: 0 0 1em; }
     color: var(--ink);
     line-height: 1;
 }
-.brand-tag { font-family: var(--font-script); font-size: 14px; color: var(--lavender-500); }
+.brand-tag { font-family: var(--font-script); font-style: italic; font-size: 14px; color: var(--lavender-500); }
 
 .site-nav { flex: 1; min-width: 0; }
 .primary-menu {
@@ -299,6 +311,8 @@ p { margin: 0 0 1em; }
 .hero-kicker {
     display: inline-block;
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 28px;
     color: var(--ink);
     background: var(--yellow);
@@ -381,6 +395,8 @@ p { margin: 0 0 1em; }
 }
 .card-kicker {
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 22px;
     color: var(--lavender-600);
     margin-bottom: 12px;
@@ -403,6 +419,8 @@ p { margin: 0 0 1em; }
 }
 .card-tag {
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 18px;
     color: var(--lavender-700);
     margin: 0;
@@ -461,6 +479,8 @@ p { margin: 0 0 1em; }
 .section-head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
 .section-kicker {
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 24px;
     color: var(--lavender-500);
     margin-bottom: 8px;
@@ -502,6 +522,8 @@ p { margin: 0 0 1em; }
 .about-sticker {
     position: absolute;
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 28px;
     padding: 8px 20px;
     border-radius: 999px;
@@ -990,6 +1012,8 @@ p { margin: 0 0 1em; }
 }
 .cta-kicker {
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 28px;
     color: var(--yellow);
     margin-bottom: 8px;
@@ -1032,6 +1056,8 @@ p { margin: 0 0 1em; }
 }
 .footer-tag {
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 18px;
     color: var(--yellow);
     margin: 4px 0 16px;
@@ -1107,15 +1133,25 @@ p { margin: 0 0 1em; }
     color: var(--white);
     font-size: 13px;
     font-weight: 500;
-    transition: background .2s, border-color .2s, transform .2s;
+    transition: background .2s, border-color .2s, transform .2s, color .2s;
 }
-.fchip:hover {
+.fchip:hover,
+.fchip:focus-visible {
     background: var(--yellow);
     color: var(--ink);
     border-color: var(--yellow);
     transform: translateY(-1px);
+    text-decoration: none;
 }
+/* The chip lives inside .footer-col, where `.footer-col a:hover { color: var(--yellow) }`
+   would normally fire. That paints the chip text yellow on a yellow background → invisible.
+   This higher-specificity override forces the on-hover text/icon to ink so they stay readable. */
+.site-footer .fchip:hover,
+.site-footer .fchip:focus-visible { color: var(--ink); }
 .fchip svg { flex-shrink: 0; }
+/* SVG icons keep their inline fill/stroke attributes (fill="currentColor" for
+   TikTok/Threads, fill="none" stroke="currentColor" for Instagram) — the
+   currentColor reference picks up .fchip color naturally on hover. */
 
 .socials { display: flex; gap: 10px; margin-top: 16px; }
 .socials a {
@@ -1163,6 +1199,8 @@ p { margin: 0 0 1em; }
 }
 .page-kicker {
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 26px;
     color: var(--lavender-600);
     margin-bottom: 8px;
@@ -1343,6 +1381,8 @@ p { margin: 0 0 1em; }
 }
 .curriculum-week {
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 20px;
     color: var(--lavender-600);
     margin-bottom: 2px;
@@ -1688,6 +1728,8 @@ p { margin: 0 0 1em; }
 
 .teacher-honorific {
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 20px;
     color: var(--lavender-500);
     margin: 0 0 2px;
@@ -1783,15 +1825,24 @@ p { margin: 0 0 1em; }
    ========================================================================= */
 .hero-v2 {
     background: linear-gradient(135deg, #E5D8FF 0%, #D9C6FF 55%, #C9B5F5 100%);
-    padding: 70px 0 110px;
+    /* Full desktop viewport — fills the screen below the sticky header (~80px).
+       box-sizing: border-box keeps padding inside the height so total = viewport-height. */
+    min-height: calc(100vh - 80px);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 30px 0 50px;
 }
 .hero-v2 .hero-grid {
     grid-template-columns: 1.05fr .95fr;
     gap: 70px;
     align-items: center;
+    width: 100%;
 }
 .hero-v2 .hero-kicker {
     font-family: var(--font-script);
+
+    font-style: italic;
     font-size: 26px;
     background: var(--yellow);
     color: var(--ink);
@@ -1817,6 +1868,8 @@ p { margin: 0 0 1em; }
 }
 .hero-slogan .handwritten {
     font-family: var(--font-script);
+
+    font-style: italic;
     color: var(--lavender-700);
     font-size: 36px;
 }
@@ -1874,81 +1927,166 @@ p { margin: 0 0 1em; }
 }
 .hero-quicklinks a:hover .ql-arrow { transform: translateX(4px); color: var(--ink); }
 
-/* hero portraits — 3 circular */
+/* hero portraits — 3 circular SALUT poster cards with floating name labels */
 .hero-portraits {
     position: relative;
-    height: 480px;
-    max-width: 480px;
+    height: 560px;
+    max-width: 560px;
     margin: 0 auto;
+    /* Padding-bottom gives breathing room for labels that sit below P2/P3 */
+    padding-bottom: 60px;
 }
 .hero-portrait {
     position: absolute;
     margin: 0;
-    text-align: center;
     transition: transform .3s;
 }
-.hero-portrait:hover { transform: translateY(-6px); }
 .hero-portrait-img {
     border-radius: 50%;
     overflow: hidden;
-    border: 6px solid var(--white);
-    box-shadow: 0 18px 40px rgba(38,52,92,0.2);
-    aspect-ratio: 1 / 1;
-}
-.hero-portrait-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-.hero-portrait figcaption {
-    margin-top: 12px;
     background: var(--white);
-    border-radius: 16px;
-    padding: 8px 14px;
-    box-shadow: var(--shadow-sm);
-    display: inline-block;
+    box-shadow: 0 20px 40px rgba(38,52,92,0.25);
+    aspect-ratio: 1 / 1;
+    width: 100%;
 }
-.hero-portrait figcaption strong {
+.hero-portrait-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
-    font-family: var(--font-heading);
-    font-size: 14px;
-    color: var(--ink);
-    line-height: 1.2;
 }
-.hero-portrait figcaption span {
-    font-size: 11px;
+
+/* Floating name label beside each portrait — pill card with name + role + tag */
+.hero-portrait-label {
+    position: absolute;
+    background: var(--white);
+    border-radius: 18px;
+    padding: 10px 16px 12px;
+    box-shadow: 0 8px 24px rgba(38,52,92,0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 130px;
+    z-index: 5;
+}
+.hero-portrait-label strong {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+.hero-portrait-label span {
+    font-size: 12px;
     color: var(--ink-soft);
     font-weight: 500;
 }
+.hero-portrait-label .hp-tag {
+    display: inline-block;
+    margin-top: 4px;
+    background: var(--yellow);
+    color: var(--ink);
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    align-self: flex-start;
+    font-family: var(--font-heading);
+    letter-spacing: 0.2px;
+}
 
-.hero-portrait-1 { top: 0; left: 50%; transform: translateX(-50%); width: 230px; z-index: 3; }
-.hero-portrait-1 .hero-portrait-img { border-color: var(--yellow); }
-.hero-portrait-1:hover { transform: translateX(-50%) translateY(-6px); }
+/* Portrait 1 — Founder, big center top */
+.hero-portrait-1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    z-index: 3;
+}
+.hero-portrait-1 .hero-portrait-img {
+    box-shadow: 0 24px 50px rgba(38,52,92,0.3), 0 0 0 6px var(--yellow);
+}
+/* Label fully outside photo on the right side, sitting next to the upper portion */
+.hero-portrait-1 .hero-portrait-label {
+    top: 60px;
+    left: calc(100% + 20px);
+    transform: rotate(2deg);
+}
 
-.hero-portrait-2 { bottom: 20px; left: 0; width: 180px; z-index: 2; }
-.hero-portrait-3 { bottom: 20px; right: 0; width: 180px; z-index: 2; }
+/* Portrait 2 — Bản ngữ, bottom left.
+   Label sits BELOW the photo (outside the circle), slightly tucked at the corner
+   so the face is never covered. */
+.hero-portrait-2 {
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    z-index: 2;
+}
+.hero-portrait-2 .hero-portrait-img { box-shadow: 0 18px 36px rgba(38,52,92,0.22), 0 0 0 4px var(--white); }
+.hero-portrait-2 .hero-portrait-label {
+    bottom: -50px;
+    left: -10px;
+    transform: rotate(-3deg);
+}
+
+/* Portrait 3 — Chuyên môn, bottom right (mirror of P2) */
+.hero-portrait-3 {
+    bottom: 0;
+    right: 0;
+    width: 220px;
+    z-index: 2;
+}
+.hero-portrait-3 .hero-portrait-img { box-shadow: 0 18px 36px rgba(38,52,92,0.22), 0 0 0 4px var(--white); }
+.hero-portrait-3 .hero-portrait-label {
+    bottom: -50px;
+    right: -10px;
+    transform: rotate(3deg);
+}
 
 .hero-bubble {
     position: absolute;
     background: var(--yellow);
     color: var(--ink);
     font-family: var(--font-script);
-    font-size: 22px;
+
+    font-style: italic;
+    font-size: 24px;
     padding: 8px 18px;
     border-radius: 999px;
     box-shadow: var(--shadow-md);
     z-index: 4;
 }
-.hero-bubble-1 { top: 30px; right: -10px; transform: rotate(8deg); }
-.hero-bubble-2 { top: 240px; left: -20px; background: var(--white); transform: rotate(-6deg); }
+.hero-bubble-1 { top: -10px; right: -20px; transform: rotate(8deg); }
+.hero-bubble-2 { top: 280px; left: -30px; background: var(--white); transform: rotate(-6deg); }
 
+@media (max-width: 1100px) {
+    .hero-portrait-1 .hero-portrait-label { left: calc(100% - 40px); }
+    .hero-portrait-2 .hero-portrait-label { left: 0; }
+    .hero-portrait-3 .hero-portrait-label { right: 0; }
+}
 @media (max-width: 960px) {
-    .hero-v2 .hero-grid { grid-template-columns: 1fr; gap: 50px; }
-    .hero-portraits { height: 420px; max-width: 380px; }
+    .hero-v2 { min-height: auto; padding: 40px 0 60px; }
+    .hero-v2 .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+    .hero-portraits { height: 480px; max-width: 460px; padding-bottom: 60px; }
+    .hero-portrait-1 { width: 240px; }
+    .hero-portrait-2, .hero-portrait-3 { width: 180px; }
+    .hero-portrait-1 .hero-portrait-label { left: calc(100% - 30px); top: 40px; }
+    .hero-portrait-2 .hero-portrait-label { left: 0; bottom: -50px; }
+    .hero-portrait-3 .hero-portrait-label { right: 0; bottom: -50px; }
+}
+@media (max-width: 600px) {
+    .hero-v2 .hero-ctas .btn-primary { padding: 14px 22px; font-size: 14px; width: 100%; }
+    .hero-portraits { height: 380px; max-width: 360px; padding-bottom: 60px; }
     .hero-portrait-1 { width: 200px; }
     .hero-portrait-2, .hero-portrait-3 { width: 150px; }
-}
-@media (max-width: 480px) {
-    .hero-v2 .hero-ctas .btn-primary { padding: 14px 22px; font-size: 14px; width: 100%; }
-    .hero-portraits { height: 380px; max-width: 320px; }
-    .hero-portrait-1 { width: 170px; }
-    .hero-portrait-2, .hero-portrait-3 { width: 130px; }
+    .hero-portrait-label { padding: 8px 12px 10px; min-width: 110px; }
+    .hero-portrait-label strong { font-size: 14px; }
+    .hero-portrait-label span { font-size: 11px; }
+    .hero-portrait-label .hp-tag { font-size: 10px; }
+    .hero-portrait-1 .hero-portrait-label { left: calc(100% - 20px); top: 30px; }
+    .hero-portrait-2 .hero-portrait-label { left: 0; bottom: -45px; }
+    .hero-portrait-3 .hero-portrait-label { right: 0; bottom: -45px; }
     .hero-bubble { font-size: 18px; padding: 6px 14px; }
 }
 
@@ -1966,6 +2104,28 @@ p { margin: 0 0 1em; }
     align-items: start;
 }
 @media (max-width: 960px) { .founder-grid { grid-template-columns: 1fr; gap: 50px; } }
+
+.founder-title {
+    line-height: 1.1;
+    margin-bottom: 8px;
+}
+.founder-title .founder-name {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: inherit;
+    letter-spacing: -0.015em;
+}
+.founder-role {
+    font-family: var(--font-script);
+
+    font-style: italic;
+    font-size: 22px;
+    color: var(--lavender-500);
+    margin: 0 0 24px;
+    line-height: 1.2;
+}
 
 .founder-quote {
     background: linear-gradient(135deg, var(--yellow-soft), var(--lavender-50));
@@ -2064,6 +2224,8 @@ p { margin: 0 0 1em; }
 }
 .founder-card-label {
     font-family: var(--font-script);
+
+    font-style: italic;
     color: var(--lavender-500);
     font-size: 18px;
     margin: 0 0 4px;
@@ -2184,6 +2346,8 @@ p { margin: 0 0 1em; }
 .equipe-info { padding: 16px 18px 20px; }
 .equipe-honorific {
     font-family: var(--font-script);
+
+    font-style: italic;
     color: var(--lavender-500);
     font-size: 16px;
     line-height: 1;
@@ -2434,7 +2598,7 @@ p { margin: 0 0 1em; }
 }
 
 /* =========================================================================
-   NEWS GRID
+   NEWS GRID — IELTS-Workshop-style cards (banner header + body)
    ========================================================================= */
 .news-section { padding: 100px 0; background: var(--cream); }
 .news-grid {
@@ -2449,43 +2613,113 @@ p { margin: 0 0 1em; }
     display: flex;
     flex-direction: column;
     background: var(--white);
-    border: 2px solid var(--lavender-100);
     border-radius: var(--radius-lg);
-    padding: 24px 22px;
+    overflow: hidden;
     color: var(--ink);
-    transition: transform .25s, box-shadow .25s, border-color .25s;
-    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: transform .25s, box-shadow .25s;
 }
 .news-card:hover {
     transform: translateY(-6px);
-    border-color: var(--yellow);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
     color: var(--ink);
 }
-.news-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: var(--yellow);
+
+/* Banner header — bold designed thumbnail with text overlays */
+.news-banner {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    padding: 18px 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    margin-bottom: 16px;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    color: var(--ink);
 }
-.news-tag {
-    display: inline-block;
-    font-size: 11px;
+/* Decorative big icon in the corner */
+.news-banner-icon {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    font-size: 50px;
+    line-height: 1;
+    opacity: 0.85;
+    transition: transform .3s;
+}
+.news-card:hover .news-banner-icon { transform: rotate(-8deg) scale(1.05); }
+
+.news-banner-kicker {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.85;
+    margin-bottom: 4px;
+}
+.news-banner-headline {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: clamp(20px, 1.6vw, 26px);
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+}
+.news-banner-sub {
     font-family: var(--font-heading);
     font-weight: 700;
-    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 4px;
     letter-spacing: 0.5px;
-    color: var(--lavender-700);
-    background: var(--lavender-50);
+    opacity: 0.85;
+}
+.news-banner-tag {
+    position: absolute;
+    top: 16px;
+    left: 18px;
+    background: rgba(255,255,255,0.9);
+    color: var(--ink);
+    font-family: var(--font-heading);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
     padding: 4px 10px;
     border-radius: 999px;
-    margin-bottom: 10px;
-    align-self: flex-start;
+}
+
+/* Theme variants — each card gets a distinct designed banner */
+.news-card--yellow .news-banner {
+    background:
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.4), transparent 60%),
+        linear-gradient(135deg, var(--yellow) 0%, #F5D770 100%);
+}
+.news-card--lavender .news-banner {
+    background:
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.3), transparent 60%),
+        linear-gradient(135deg, var(--lavender-200) 0%, var(--lavender-300) 100%);
+    color: var(--ink);
+}
+.news-card--cream .news-banner {
+    background:
+        radial-gradient(circle at 70% 30%, var(--yellow-soft), transparent 70%),
+        linear-gradient(135deg, var(--cream-dark) 0%, #F5DFB5 100%);
+}
+.news-card--ink .news-banner {
+    background:
+        radial-gradient(circle at 30% 30%, var(--lavender-700), transparent 70%),
+        linear-gradient(135deg, var(--ink) 0%, var(--lavender-800) 100%);
+    color: var(--white);
+}
+.news-card--ink .news-banner-tag {
+    background: var(--yellow);
+    color: var(--ink);
+}
+
+/* Body — title + excerpt below banner */
+.news-body {
+    padding: 20px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 .news-card h3 {
     font-family: var(--font-heading);
@@ -2497,15 +2731,8 @@ p { margin: 0 0 1em; }
 .news-card p {
     font-size: 13.5px;
     color: var(--ink-soft);
-    margin: 0 0 16px;
+    margin: 0;
     line-height: 1.55;
     flex: 1;
 }
-.news-link {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    color: var(--lavender-700);
-    font-size: 14px;
-}
-.news-card:hover .news-link { color: var(--ink); }
 
