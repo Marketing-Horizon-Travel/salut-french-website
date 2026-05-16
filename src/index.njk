@@ -33,9 +33,8 @@ bodyClass: home
                 {% for q in site.hero.quickLinks %}
                     <li>
                         <a href="{{ q.url }}">
-                            <span class="ql-icon">{{ q.icon }}</span>
+                            <span class="ql-bullet" aria-hidden="true">▶</span>
                             <span class="ql-label">{{ q.label }}</span>
-                            <span class="ql-arrow" aria-hidden="true">→</span>
                         </a>
                     </li>
                 {% endfor %}

@@ -1864,15 +1864,9 @@ p { margin: 0 0 1em; }
 }
 .hero-v2 .hero-kicker {
     font-family: var(--font-script);
-
     font-style: italic;
     font-size: 14pt;
-    background: var(--yellow);
     color: var(--ink);
-    padding: 4px 18px;
-    border-radius: 999px;
-    transform: rotate(-3deg);
-    box-shadow: 0 4px 0 var(--yellow-dark);
     margin-bottom: 18px;
 }
 .hero-v2 .hero-title {
@@ -1920,36 +1914,38 @@ p { margin: 0 0 1em; }
     list-style: none;
     padding: 0;
     margin: 0;
-    display: grid;
-    gap: 10px;
     max-width: 460px;
+    counter-reset: ql-counter;
+}
+.hero-quicklinks li {
+    counter-increment: ql-counter;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
 }
 .hero-quicklinks a {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 14px 20px;
-    background: rgba(255,255,255,0.7);
-    border: 2px solid rgba(255,255,255,0.9);
-    border-radius: 999px;
+    padding: 16px 0;
     color: var(--ink);
     font-weight: 600;
-    font-size: 14.5px;
-    transition: transform .2s, background .2s, border-color .2s;
+    font-size: 15px;
+    transition: transform .2s, color .2s;
 }
-.hero-quicklinks a:hover {
-    transform: translateX(4px);
-    background: var(--white);
-    border-color: var(--yellow);
+.hero-quicklinks a:hover { transform: translateX(4px); color: var(--lavender-700); }
+.hero-quicklinks .ql-bullet {
+    color: var(--yellow);
+    font-size: 11px;
+    line-height: 1;
 }
-.hero-quicklinks .ql-icon { font-size: 20px; }
 .hero-quicklinks .ql-label { flex: 1; }
-.hero-quicklinks .ql-arrow {
-    color: var(--lavender-600);
-    font-weight: 700;
-    transition: transform .2s;
+.hero-quicklinks a::after {
+    content: counter(ql-counter, decimal-leading-zero);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--ink);
+    letter-spacing: 0.5px;
 }
-.hero-quicklinks a:hover .ql-arrow { transform: translateX(4px); color: var(--ink); }
 
 /* hero portraits — 3 circular SALUT poster cards with floating name labels */
 .hero-portraits {
