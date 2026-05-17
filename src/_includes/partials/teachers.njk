@@ -26,7 +26,7 @@
 
                         {% if t.education and t.education.length %}
                             <div class="teacher-block">
-                                <p class="teacher-block-label">🎓 Học vấn</p>
+                                <p class="teacher-block-label">{% icon "graduation-cap", 16 %} Học vấn</p>
                                 <ul>
                                     {% for line in t.education %}<li>{{ line }}</li>{% endfor %}
                                 </ul>
@@ -35,7 +35,7 @@
 
                         {% if t.experience and t.experience.length %}
                             <div class="teacher-block">
-                                <p class="teacher-block-label">💼 Kinh nghiệm</p>
+                                <p class="teacher-block-label">{% icon "briefcase", 16 %} Kinh nghiệm</p>
                                 <ul>
                                     {% for line in t.experience %}<li>{{ line }}</li>{% endfor %}
                                 </ul>
@@ -44,7 +44,7 @@
 
                         {% if t.achievements and t.achievements.length %}
                             <div class="teacher-block">
-                                <p class="teacher-block-label">🏆 Thành tích</p>
+                                <p class="teacher-block-label">{% icon "trophy", 16 %} Thành tích</p>
                                 <ul>
                                     {% for line in t.achievements %}<li>{{ line }}</li>{% endfor %}
                                 </ul>

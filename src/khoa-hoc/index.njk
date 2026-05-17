@@ -19,13 +19,13 @@ bodyClass: courses-archive
         <div class="course-grid">
             {% for c in courses %}
                 <article class="course-card">
-                    <div class="course-icon">{{ c.icon }}</div>
+                    <div class="course-icon">{% icon c.icon, 32 %}</div>
                     <h2 class="course-title"><a href="/khoa-hoc/{{ c.slug }}/">{{ c.title }}</a></h2>
                     <p class="course-excerpt">{{ c.excerpt }}</p>
                     <ul class="course-meta">
-                        <li>⏱ {{ c.duration }}</li>
-                        <li>📊 {{ c.level }}</li>
-                        <li>🎯 {{ c.goal }}</li>
+                        <li>{% icon "clock", 14 %} {{ c.duration }}</li>
+                        <li>{% icon "bar-chart", 14 %} {{ c.level }}</li>
+                        <li>{% icon "target", 14 %} {{ c.goal }}</li>
                     </ul>
                     <div class="course-footer">
                         <span class="course-price">{{ c.price }}</span>

@@ -28,7 +28,7 @@ bodyClass: contact-page
 
             <ul class="contact-list">
                 <li>
-                    <span class="ci-icon">📍</span>
+                    <span class="ci-icon">{% icon "map-pin", 20 %}</span>
                     <div>
                         <strong>Địa chỉ</strong>
                         <p>{{ site.address }}</p>
@@ -37,25 +37,25 @@ bodyClass: contact-page
                 </li>
                 {% if site.phone %}
                 <li>
-                    <span class="ci-icon">📞</span>
+                    <span class="ci-icon">{% icon "phone", 20 %}</span>
                     <div>
                         <strong>Hotline</strong>
                         <p>
                             <a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a>
-                            {% if site.phoneFr %}<br><small>🇫🇷 Pháp: {{ site.phoneFr }}</small>{% endif %}
+                            {% if site.phoneFr %}<br><small>Pháp: {{ site.phoneFr }}</small>{% endif %}
                         </p>
                     </div>
                 </li>
                 {% endif %}
                 <li>
-                    <span class="ci-icon">✉️</span>
+                    <span class="ci-icon">{% icon "mail", 20 %}</span>
                     <div>
                         <strong>Email</strong>
                         <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
                     </div>
                 </li>
                 <li>
-                    <span class="ci-icon">💬</span>
+                    <span class="ci-icon">{% icon "message-circle", 20 %}</span>
                     <div>
                         <strong>Facebook Messenger</strong>
                         <p><a href="{{ site.social.facebook }}" target="_blank" rel="noopener">Salut - Chia sẻ Pháp ngữ</a></p>

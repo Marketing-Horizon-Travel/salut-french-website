@@ -15,7 +15,7 @@ bodyClass: course-detail
     <div class="container grid-2">
         <div class="course-hero-text">
             <p class="page-kicker">Khoá học</p>
-            <h1 class="page-title">{{ course.icon }} {{ course.title }}</h1>
+            <h1 class="page-title"><span class="title-icon">{% icon course.icon, 32 %}</span> {{ course.title }}</h1>
             <p class="page-lede">{{ course.excerpt }}</p>
             <ul class="course-stats">
                 <li><strong>{{ course.duration }}</strong><span>Thời lượng</span></li>
@@ -30,7 +30,7 @@ bodyClass: course-detail
         </div>
         <div class="course-hero-image">
             <div class="course-hero-placeholder">
-                <span style="font-size:120px">{{ course.icon }}</span>
+                <span class="course-hero-icon">{% icon course.icon, 120 %}</span>
             </div>
         </div>
     </div>
@@ -44,7 +44,7 @@ bodyClass: course-detail
         <h2>Mục tiêu đầu ra</h2>
         <ul class="checklist">
             {% for outcome in course.outcomes %}
-                <li>✅ {{ outcome }}</li>
+                <li>{% icon "circle-check", 18 %} {{ outcome }}</li>
             {% endfor %}
         </ul>
 
@@ -86,12 +86,12 @@ bodyClass: course-detail
             {% set count = 0 %}
             {% for c in courses %}{% if c.slug != course.slug and count < 3 %}{% set count = count + 1 %}
                 <article class="course-card">
-                    <div class="course-icon">{{ c.icon }}</div>
+                    <div class="course-icon">{% icon c.icon, 32 %}</div>
                     <h3 class="course-title"><a href="/khoa-hoc/{{ c.slug }}/">{{ c.title }}</a></h3>
                     <p class="course-excerpt">{{ c.excerpt }}</p>
                     <ul class="course-meta">
-                        <li>⏱ {{ c.duration }}</li>
-                        <li>🎯 {{ c.goal }}</li>
+                        <li>{% icon "clock", 14 %} {{ c.duration }}</li>
+                        <li>{% icon "target", 14 %} {{ c.goal }}</li>
                     </ul>
                     <div class="course-footer">
                         <span class="course-price">{{ c.price }}</span>

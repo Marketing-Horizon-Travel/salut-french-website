@@ -19,7 +19,7 @@ bodyClass: blog-archive
         <div class="post-grid">
             {% for p in posts %}
                 <article class="post-card">
-                    <a href="/blog/{{ p.slug }}/" class="post-thumb post-thumb-placeholder"><span>{{ p.emoji }}</span></a>
+                    <a href="/blog/{{ p.slug }}/" class="post-thumb post-thumb-placeholder"><span>{% icon p.emoji, 56 %}</span></a>
                     <div class="post-body">
                         <div class="post-meta">{{ p.date | dateVi }} · {{ p.category }}</div>
                         <h2 class="post-title"><a href="/blog/{{ p.slug }}/">{{ p.title }}</a></h2>

@@ -11,7 +11,52 @@
         initLeadForm();
         initRevealOnScroll();
         initRoadmapTabs();
+        initTestimonialCarousel();
     });
+
+    /* Testimonial carousel (homepage section 04b) */
+    function initTestimonialCarousel() {
+        document.querySelectorAll('[data-testimonial-carousel]').forEach(function (root) {
+            var track = root.querySelector('.testimonial-track');
+            var slides = root.querySelectorAll('.testimonial-slide');
+            var dots = root.querySelectorAll('.testimonial-dot');
+            var prev = root.querySelector('.testimonial-prev');
+            var next = root.querySelector('.testimonial-next');
+            if (!track || slides.length < 2) {
+                if (prev) prev.style.display = 'none';
+                if (next) next.style.display = 'none';
+                if (root.querySelector('.testimonial-dots')) root.querySelector('.testimonial-dots').style.display = 'none';
+                return;
+            }
+            var total = slides.length;
+            var current = 0;
+            var autoTimer = null;
+
+            function go(i) {
+                current = (i + total) % total;
+                track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                dots.forEach(function (d, idx) {
+                    d.classList.toggle('is-active', idx === current);
+                });
+            }
+            function nextSlide() { go(current + 1); }
+            function prevSlide() { go(current - 1); }
+            function resetAuto() {
+                if (autoTimer) clearInterval(autoTimer);
+                autoTimer = setInterval(nextSlide, 7000);
+            }
+
+            if (prev) prev.addEventListener('click', function () { prevSlide(); resetAuto(); });
+            if (next) next.addEventListener('click', function () { nextSlide(); resetAuto(); });
+            dots.forEach(function (d) {
+                d.addEventListener('click', function () { go(parseInt(d.getAttribute('data-slide'), 10) || 0); resetAuto(); });
+            });
+            root.addEventListener('mouseenter', function () { if (autoTimer) clearInterval(autoTimer); });
+            root.addEventListener('mouseleave', resetAuto);
+
+            resetAuto();
+        });
+    }
 
     /* Roadmap tabs (homepage section 04) */
     function initRoadmapTabs() {
