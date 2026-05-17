@@ -21,8 +21,7 @@ bodyClass: home
     <div class="container hero-grid">
         <div class="hero-left">
             <span class="hero-kicker">Bonjour à tous!</span>
-            <h1 class="hero-title">{{ site.hero.title }}</h1>
-            <p class="hero-slogan"><span class="handwritten">{{ site.hero.slogan }}</span></p>
+            <h1 class="hero-title">{{ site.hero.slogan }}</h1>
             <p class="hero-lede">{{ site.hero.lede }}</p>
 
             <div class="hero-ctas">
@@ -82,9 +81,8 @@ bodyClass: home
             <div class="values-grid">
                 {% for v in site.founder.values %}
                     <div class="value-card">
-                        <div class="value-icon">{{ v.icon }}</div>
+                        <div class="value-icon">{% icon v.icon, 20 %}</div>
                         <h3>{{ v.title }}</h3>
-                        <p>{{ v.desc }}</p>
                     </div>
                 {% endfor %}
             </div>
@@ -120,14 +118,14 @@ bodyClass: home
 
         <div class="equipe-categories">
             <div class="equipe-cat">
-                <div class="equipe-cat-icon">🇻🇳</div>
+                <div class="equipe-cat-icon flag-vn" aria-label="Vietnam"><svg viewBox="0 0 24 16" width="32" height="22"><rect width="24" height="16" fill="#DA251D"/><path d="M12 3.5l1.62 4.99h5.25l-4.25 3.08 1.62 4.99L12 13.49l-4.25 3.07 1.62-4.99-4.25-3.08h5.25z" fill="#FFFF00"/></svg></div>
                 <div>
                     <h3>Giảng viên Việt Nam</h3>
                     <p>Các thầy cô từ Khoa Pháp <strong>(Đại học)</strong> & <strong>THPT chuyên</strong> — nắm vững tiêu chí chấm điểm khắt khe của DELF/TCF.</p>
                 </div>
             </div>
             <div class="equipe-cat">
-                <div class="equipe-cat-icon">🇫🇷</div>
+                <div class="equipe-cat-icon flag-fr" aria-label="France"><svg viewBox="0 0 24 16" width="32" height="22"><rect width="8" height="16" fill="#0055A4"/><rect x="8" width="8" height="16" fill="#FFFFFF"/><rect x="16" width="8" height="16" fill="#EF4135"/></svg></div>
                 <div>
                     <h3>Giảng viên bản xứ <em>(Professeurs Natifs)</em></h3>
                     <p>Chuẩn hoá <strong>phát âm, ngữ điệu</strong> và mang đến những góc nhìn thực tế về <strong>văn hoá Pháp</strong>.</p>
@@ -163,7 +161,6 @@ bodyClass: home
         <div class="section-head">
             <p class="section-kicker">Danh mục khoá học</p>
             <h2 class="section-title">Lộ trình <span class="accent">chinh phục</span> A1 → B2</h2>
-            <p class="section-lede">Online 100% · Tương tác trực tiếp · Live Class — không học qua video quay sẵn.</p>
         </div>
 
         <div class="roadmap" data-roadmap>
@@ -173,7 +170,7 @@ bodyClass: home
                             role="tab"
                             aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
                             data-target="rm-{{ r.level }}">
-                        <span class="rt-icon">{{ r.icon }}</span>
+                        <span class="rt-icon">{% icon r.icon, 24 %}</span>
                         <span class="rt-level">{{ r.level }}</span>
                     </button>
                 {% endfor %}
@@ -183,16 +180,16 @@ bodyClass: home
                 {% for r in site.courseRoadmap %}
                     <div class="roadmap-panel{% if loop.first %} is-active{% endif %}" id="rm-{{ r.level }}" role="tabpanel">
                         <div class="rp-header">
-                            <span class="rp-icon">{{ r.icon }}</span>
+                            <span class="rp-icon">{% icon r.icon, 36 %}</span>
                             <div>
                                 <h3>{{ r.title }}</h3>
                                 <p>{{ r.goal }}</p>
                             </div>
                         </div>
                         <dl class="rp-stats">
-                            <div><dt>⏱ Thời lượng</dt><dd>{{ r.duration }}</dd></div>
-                            <div><dt>📚 Tổng giờ</dt><dd>{{ r.hours }}</dd></div>
-                            <div><dt>🎯 Mục tiêu</dt><dd>Đạt chuẩn {{ r.level }} CEFR</dd></div>
+                            <div><dt>{% icon "clock", 16 %} Thời lượng</dt><dd>{{ r.duration }}</dd></div>
+                            <div><dt>{% icon "book-open", 16 %} Tổng giờ</dt><dd>{{ r.hours }}</dd></div>
+                            <div><dt>{% icon "target", 16 %} Mục tiêu</dt><dd>Đạt chuẩn {{ r.level }} CEFR</dd></div>
                         </dl>
                         <a href="/khoa-hoc/{{ r.level | lower }}/" class="btn btn-primary">Xem chi tiết khoá {{ r.level }} →</a>
                     </div>
@@ -204,7 +201,7 @@ bodyClass: home
             <p class="supplements-label">Lớp bổ trợ:</p>
             <ul>
                 {% for s in site.supplementCourses %}
-                    <li><span>{{ s.icon }}</span> {{ s.title }}</li>
+                    <li><span class="suppl-icon">{% icon s.icon, 18 %}</span> {{ s.title }}</li>
                 {% endfor %}
             </ul>
         </div>
@@ -222,20 +219,37 @@ bodyClass: home
             <p class="section-lede">Du học, định cư, sự nghiệp mới — những giấc mơ Pháp ngữ đã thành hiện thực cùng Salut.</p>
         </div>
 
-        <div class="results-grid">
-            {% for t in testimonials | limit(6) %}
-                <figure class="result-card">
-                    <span class="result-score">🏆 {{ t.score }}</span>
-                    <blockquote>« {{ t.quote }} »</blockquote>
-                    <figcaption>
-                        <div class="result-avatar">{{ t.name | initial }}</div>
-                        <div>
-                            <strong>{{ t.name }}</strong>
-                            <span>{{ t.role }}</span>
-                        </div>
-                    </figcaption>
-                </figure>
-            {% endfor %}
+        <div class="testimonial-carousel" data-testimonial-carousel>
+            <div class="testimonial-viewport">
+                <div class="testimonial-track">
+                    {% for t in testimonials | limit(6) %}
+                        <figure class="testimonial-slide">
+                            <div class="testimonial-photo">
+                                {% if t.photo %}
+                                    <img src="{{ t.photo }}" alt="{{ t.name }}" loading="lazy" />
+                                {% else %}
+                                    <span class="testimonial-avatar-lg" aria-hidden="true">{{ t.name | initial }}</span>
+                                {% endif %}
+                            </div>
+                            <div class="testimonial-content">
+                                <span class="result-score">{% icon "trophy", 16 %} {{ t.score }}</span>
+                                <blockquote>« {{ t.quote }} »</blockquote>
+                                <figcaption>
+                                    <strong>{{ t.name }}</strong>
+                                    <span>{{ t.role }}</span>
+                                </figcaption>
+                            </div>
+                        </figure>
+                    {% endfor %}
+                </div>
+            </div>
+            <button class="testimonial-nav testimonial-prev" type="button" aria-label="Trước">‹</button>
+            <button class="testimonial-nav testimonial-next" type="button" aria-label="Sau">›</button>
+            <div class="testimonial-dots" role="tablist">
+                {% for t in testimonials | limit(6) %}
+                    <button type="button" class="testimonial-dot{% if loop.first %} is-active{% endif %}" data-slide="{{ loop.index0 }}" aria-label="Slide {{ loop.index }}"></button>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
@@ -254,7 +268,7 @@ bodyClass: home
             {% for n in site.homeNews %}
                 <a href="{{ n.url }}" class="news-card news-card--{{ n.theme }}">
                     <div class="news-banner">
-                        <span class="news-banner-icon" aria-hidden="true">{{ n.icon }}</span>
+                        <span class="news-banner-icon" aria-hidden="true">{% icon n.icon, 28 %}</span>
                         <span class="news-banner-kicker">{{ n.bannerKicker }}</span>
                         <span class="news-banner-headline">{{ n.bannerHeadline }}</span>
                         <span class="news-banner-sub">{{ n.bannerSub }}</span>

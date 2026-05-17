@@ -37,9 +37,9 @@ bodyClass: about-page
             <p class="section-lede">Salut hướng đến việc xoá bỏ khoảng cách giữa người học và tiếng Pháp thông qua 3 trụ cột:</p>
         </div>
         <div class="why-grid">
-            <div class="why-card"><div class="why-icon">🎯</div><h3>Cá nhân hoá trải nghiệm</h3><p>Xây dựng lộ trình học tối ưu, phù hợp với năng lực và mục tiêu của từng người học.</p></div>
-            <div class="why-card"><div class="why-icon">💡</div><h3>Phương pháp hiện đại</h3><p>Kết hợp kiến thức học thuật vững chắc với tính ứng dụng cao, giúp người học tự tin giao tiếp trong môi trường đa văn hóa.</p></div>
-            <div class="why-card"><div class="why-icon">🤝</div><h3>Kiến tạo cộng đồng</h3><p>Tạo ra không gian chia sẻ Pháp ngữ, nơi mọi người cùng kết nối, học hỏi và truyền cảm hứng cho nhau.</p></div>
+            <div class="why-card"><div class="why-icon">{% icon "target", 36 %}</div><h3>Cá nhân hoá trải nghiệm</h3><p>Xây dựng lộ trình học tối ưu, phù hợp với năng lực và mục tiêu của từng người học.</p></div>
+            <div class="why-card"><div class="why-icon">{% icon "lightbulb", 36 %}</div><h3>Phương pháp hiện đại</h3><p>Kết hợp kiến thức học thuật vững chắc với tính ứng dụng cao, giúp người học tự tin giao tiếp trong môi trường đa văn hóa.</p></div>
+            <div class="why-card"><div class="why-icon">{% icon "handshake", 36 %}</div><h3>Kiến tạo cộng đồng</h3><p>Tạo ra không gian chia sẻ Pháp ngữ, nơi mọi người cùng kết nối, học hỏi và truyền cảm hứng cho nhau.</p></div>
         </div>
     </div>
 </section>
@@ -52,7 +52,7 @@ bodyClass: about-page
         </div>
         <div class="why-grid" style="grid-template-columns:repeat(3,1fr)">
             {% for v in site.values %}
-                <div class="why-card"><div class="why-icon">{{ v.icon }}</div><h3>{{ v.title }}</h3><p>{{ v.desc }}</p></div>
+                <div class="why-card"><div class="why-icon">{% icon v.icon, 36 %}</div><h3>{{ v.title }}</h3><p>{{ v.desc }}</p></div>
             {% endfor %}
         </div>
     </div>
@@ -71,7 +71,7 @@ bodyClass: about-page
         <div class="course-grid">
             {% for g in site.guarantees %}
                 <article class="course-card">
-                    <div class="course-icon">{{ g.icon }}</div>
+                    <div class="course-icon">{% icon g.icon, 32 %}</div>
                     <h3 class="course-title">{{ g.title }}</h3>
                     <p class="course-excerpt">{{ g.desc }}</p>
                 </article>
@@ -87,9 +87,9 @@ bodyClass: about-page
             <h2 class="section-title"><span class="accent">Kết quả</span> đo lường được</h2>
         </div>
         <ul class="checklist" style="max-width:860px;margin:0 auto">
-            <li>✅ Làm chủ kiến thức theo Khung Tham chiếu Ngôn ngữ Châu Âu (CEFR)</li>
-            <li>✅ Tự tin tham gia các kỳ thi chứng chỉ DELF/TCF với tỷ lệ đạt cao</li>
-            <li>✅ Hỗ trợ cài đặt và hướng dẫn sử dụng các công cụ học tập trực tuyến chuyên biệt</li>
+            <li>{% icon "circle-check", 18 %}Làm chủ kiến thức theo Khung Tham chiếu Ngôn ngữ Châu Âu (CEFR)</li>
+            <li>{% icon "circle-check", 18 %}Tự tin tham gia các kỳ thi chứng chỉ DELF/TCF với tỷ lệ đạt cao</li>
+            <li>{% icon "circle-check", 18 %}Hỗ trợ cài đặt và hướng dẫn sử dụng các công cụ học tập trực tuyến chuyên biệt</li>
         </ul>
     </div>
 </section>

@@ -1,7 +1,7 @@
 <footer class="site-footer">
     <div class="container footer-grid">
         <div class="footer-col">
-            <div class="footer-brand"><img src="/assets/images/logo.png" alt="{{ site.name }}" class="footer-logo" width="180" height="64" /></div>
+            <div class="footer-brand"><img src="/assets/images/logo-white.png" alt="{{ site.name }}" class="footer-logo" width="180" height="64" /></div>
             <p class="footer-tag">{{ site.tagline }} · {{ site.city }}</p>
             <p class="footer-desc">Trung tâm tiếng Pháp dành cho người bắt đầu từ con số 0 đến luyện thi TCF, DELF, TEF. Học cùng đội ngũ giảng viên trẻ, tận tâm, phương pháp vui và hiệu quả.</p>
             <div class="socials">
@@ -26,10 +26,10 @@
         <div class="footer-col">
             <h4>Liên hệ</h4>
             <ul class="footer-contact">
-                {% if site.phone %}<li><span class="fc-icon">📞</span><a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a><span class="fc-tag">VN</span></li>{% endif %}
-                {% if site.phoneFr %}<li><span class="fc-icon">📞</span><a href="tel:{{ site.phoneFr | replace(' ', '') }}">{{ site.phoneFr }}</a><span class="fc-tag">FR</span></li>{% endif %}
-                {% if site.website %}<li><span class="fc-icon">🌐</span><a href="https://{{ site.website }}" target="_blank" rel="noopener">{{ site.website }}</a></li>{% endif %}
-                <li><span class="fc-icon">✉️</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                {% if site.phone %}<li><span class="fc-icon">{% icon "phone", 16 %}</span><a href="tel:{{ site.phone | replace(' ', '') }}">{{ site.phone }}</a><span class="fc-tag">VN</span></li>{% endif %}
+                {% if site.phoneFr %}<li><span class="fc-icon">{% icon "phone", 16 %}</span><a href="tel:{{ site.phoneFr | replace(' ', '') }}">{{ site.phoneFr }}</a><span class="fc-tag">FR</span></li>{% endif %}
+                {% if site.website %}<li><span class="fc-icon">{% icon "globe", 16 %}</span><a href="https://{{ site.website }}" target="_blank" rel="noopener">{{ site.website }}</a></li>{% endif %}
+                <li><span class="fc-icon">{% icon "mail", 16 %}</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             </ul>
 
             {% if site.handle %}

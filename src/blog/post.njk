@@ -24,8 +24,8 @@ bodyClass: blog-post
     </header>
 
     <div class="container single-thumb" style="max-width:800px">
-        <div class="post-thumb-placeholder" style="aspect-ratio:16/9;font-size:120px;border-radius:28px">
-            <span>{{ post.emoji }}</span>
+        <div class="post-thumb-placeholder" style="aspect-ratio:16/9;border-radius:28px">
+            <span>{% icon post.emoji, 96 %}</span>
         </div>
     </div>
 
@@ -44,7 +44,7 @@ bodyClass: blog-post
             {% set count = 0 %}
             {% for p in posts %}{% if p.slug != post.slug and count < 3 %}{% set count = count + 1 %}
                 <article class="post-card">
-                    <a href="/blog/{{ p.slug }}/" class="post-thumb post-thumb-placeholder"><span>{{ p.emoji }}</span></a>
+                    <a href="/blog/{{ p.slug }}/" class="post-thumb post-thumb-placeholder"><span>{% icon p.emoji, 56 %}</span></a>
                     <div class="post-body">
                         <div class="post-meta">{{ p.date | dateVi }} · {{ p.category }}</div>
                         <h3 class="post-title"><a href="/blog/{{ p.slug }}/">{{ p.title }}</a></h3>
