@@ -93,14 +93,6 @@ bodyClass: home
                 <img src="{{ site.founder.photo }}" alt="{{ site.founder.name }}" loading="lazy" width="500" height="600">
                 <span class="founder-badge">DALF C1 · 8+ năm KN</span>
             </div>
-            <div class="founder-card">
-                <p class="founder-card-label">Portrait de Founder</p>
-                <h3>{{ site.founder.name }}</h3>
-                <p class="founder-card-title">{{ site.founder.title }}</p>
-                <ul class="founder-credentials">
-                    {% for c in site.founder.credentials %}<li>{{ c }}</li>{% endfor %}
-                </ul>
-            </div>
         </aside>
     </div>
 </section>
@@ -163,38 +155,22 @@ bodyClass: home
             <h2 class="section-title">Lộ trình <span class="accent">chinh phục</span> A1 → B2</h2>
         </div>
 
-        <div class="roadmap" data-roadmap>
-            <div class="roadmap-tabs" role="tablist">
-                {% for r in site.courseRoadmap %}
-                    <button class="roadmap-tab{% if loop.first %} is-active{% endif %}"
-                            role="tab"
-                            aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
-                            data-target="rm-{{ r.level }}">
-                        <span class="rt-icon">{% icon r.icon, 24 %}</span>
-                        <span class="rt-level">{{ r.level }}</span>
-                    </button>
-                {% endfor %}
-            </div>
-
-            <div class="roadmap-panels">
-                {% for r in site.courseRoadmap %}
-                    <div class="roadmap-panel{% if loop.first %} is-active{% endif %}" id="rm-{{ r.level }}" role="tabpanel">
-                        <div class="rp-header">
-                            <span class="rp-icon">{% icon r.icon, 36 %}</span>
-                            <div>
-                                <h3>{{ r.title }}</h3>
-                                <p>{{ r.goal }}</p>
-                            </div>
-                        </div>
-                        <dl class="rp-stats">
-                            <div><dt>{% icon "clock", 16 %} Thời lượng</dt><dd>{{ r.duration }}</dd></div>
-                            <div><dt>{% icon "book-open", 16 %} Tổng giờ</dt><dd>{{ r.hours }}</dd></div>
-                            <div><dt>{% icon "target", 16 %} Mục tiêu</dt><dd>Đạt chuẩn {{ r.level }} CEFR</dd></div>
-                        </dl>
-                        <a href="/khoa-hoc/{{ r.level | lower }}/" class="btn btn-primary">Xem chi tiết khoá {{ r.level }} →</a>
+        <div class="course-levels">
+            {% for r in site.courseRoadmap %}
+                <a href="/khoa-hoc/{{ r.level | lower }}/" class="level-card">
+                    <div class="level-card-head">
+                        <span class="level-icon">{% icon r.icon, 26 %}</span>
+                        <span class="level-badge">{{ r.level }}</span>
                     </div>
-                {% endfor %}
-            </div>
+                    <h3 class="level-title">{{ r.title }}</h3>
+                    <p class="level-goal">{{ r.goal }}</p>
+                    <div class="level-stats">
+                        <span class="level-stat">{% icon "clock", 13 %} {{ r.duration }}</span>
+                        <span class="level-stat">{% icon "book-open", 13 %} {{ r.hours }}</span>
+                    </div>
+                    <span class="level-link">Xem chi tiết →</span>
+                </a>
+            {% endfor %}
         </div>
 
         <div class="supplements">
