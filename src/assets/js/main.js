@@ -98,17 +98,39 @@
         });
     }
 
-    /* Shrink/color-change header on scroll */
+    /* Shrink/color-change header on scroll + hide on scroll-down / show on scroll-up */
     function initHeaderScroll() {
         var header = document.getElementById('site-header');
         if (!header) return;
         var scrolled = false;
+        var hidden = false;
+        var lastY = window.scrollY;
+        var threshold = 80; // px before we start the hide/show behavior
         window.addEventListener('scroll', function () {
-            var isScrolled = window.scrollY > 10;
+            var y = window.scrollY;
+
+            // color/shrink state at the very top
+            var isScrolled = y > 10;
             if (isScrolled !== scrolled) {
                 scrolled = isScrolled;
                 header.classList.toggle('is-scrolled', scrolled);
             }
+
+            // hide on scroll-down, show on scroll-up (after threshold)
+            if (y > threshold) {
+                var delta = y - lastY;
+                if (delta > 4 && !hidden) {
+                    hidden = true;
+                    header.classList.add('is-hidden');
+                } else if (delta < -4 && hidden) {
+                    hidden = false;
+                    header.classList.remove('is-hidden');
+                }
+            } else if (hidden) {
+                hidden = false;
+                header.classList.remove('is-hidden');
+            }
+            lastY = y;
         }, { passive: true });
     }
 

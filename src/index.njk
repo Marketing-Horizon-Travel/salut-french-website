@@ -158,10 +158,6 @@ bodyClass: home
         <div class="course-levels">
             {% for r in site.courseRoadmap %}
                 <a href="/khoa-hoc/{{ r.level | lower }}/" class="level-card">
-                    <div class="level-card-head">
-                        <span class="level-icon">{% icon r.icon, 26 %}</span>
-                        <span class="level-badge">{{ r.level }}</span>
-                    </div>
                     <h3 class="level-title">{{ r.title }}</h3>
                     <p class="level-goal">{{ r.goal }}</p>
                     <div class="level-stats">

@@ -158,7 +158,10 @@ p { margin: 0 0 1em; }
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
+    transition: transform .3s ease;
+    will-change: transform;
 }
+.site-header.is-hidden { transform: translateY(-100%); }
 .header-inner {
     display: flex;
     align-items: center;
@@ -2427,7 +2430,7 @@ p { margin: 0 0 1em; }
 @media (max-width: 520px) { .course-levels { grid-template-columns: 1fr; } }
 
 .level-card {
-    background: var(--white);
+    background: var(--lavender-50);
     border: 2px solid var(--lavender-100);
     border-radius: var(--radius-md);
     padding: 22px 20px;
@@ -2435,50 +2438,31 @@ p { margin: 0 0 1em; }
     flex-direction: column;
     gap: 10px;
     color: var(--ink);
-    transition: transform .2s, border-color .2s, box-shadow .2s;
+    transition: transform .2s, border-color .2s, box-shadow .2s, background .2s;
     text-decoration: none;
 }
 .level-card:hover {
     transform: translateY(-4px);
     border-color: var(--yellow);
+    background: var(--lavender-100);
     box-shadow: var(--shadow-md);
     color: var(--ink);
 }
-.level-card-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 4px;
-}
-.level-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: var(--yellow-soft);
-    color: var(--ink);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-.level-badge {
-    background: var(--lavender-100);
+.level-title {
+    align-self: flex-start;
+    background: var(--white);
     color: var(--lavender-700);
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 13px;
-    padding: 4px 12px;
+    font-size: 15px;
+    padding: 6px 16px;
     border-radius: 999px;
-    letter-spacing: 0.5px;
-}
-.level-card:hover .level-badge { background: var(--yellow); color: var(--ink); }
-
-.level-title {
-    font-family: var(--font-heading);
-    font-size: 17px;
     margin: 0;
-    color: var(--ink);
-    line-height: 1.25;
+    line-height: 1.2;
+    letter-spacing: 0.3px;
+    transition: background .2s, color .2s;
 }
+.level-card:hover .level-title { background: var(--yellow); color: var(--ink); }
 .level-goal {
     font-size: 13.5px;
     color: var(--ink-soft);
@@ -2495,7 +2479,7 @@ p { margin: 0 0 1em; }
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    background: var(--lavender-50);
+    background: var(--white);
     color: var(--ink-soft);
     font-size: 11.5px;
     padding: 4px 9px;
