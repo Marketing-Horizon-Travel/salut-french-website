@@ -38,6 +38,11 @@
     "title": "SALUT — Chia sẻ Pháp ngữ",
     "slogan": "Chất lượng là kim chỉ nam",
     "lede": "Trung tâm tiếng Pháp 100% online — đồng hành cùng bạn từ A1 đến B2, luyện thi DELF/TCF/TEF với đội ngũ giảng viên C1+ và bản ngữ.",
+    "stats": [
+      { "value": "88,75%", "label": "Tỷ lệ đỗ DELF / DALF / TCF" },
+      { "value": "72,5", "label": "DALF C1 — Điểm cao nhất" },
+      { "value": "+4 000", "label": "Học viên đã theo học" }
+    ],
     "ctaPrimary": { "label": "Nói tiếng Pháp cùng SALUT!", "url": "/lien-he/" },
     "quickLinks": [
       { "icon": "clipboard-edit", "label": "Kiểm tra trình độ miễn phí", "url": "/lien-he/" },

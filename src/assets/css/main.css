@@ -45,10 +45,10 @@
 
     /* Typography
        Body  → Inter (UI text, paragraphs, forms, lists)
-       Heading → Bricolage Grotesque (h1–h6, brand, labels, badges)
+       Heading → Montserrat (h1–h6, brand, labels, badges)
        Script → Dancing Script (handwritten emphasis points) */
     --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    --font-heading: 'Bricolage Grotesque', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     /* "Script" / accent — readable italic Inter instead of cursive (better diacritics support, easier to read) */
     --font-script: var(--font-body);
     --font-logo: var(--font-heading);
@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.15;
     letter-spacing: -0.01em;
     margin: 0 0 .6em;
-    font-optical-sizing: auto; /* Bricolage Grotesque is variable with optical sizing */
+    font-optical-sizing: auto;
 }
 
 p { margin: 0 0 1em; }
@@ -701,18 +701,20 @@ p { margin: 0 0 1em; }
 .why-card:nth-child(4) { background: #FFE5EC; }
 .why-card:nth-child(4):hover { background: var(--coral); }
 .why-icon {
-    margin-bottom: 16px;
-    color: var(--ink);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 56px;
     height: 56px;
     border-radius: 16px;
-    background: var(--yellow-soft);
-    display: inline-block;
+    background: var(--white);
+    color: var(--ink);
+    margin: 0 auto 16px;
     animation: bounce 3s ease-in-out infinite;
 }
+.why-icon svg { display: block; }
+.why-card:nth-child(2) .why-icon { background: var(--white); }
+.why-card:nth-child(4) .why-icon { background: var(--white); }
 .why-card:nth-child(2) .why-icon { animation-delay: .5s; }
 .why-card:nth-child(3) .why-icon { animation-delay: 1s; }
 .why-card:nth-child(4) .why-icon { animation-delay: 1.5s; }
@@ -1458,6 +1460,15 @@ p { margin: 0 0 1em; }
     border-radius: var(--radius-md);
     font-size: 15px;
     border-left: 3px solid var(--yellow);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+}
+.checklist li svg {
+    color: var(--lavender-600);
+    flex-shrink: 0;
+    margin-top: 3px;
 }
 
 /* Team cards on About page */
@@ -1910,6 +1921,37 @@ p { margin: 0 0 1em; }
     color: var(--ink);
     max-width: 520px;
     margin-bottom: 28px;
+}
+
+.hero-stats {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 16px 28px;
+    max-width: 480px;
+}
+@media (max-width: 540px) {
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+}
+.hero-stat { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hero-stat strong {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: clamp(20px, 2.2vw, 26px);
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+.hero-stat span {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    line-height: 1.35;
+    font-weight: 600;
 }
 .hero-v2 .hero-ctas { margin-bottom: 28px; }
 .hero-v2 .hero-ctas .btn-primary {

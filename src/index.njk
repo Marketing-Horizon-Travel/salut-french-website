@@ -22,7 +22,14 @@ bodyClass: home
         <div class="hero-left">
             <span class="hero-kicker">Bonjour à tous!</span>
             <h1 class="hero-title">{{ site.hero.slogan }}</h1>
-            <p class="hero-lede">{{ site.hero.lede }}</p>
+            <ul class="hero-stats">
+                {% for s in site.hero.stats %}
+                    <li class="hero-stat">
+                        <strong>{{ s.value }}</strong>
+                        <span>{{ s.label }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
 
             <div class="hero-ctas">
                 <a href="{{ site.hero.ctaPrimary.url }}" class="btn btn-primary btn-lg">{{ site.hero.ctaPrimary.label }}</a>
