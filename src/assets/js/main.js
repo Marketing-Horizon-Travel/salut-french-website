@@ -12,7 +12,84 @@
         initRevealOnScroll();
         initRoadmapTabs();
         initTestimonialCarousel();
+        initStatCountUp();
     });
+
+    /* Count-up animation for hero stat numbers. Parses each target string
+       ("88,75%", "72,5", "+4 000") to preserve prefix/suffix, decimals,
+       and thousand-space formatting; triggers once on viewport entry. */
+    function initStatCountUp() {
+        var nodes = document.querySelectorAll('.hero-stat strong');
+        if (!nodes.length) return;
+
+        function parse(text) {
+            var m = text.match(/^([+\-]?)([\d.,\s]+)(.*)$/);
+            if (!m) return null;
+            var prefix = m[1];
+            var numStr = m[2].trim();
+            var suffix = m[3] || '';
+            var hasDecimal = numStr.indexOf(',') !== -1;
+            var hasSpace = numStr.indexOf(' ') !== -1;
+            var decimals = hasDecimal ? numStr.split(',')[1].length : 0;
+            var numeric = parseFloat(numStr.replace(/\s/g, '').replace(',', '.'));
+            return { prefix: prefix, suffix: suffix, numeric: numeric, decimals: decimals, hasSpace: hasSpace };
+        }
+
+        function format(value, info) {
+            var out;
+            if (info.decimals > 0) {
+                out = value.toFixed(info.decimals).replace('.', ',');
+            } else if (info.hasSpace) {
+                out = Math.round(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+            } else {
+                out = Math.round(value).toString();
+            }
+            return info.prefix + out + info.suffix;
+        }
+
+        function animate(node, info, duration) {
+            var start = null;
+            // Reserve width so the layout doesn't jiggle while digits change
+            node.style.minWidth = node.getBoundingClientRect().width + 'px';
+            function step(ts) {
+                if (start === null) start = ts;
+                var t = Math.min(1, (ts - start) / duration);
+                // easeOutCubic
+                var eased = 1 - Math.pow(1 - t, 3);
+                node.textContent = format(info.numeric * eased, info);
+                if (t < 1) requestAnimationFrame(step);
+                else node.textContent = format(info.numeric, info); // ensure exact final
+            }
+            requestAnimationFrame(step);
+        }
+
+        var prepared = [];
+        nodes.forEach(function (node) {
+            var info = parse(node.textContent.trim());
+            if (!info || isNaN(info.numeric)) return;
+            prepared.push({ node: node, info: info });
+            node.textContent = format(0, info);
+        });
+        if (!prepared.length) return;
+
+        function runAll() {
+            prepared.forEach(function (item) { animate(item.node, item.info, 1400); });
+        }
+
+        if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        io.disconnect();
+                        runAll();
+                    }
+                });
+            }, { threshold: 0.4 });
+            io.observe(prepared[0].node);
+        } else {
+            runAll();
+        }
+    }
 
     /* Testimonial carousel (homepage section 04b) */
     function initTestimonialCarousel() {
