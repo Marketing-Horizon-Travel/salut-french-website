@@ -584,6 +584,8 @@ p { margin: 0 0 1em; }
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 28px;
 }
+.course-grid-2col { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 600px) { .course-grid-2col { grid-template-columns: 1fr; } }
 .course-card {
     background: var(--white);
     border-radius: var(--radius-lg);
@@ -1243,9 +1245,10 @@ p { margin: 0 0 1em; }
     margin-bottom: 8px;
 }
 .page-title {
-    font-size: clamp(32px, 5vw, 56px);
+    font-size: clamp(28px, 4vw, 44px);
     margin-bottom: 16px;
-    line-height: 1.1;
+    line-height: 1.15;
+    text-wrap: balance;
 }
 .page-lede { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin: 0 auto; }
 
@@ -1276,6 +1279,25 @@ p { margin: 0 0 1em; }
     padding: 80px 0;
 }
 .course-hero-image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
+
+/* Centered variant: text + stats + CTAs all centered, no right column */
+.course-hero-centered .course-hero-text {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+.course-hero-centered .course-stats {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 720px;
+}
+.course-hero-centered .hero-ctas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .course-stats {
     list-style: none;
     padding: 0;
@@ -1928,14 +1950,20 @@ p { margin: 0 0 1em; }
     padding: 0;
     margin: 0 0 24px;
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 16px 28px;
-    max-width: 480px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 20px;
 }
 @media (max-width: 540px) {
-    .hero-stats { grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
 }
-.hero-stat { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+    min-width: 0;
+}
 .hero-stat strong {
     font-family: var(--font-heading);
     font-weight: 800;

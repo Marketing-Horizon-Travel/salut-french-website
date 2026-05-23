@@ -11,11 +11,11 @@ eleventyComputed:
 bodyClass: course-detail
 ---
 
-<section class="course-hero">
-    <div class="container grid-2">
+<section class="course-hero course-hero-centered">
+    <div class="container">
         <div class="course-hero-text">
             <p class="page-kicker">Khoá học</p>
-            <h1 class="page-title"><span class="title-icon">{% icon course.icon, 32 %}</span> {{ course.title }}</h1>
+            <h1 class="page-title">{{ course.title }}</h1>
             <p class="page-lede">{{ course.excerpt }}</p>
             <ul class="course-stats">
                 <li><strong>{{ course.duration }}</strong><span>Thời lượng</span></li>
@@ -26,11 +26,6 @@ bodyClass: course-detail
             <div class="hero-ctas">
                 <a href="/lien-he/?khoa={{ course.slug }}" class="btn btn-primary btn-lg">Đăng ký khoá này</a>
                 <a href="/khoa-hoc/" class="btn btn-outline">← Tất cả khoá học</a>
-            </div>
-        </div>
-        <div class="course-hero-image">
-            <div class="course-hero-placeholder">
-                <span class="course-hero-icon">{% icon course.icon, 120 %}</span>
             </div>
         </div>
     </div>
@@ -82,22 +77,18 @@ bodyClass: course-detail
             <p class="section-kicker">Khoá học khác</p>
             <h2 class="section-title"><span class="accent">Bạn cũng</span> có thể thích</h2>
         </div>
-        <div class="course-grid">
+        <div class="course-levels">
             {% set count = 0 %}
             {% for c in courses %}{% if c.slug != course.slug and count < 3 %}{% set count = count + 1 %}
-                <article class="course-card">
-                    <div class="course-icon">{% icon c.icon, 32 %}</div>
-                    <h3 class="course-title"><a href="/khoa-hoc/{{ c.slug }}/">{{ c.title }}</a></h3>
-                    <p class="course-excerpt">{{ c.excerpt }}</p>
-                    <ul class="course-meta">
-                        <li>{% icon "clock", 14 %} {{ c.duration }}</li>
-                        <li>{% icon "target", 14 %} {{ c.goal }}</li>
-                    </ul>
-                    <div class="course-footer">
-                        <span class="course-price">{{ c.price }}</span>
-                        <a href="/khoa-hoc/{{ c.slug }}/" class="link-more">Chi tiết →</a>
+                <a href="/khoa-hoc/{{ c.slug }}/" class="level-card">
+                    <h3 class="level-title">{{ c.short }}</h3>
+                    <p class="level-goal">{{ c.excerpt }}</p>
+                    <div class="level-stats">
+                        <span class="level-stat">{% icon "clock", 13 %} {{ c.duration }}</span>
+                        <span class="level-stat">{% icon "target", 13 %} {{ c.goal }}</span>
                     </div>
-                </article>
+                    <span class="level-link">Xem chi tiết →</span>
+                </a>
             {% endif %}{% endfor %}
         </div>
     </div>

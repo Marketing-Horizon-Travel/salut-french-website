@@ -6,33 +6,34 @@ permalink: /khoa-hoc/
 bodyClass: courses-archive
 ---
 
-<section class="page-header">
-    <div class="container">
-        <p class="page-kicker">Các khoá học</p>
-        <h1 class="page-title"><span class="accent">Chọn khoá</span> phù hợp với bạn</h1>
-        <p class="page-lede">Từ A1 đến C1 — Salut có khoá phù hợp cho mọi mục tiêu: luyện thi chứng chỉ, du học, định cư, hay đơn giản là vì yêu tiếng Pháp.</p>
-    </div>
-</section>
-
 <section class="courses-section">
     <div class="container">
-        <div class="course-grid">
+        <div class="section-head">
+            <p class="section-kicker">Danh mục khoá học</p>
+            <h1 class="section-title">Lộ trình <span class="accent">chinh phục</span> A1 → B2</h1>
+        </div>
+
+        <div class="course-levels">
             {% for c in courses %}
-                <article class="course-card">
-                    <div class="course-icon">{% icon c.icon, 32 %}</div>
-                    <h2 class="course-title"><a href="/khoa-hoc/{{ c.slug }}/">{{ c.title }}</a></h2>
-                    <p class="course-excerpt">{{ c.excerpt }}</p>
-                    <ul class="course-meta">
-                        <li>{% icon "clock", 14 %} {{ c.duration }}</li>
-                        <li>{% icon "bar-chart", 14 %} {{ c.level }}</li>
-                        <li>{% icon "target", 14 %} {{ c.goal }}</li>
-                    </ul>
-                    <div class="course-footer">
-                        <span class="course-price">{{ c.price }}</span>
-                        <a href="/khoa-hoc/{{ c.slug }}/" class="link-more">Chi tiết →</a>
+                <a href="/khoa-hoc/{{ c.slug }}/" class="level-card">
+                    <h3 class="level-title">{{ c.short }}</h3>
+                    <p class="level-goal">{{ c.excerpt }}</p>
+                    <div class="level-stats">
+                        <span class="level-stat">{% icon "clock", 13 %} {{ c.duration }}</span>
+                        <span class="level-stat">{% icon "book-open", 13 %} {{ c.sessions }}</span>
                     </div>
-                </article>
+                    <span class="level-link">Xem chi tiết →</span>
+                </a>
             {% endfor %}
+        </div>
+
+        <div class="supplements">
+            <p class="supplements-label">Lớp bổ trợ:</p>
+            <ul>
+                {% for s in site.supplementCourses %}
+                    <li><span class="suppl-icon">{% icon s.icon, 18 %}</span> {{ s.title }}</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </section>
