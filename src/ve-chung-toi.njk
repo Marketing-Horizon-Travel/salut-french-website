@@ -68,7 +68,7 @@ bodyClass: about-page
             <p class="section-lede">Tại Salut, chúng tôi không chỉ dạy tiếng Pháp — chúng tôi truyền niềm đam mê và tư duy ngôn ngữ có hệ thống.</p>
         </div>
 
-        <div class="course-grid">
+        <div class="course-grid course-grid-2col">
             {% for g in site.guarantees %}
                 <article class="course-card">
                     <div class="course-icon">{% icon g.icon, 32 %}</div>
@@ -77,19 +77,5 @@ bodyClass: about-page
                 </article>
             {% endfor %}
         </div>
-    </div>
-</section>
-
-<section class="courses-section">
-    <div class="container">
-        <div class="section-head">
-            <p class="section-kicker">Cam kết đầu ra</p>
-            <h2 class="section-title"><span class="accent">Kết quả</span> đo lường được</h2>
-        </div>
-        <ul class="checklist" style="max-width:860px;margin:0 auto">
-            <li>{% icon "circle-check", 18 %}Làm chủ kiến thức theo Khung Tham chiếu Ngôn ngữ Châu Âu (CEFR)</li>
-            <li>{% icon "circle-check", 18 %}Tự tin tham gia các kỳ thi chứng chỉ DELF/TCF với tỷ lệ đạt cao</li>
-            <li>{% icon "circle-check", 18 %}Hỗ trợ cài đặt và hướng dẫn sử dụng các công cụ học tập trực tuyến chuyên biệt</li>
-        </ul>
     </div>
 </section>
