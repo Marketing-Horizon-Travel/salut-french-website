@@ -6,6 +6,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         initMobileMenu();
+        initSubmenu();
         initHeaderScroll();
         initSmoothScroll();
         initLeadForm();
@@ -14,6 +15,37 @@
         initTestimonialCarousel();
         initStatCountUp();
     });
+
+    /* Header submenu (dropdown). Desktop: CSS :hover. Mobile: tap caret to toggle. */
+    function initSubmenu() {
+        var mq = window.matchMedia('(max-width: 980px)');
+        document.querySelectorAll('.has-submenu').forEach(function (item) {
+            var trigger = item.querySelector(':scope > a');
+            if (!trigger) return;
+            trigger.addEventListener('click', function (e) {
+                // Only intercept on mobile; on desktop let the parent link work normally
+                if (!mq.matches) return;
+                // Tap on caret area (right portion) toggles; tap on label → follow link
+                var rect = trigger.getBoundingClientRect();
+                var caretZone = rect.right - 48; // last ~48px = caret + padding
+                if (e.clientX >= caretZone || item.classList.contains('is-open') === false) {
+                    e.preventDefault();
+                    var open = item.classList.toggle('is-open');
+                    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+                }
+            });
+        });
+        // Click outside closes any open submenu (desktop fallback for keyboard users)
+        document.addEventListener('click', function (e) {
+            document.querySelectorAll('.has-submenu.is-open').forEach(function (item) {
+                if (!item.contains(e.target)) {
+                    item.classList.remove('is-open');
+                    var trigger = item.querySelector(':scope > a');
+                    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+    }
 
     /* Count-up animation for hero stat numbers. Parses each target string
        ("88,75%", "72,5", "+4 000") to preserve prefix/suffix, decimals,
