@@ -127,6 +127,30 @@
       "color": "cream"
     }
   ],
+  "examCourses": [
+    {
+      "code": "DELF",
+      "title": "Luyện thi DELF",
+      "tagline": "Chứng chỉ Bộ Giáo dục Pháp · Có giá trị vĩnh viễn",
+      "goal": "Công nhận trình độ A1 → B2 — chuẩn cho du học, định cư và làm việc tại Pháp.",
+      "stats": [
+        { "icon": "target", "label": "A1 → B2" },
+        { "icon": "clock", "label": "8-12 tuần" }
+      ],
+      "url": "/lien-he/?khoa=delf"
+    },
+    {
+      "code": "TCF",
+      "title": "Luyện thi TCF",
+      "tagline": "TCF Canada · TCF DAP · TCF IRN",
+      "goal": "Chứng chỉ định mức trình độ — TCF Canada cho hồ sơ định cư, TCF DAP cho du học đại học Pháp.",
+      "stats": [
+        { "icon": "target", "label": "TCF 300+" },
+        { "icon": "clock", "label": "6-10 tuần" }
+      ],
+      "url": "/lien-he/?khoa=tcf"
+    }
+  ],
   "supplementCourses": [
     { "icon": "target", "title": "Luyện thi DELF/TCF/TEF cấp tốc" },
     { "icon": "message-circle", "title": "Lớp Giao tiếp phản xạ" },
@@ -433,7 +457,17 @@
   ],
   "nav": [
     { "label": "Trang chủ", "url": "/" },
-    { "label": "Khoá học", "url": "/khoa-hoc/" },
+    {
+      "label": "Khoá học",
+      "url": "/khoa-hoc/",
+      "children": [
+        { "label": "Tất cả khoá học", "url": "/khoa-hoc/" },
+        { "label": "Level A1 · Khám phá tiếng Pháp", "url": "/khoa-hoc/a1/" },
+        { "label": "Level A2 · Giao tiếp phản xạ", "url": "/khoa-hoc/a2/" },
+        { "label": "Level B1 · Luyện thi DELF B1", "url": "/khoa-hoc/b1/" },
+        { "label": "Level B2 · Hoàn thiện 4 kỹ năng", "url": "/khoa-hoc/b2/" }
+      ]
+    },
     { "label": "Lịch khai giảng", "url": "/lich-khai-giang/" },
     { "label": "Về Salut", "url": "/ve-chung-toi/" },
     { "label": "Câu hỏi thường gặp", "url": "/cau-hoi-thuong-gap/" },

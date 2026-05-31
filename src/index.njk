@@ -162,6 +162,25 @@ bodyClass: home
             <h2 class="section-title">Lộ trình <span class="accent">chinh phục</span> A1 → B2</h2>
         </div>
 
+        <div class="exam-courses">
+            {% for e in site.examCourses %}
+                <a href="{{ e.url }}" class="exam-card">
+                    <div class="exam-card-head">
+                        <span class="exam-code">{{ e.code }}</span>
+                        <h3 class="exam-title">{{ e.title }}</h3>
+                    </div>
+                    <p class="exam-tagline">{{ e.tagline }}</p>
+                    <p class="exam-goal">{{ e.goal }}</p>
+                    <div class="exam-stats">
+                        {% for s in e.stats %}
+                            <span class="level-stat">{% icon s.icon, 13 %} {{ s.label }}</span>
+                        {% endfor %}
+                    </div>
+                    <span class="level-link">Xem chi tiết →</span>
+                </a>
+            {% endfor %}
+        </div>
+
         <div class="course-levels">
             {% for r in site.courseRoadmap %}
                 <a href="/khoa-hoc/{{ r.level | lower }}/" class="level-card">

@@ -9,7 +9,23 @@
         <nav class="site-nav" aria-label="Menu chính">
             <ul class="primary-menu">
                 {% for item in site.nav %}
-                    <li><a href="{{ item.url }}"{% if page.url == item.url or (item.url != '/' and page.url.startsWith(item.url)) %} class="current"{% endif %}>{{ item.label }}</a></li>
+                    {% set isCurrent = page.url == item.url or (item.url != '/' and page.url.startsWith(item.url)) %}
+                    {% if item.children %}
+                        <li class="has-submenu{% if isCurrent %} is-current{% endif %}">
+                            <a href="{{ item.url }}"{% if isCurrent %} class="current"{% endif %} aria-haspopup="true" aria-expanded="false">
+                                {{ item.label }}
+                                <svg class="submenu-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                            </a>
+                            <ul class="submenu" role="menu">
+                                {% for child in item.children %}
+                                    {% set childCurrent = page.url == child.url %}
+                                    <li><a href="{{ child.url }}"{% if childCurrent %} class="current"{% endif %} role="menuitem">{{ child.label }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li><a href="{{ item.url }}"{% if isCurrent %} class="current"{% endif %}>{{ item.label }}</a></li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </nav>
