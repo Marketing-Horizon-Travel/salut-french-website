@@ -199,7 +199,7 @@ bodyClass: home
             <p class="supplements-label">Lớp bổ trợ:</p>
             <ul>
                 {% for s in site.supplementCourses %}
-                    <li><span class="suppl-icon">{% icon s.icon, 18 %}</span> {{ s.title }}</li>
+                    <li><a href="{{ s.url }}"><span class="suppl-icon">{% icon s.icon, 18 %}</span> {{ s.title }}</a></li>
                 {% endfor %}
             </ul>
         </div>

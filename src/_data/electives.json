@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "luyen-thi",
+    "code": "EXAM",
+    "kicker": "Luyện thi chứng chỉ",
+    "title": "Khoá luyện thi DELF / TCF / TEF cấp tốc",
+    "subtitle": "Mục tiêu B1 — B2 — CLB Level 7 Canada",
+    "short": "Luyện thi DELF/TCF/TEF",
+    "lede": "Bạn cần chứng chỉ để du học Pháp, xin PR (thường trú nhân) hay định cư Canada? Khoá học được thiết kế dành riêng cho những ai muốn tối ưu hoá điểm số trong thời gian ngắn nhất — dựa trên lộ trình thực chất, nói KHÔNG với việc \"học vẹt\" hay \"học mẹo\" đối phó.",
+    "differentiatorsTitle": "Điểm khác biệt tại Team",
+    "differentiators": [
+      {
+        "icon": "target",
+        "title": "Chiến lược kết hợp song song",
+        "desc": "Không chỉ giải đề thuần tuý. Khoá học luôn đi kèm việc rà soát và bù đắp lỗ hổng kiến thức nền tảng — có nền chắc thì mức Niveau mới tăng bền vững."
+      },
+      {
+        "icon": "trophy",
+        "title": "Chuẩn đầu ra Canada (CLB Level 7)",
+        "desc": "Lộ trình được thiết kế chuyên biệt để chạm đến mức B2.2 — đầu C1, đáp ứng đúng yêu cầu khắt khe của Bộ Di trú Canada đối với kỹ năng Nghe & Đọc."
+      },
+      {
+        "icon": "graduation-cap",
+        "title": "Đội ngũ giáo viên tinh anh",
+        "desc": "100% giáo viên luyện thi đạt trình độ từ C1 trở lên, có nhiều năm kinh nghiệm thực chiến và từng học tập/sinh sống tại Pháp (Cử nhân, Thạc sĩ). Giáo viên bắt buộc giảng bài bằng tiếng Pháp để tạo môi trường phản xạ tối đa."
+      }
+    ],
+    "audienceTitle": "Khoá học này dành cho ai?",
+    "audience": [
+      "Học viên đã có nền tảng vững chắc (qua bài test đạt tối thiểu từ A2 hoặc B1.2 trở lên).",
+      "Các bạn cựu học sinh trường chuyên Pháp, hệ song ngữ muốn hệ thống lại kiến thức và làm quen format đề thi mới."
+    ],
+    "note": "Team xin phép không nhận các trường hợp cam kết bao đậu 100% trong vòng 2-3 tháng từ con số 0. Chúng tôi cam kết chất lượng dựa trên sự nghiêm túc và nỗ lực từ cả hai phía.",
+    "cta": "Đăng ký luyện thi"
+  },
+  {
+    "slug": "giao-tiep",
+    "code": "ORAL",
+    "kicker": "Lớp giao tiếp",
+    "title": "Khoá lớp Giao tiếp phản xạ",
+    "subtitle": "Toàn diện Nói & Viết",
+    "short": "Giao tiếp phản xạ",
+    "lede": "Xoá bỏ định kiến \"Học tiếng Pháp nhiều năm nhưng không mở miệng nói được\". Khoá học Giao tiếp phản xạ tập trung tối đa vào đầu ra Nói và Nói + Viết — giúp bạn tự tin làm chủ ngôn ngữ trong đời sống, công việc và học tập tại môi trường quốc tế.",
+    "differentiatorsTitle": "Điểm khác biệt tại Team",
+    "differentiators": [
+      {
+        "icon": "globe",
+        "title": "Môi trường \"tắm\" tiếng Pháp",
+        "desc": "Chương trình học được nâng cấp dần độ khó bài giảng, tăng tỷ lệ sử dụng tiếng Pháp từ 30% lên đến 60% - 70% ngay trong lớp học."
+      },
+      {
+        "icon": "zap",
+        "title": "Nguyên tắc \"Chắc nền - Đủ chất\"",
+        "desc": "Ngay từ trình độ sơ cấp (A1-A2), học viên đã được thúc đẩy (push) liên tục để thực hành nói. Không học lý thuyết suông, học đến đâu phản xạ được đến đó."
+      },
+      {
+        "icon": "circle-check",
+        "title": "Kỷ luật nghiêm túc",
+        "desc": "Học viên chỉ được lên lớp khi giáo viên chính đánh giá đạt chuẩn đầu ra. Nếu nghỉ học quá nhiều hoặc chưa đạt kỹ năng Nói, bạn sẽ được yêu cầu HỌC LẠI để đảm bảo không bị \"đuối\" ở các cấp độ cao hơn."
+      }
+    ],
+    "audienceTitle": "Hình thức lớp học",
+    "audience": [
+      "Lớp nhóm giới hạn (từ 4 học viên): đảm bảo thời gian tương tác và thực hành đồng đều cho tất cả mọi người. Không nhận học thử giữa chừng để tránh ảnh hưởng đến tinh thần và tiến độ của nhóm.",
+      "Lớp 1-1 cá nhân hoá: dành cho các bạn bị lệch kỹ năng nặng (Nghe tốt nhưng không Nói được) hoặc cần lịch trình linh hoạt theo cá nhân — xét duyệt dựa trên lịch trống của giáo viên."
+    ],
+    "cta": "Đăng ký lớp giao tiếp"
+  },
+  {
+    "slug": "ngu-phap",
+    "code": "GRAM",
+    "kicker": "Lớp chuyên sâu",
+    "title": "Khoá lớp Ngữ pháp chuyên sâu & Tư duy nghị luận",
+    "subtitle": "B1 — B2 — C1",
+    "short": "Ngữ pháp chuyên sâu",
+    "lede": "Khoảng cách giữa \"biết vài từ vựng cơ bản\" và \"viết được một bài luận thuyết phục\" là rất lớn. Khoá học Ngữ pháp chuyên sâu là bệ phóng bắt buộc cho những ai muốn bước chân vào thế giới tiếng Pháp Trung — Cao cấp, chuẩn bị cho các bậc học đại học hoặc làm việc chuyên nghiệp.",
+    "differentiatorsTitle": "Điểm khác biệt tại Team",
+    "differentiators": [
+      {
+        "icon": "lightbulb",
+        "title": "Bước đệm lên Trung cấp",
+        "desc": "Ở trình độ B1-B2, bạn không còn học ghép từ hay nói các câu ngắn đơn giản. Khoá học sẽ trang bị cho bạn tư duy viết luận, lập luận (Argumentation) và sử dụng cấu trúc câu phức tạp."
+      },
+      {
+        "icon": "book-open",
+        "title": "Hệ thống logic bài bản",
+        "desc": "Đi sâu vào bản chất của các thì (Temps), các thức (Modes) phức tạp như Subjonctif, Conditionnel, cách sử dụng từ nối (Connecteurs) logic để bài viết và bài nói có chiều sâu."
+      },
+      {
+        "icon": "trophy",
+        "title": "Chuẩn hoá tư duy học thuật",
+        "desc": "Giúp học viên xoá bỏ thói quen dịch từ tư duy tiếng Việt sang tiếng Pháp — hướng tới cách diễn đạt tự nhiên, sang trọng và chuẩn bản xứ."
+      }
+    ],
+    "audienceTitle": "Khoá học này dành cho ai?",
+    "audience": [
+      "Học viên đã học xong A2 nhưng cảm thấy hổng kiến thức, không thể tự viết một đoạn văn dài.",
+      "Học viên thi đạt DELF B1 nhưng điểm số ở mức \"suýt soát\" (50-60 điểm — mức B1.1) muốn củng cố lại trước khi lên B2 để tránh tình trạng \"ngồi nhầm lớp\".",
+      "Những bạn có mục tiêu du học trường công tại Pháp, cần chuẩn bị kỹ năng viết bài luận học thuật (Production Écrite) ăn điểm."
+    ],
+    "founderNote": "Học một ngôn ngữ là một hành trình dài hạn. Khoảng cách giữa sách vở và thực tế đời sống là rất xa, ngay cả khi bạn có DELF B2 hay DALF C1 trên tay. Hãy lựa chọn khoá học phù hợp với mục tiêu và năng lực thực tế của mình để không lãng phí thời gian và tiền bạc. Chúc các bạn học tiếng Pháp — NÓI ĐƯỢC tiếng Pháp!",
+    "cta": "Đăng ký lớp ngữ pháp"
+  }
+]
