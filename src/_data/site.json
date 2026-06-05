@@ -152,9 +152,9 @@
     }
   ],
   "supplementCourses": [
-    { "icon": "target", "title": "Luyện thi DELF/TCF/TEF cấp tốc" },
-    { "icon": "message-circle", "title": "Lớp Giao tiếp phản xạ" },
-    { "icon": "book-open", "title": "Lớp Ngữ pháp chuyên sâu" }
+    { "icon": "target", "title": "Luyện thi DELF/TCF/TEF cấp tốc", "url": "/khoa-hoc/luyen-thi/" },
+    { "icon": "message-circle", "title": "Lớp Giao tiếp phản xạ", "url": "/khoa-hoc/giao-tiep/" },
+    { "icon": "book-open", "title": "Lớp Ngữ pháp chuyên sâu", "url": "/khoa-hoc/ngu-phap/" }
   ],
   "homeNews": [
     {
@@ -465,7 +465,10 @@
         { "label": "Level A1 · Khám phá tiếng Pháp", "url": "/khoa-hoc/a1/" },
         { "label": "Level A2 · Giao tiếp phản xạ", "url": "/khoa-hoc/a2/" },
         { "label": "Level B1 · Luyện thi DELF B1", "url": "/khoa-hoc/b1/" },
-        { "label": "Level B2 · Hoàn thiện 4 kỹ năng", "url": "/khoa-hoc/b2/" }
+        { "label": "Level B2 · Hoàn thiện 4 kỹ năng", "url": "/khoa-hoc/b2/" },
+        { "label": "Luyện thi DELF / TCF / TEF", "url": "/khoa-hoc/luyen-thi/" },
+        { "label": "Lớp Giao tiếp phản xạ", "url": "/khoa-hoc/giao-tiep/" },
+        { "label": "Lớp Ngữ pháp chuyên sâu", "url": "/khoa-hoc/ngu-phap/" }
       ]
     },
     { "label": "Lịch khai giảng", "url": "/lich-khai-giang/" },

@@ -1354,12 +1354,169 @@ p { margin: 0 0 1em; }
 }
 .course-hero-image { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); }
 
+/* Elective page — subtitle pill + overview + audience + notes */
+.elective-subtitle {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin: 0 0 24px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 3px 0 var(--yellow-dark);
+}
+.elective-overview {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 28px 28px 24px;
+    margin: 0 auto 32px;
+    text-align: left;
+    box-shadow: var(--shadow-sm);
+    max-width: 760px;
+}
+.elective-overview h2 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    margin: 0 0 12px;
+    color: var(--ink);
+}
+.elective-overview p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0;
+}
+
+/* Audience list — numbered persona cards */
+.elective-audience-section { background: var(--cream); }
+.elective-audience-section .section-head { text-align: center; margin-bottom: 36px; }
+.audience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.audience-card {
+    background: var(--white);
+    border: 2px solid var(--lavender-100);
+    border-radius: var(--radius-md);
+    padding: 24px 24px 22px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    transition: transform .2s, border-color .2s, box-shadow .2s;
+    position: relative;
+}
+.audience-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--yellow);
+    box-shadow: var(--shadow-md);
+}
+.audience-number {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--lavender-300);
+    line-height: 1;
+    flex-shrink: 0;
+    letter-spacing: -0.02em;
+}
+.audience-card:hover .audience-number { color: var(--lavender-600); }
+.audience-card p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+    flex: 1;
+}
+
+/* Note callout — yellow info box */
+.elective-note {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #FFF8E5 0%, #FFF1C2 100%);
+    border: 1px solid var(--yellow);
+    border-radius: var(--radius-md);
+    padding: 22px 26px;
+    margin: 0 auto 28px;
+    max-width: 880px;
+    box-shadow: 0 2px 0 var(--yellow-dark);
+}
+.elective-note-icon {
+    width: 40px; height: 40px;
+    background: var(--yellow);
+    color: var(--ink);
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 0 var(--yellow-dark);
+}
+.elective-note > div { flex: 1; }
+.elective-note strong {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.elective-note p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+}
+
+.founder-callout {
+    background: linear-gradient(135deg, var(--lavender-700) 0%, var(--lavender-800) 100%);
+    color: var(--white);
+    border-radius: var(--radius-md);
+    padding: 28px 32px;
+    margin: 36px 0 0;
+    position: relative;
+    border: 0;
+}
+.founder-callout-label {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+.founder-callout p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--white);
+    font-style: italic;
+}
+
 /* Centered variant: text + stats + CTAs all centered, no right column */
 .course-hero-centered .course-hero-text {
     max-width: 760px;
     margin: 0 auto;
     text-align: center;
 }
+.course-hero-centered.elective-hero .course-hero-text { max-width: 920px; }
 .course-hero-centered .course-stats {
     margin-left: auto;
     margin-right: auto;
@@ -2763,6 +2920,9 @@ p { margin: 0 0 1em; }
     padding: 0;
 }
 .supplements li {
+    border-radius: 999px;
+}
+.supplements li a {
     background: var(--white);
     padding: 8px 16px;
     border-radius: 999px;
@@ -2773,6 +2933,12 @@ p { margin: 0 0 1em; }
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    transition: border-color .2s, background .2s, color .2s;
+}
+.supplements li a:hover {
+    border-color: var(--yellow);
+    background: var(--yellow-soft);
+    color: var(--ink);
 }
 
 /* =========================================================================
